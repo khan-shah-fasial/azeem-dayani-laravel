@@ -4,12 +4,13 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Contact;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
     public function index(){
-        $contactCount = Contact::count();
-        return view('backend.pages.dashboard.index', compact('contactCount'));
+        $flimCount = DB::table('products')->where('categories_id', 1)->count();
+        $nonflimCount = DB::table('products')->where('categories_id', 2)->count();
+        return view('backend.pages.dashboard.index', compact('flimCount', 'nonflimCount'));
     }
 }
