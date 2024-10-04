@@ -1,21 +1,61 @@
-<script type="text/javascript" defer src="/assets/frontend/js/jquery.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/owl-carousel.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/bootstrap5.min.js"></script>
-<script type="text/javascript" defer src="/assets/frontend/js/script.js"></script>
-<!-- <script type="text/javascript" defer src="/assets/frontend/js/init.js"></script> -->
-<!--moment js-->
-<!-- <script defer defer src="/assets/frontend/js/moment.min.js"></script> -->
+<script type="text/javascript" src="/assets/frontend/js/jquery.js"></script>
 
-<!--jQuery Validate-->
-<!-- <script defer src="/assets/frontend/js/jquery.validate.min.js"></script> -->
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CSSRulePlugin.min.js"
+    integrity="sha512-IxxYrSNXnt/RJlxNX40+7BQL88FLqvdpVpuV9AuvpNH/NFP0L8xA8WLxWTXx6PYExB5R/ktQisp6tIrnLn8xvw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
+
+<script type="text/javascript" defer src="/assets/frontend/js/owl-carousel.js"></script>
+<script type="text/javascript" src="/assets/frontend/js/bootstrap5.min.js"></script>
+<script type="text/javascript" defer src="/assets/frontend/js/libs.min.js"></script>
+
+<script type="text/javascript" defer src="/assets/frontend/js/fancybox.min.js"></script>
+
+<script type="text/javascript" defer src="/assets/frontend/js/script.js"></script>
 
 <!--Toast Js-->
-<!-- <script defer defer src="/assets/frontend/js/toastr.min.js"></script> -->
+<script defer defer src="/assets/frontend/js/toastr.min.js"></script>
 
-<!-- <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+<!--jQuery Validate-->
+<script defer src="/assets/frontend/js/jquery.validate.min.js"></script>
 
-  
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","flag_size":16,"switcher_horizontal_position":"inline"}</script>
-<script defer src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-<!-- <script defer src="js/google_translate.js" defer></script> -->
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" defer src="/assets/frontend/js/init.js"></script>
+
+
+<script>
+    document.querySelector('.menu-trigger').addEventListener('change', function() {
+        if (this.checked) {
+            // Disable scrolling
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Enable scrolling
+            document.body.style.overflow = 'auto';
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('[data-fancybox="gallery"]').fancybox();
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $(".gallery_yt_video").click(function() {
+            var url = $(this).attr("data-youtube-url");
+            $("#videoIframe").attr("src", url);
+            $("#videoModal").modal("show");
+        });
+
+        $(".close").click(function() {
+            $("#videoModal").modal("hide");
+        });
+
+        $("#videoModal").on("hide.bs.modal", function() {
+            $("#videoIframe").attr("src", "");
+        });
+    });
+</script>
+
+
+
+<!--moment js-->
+<!-- <script defer defer src="/assets/frontend/js/moment.min.js"></script> -->

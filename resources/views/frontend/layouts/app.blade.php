@@ -11,7 +11,7 @@
 
 </head>
 
-<body style="background-color: #333;" id="index">
+<body class="scroll-container" data-scroll-container>
 
 
 

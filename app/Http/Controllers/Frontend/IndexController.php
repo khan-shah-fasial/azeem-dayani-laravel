@@ -4,117 +4,112 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
-use App\Models\User;
-use App\Models\Faq;
-use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 
 
 class IndexController extends Controller
 {
-    public function Form_Save(Request $request)
-    {
-        $formType = $request->input('form_type');
+    // public function Form_Save(Request $request)
+    // {
+    //     $formType = $request->input('form_type');
 
-        // Validate data based on form type
-        if ($formType === 'partner_us') {
-            $page = 'Partner Us';
-            $validated = Validator::make($request->all(), [
-                'company_name' => 'required|string|max:255',
-                'full_name' => 'required|string|max:255',
-                'mobile' => 'required|string|max:20',
-                'email' => 'required|email|max:255',
-                'product' => 'required|string|max:255',
-                'message' => 'nullable|string|max:500',
-            ]);
-        } 
-        elseif ($formType === 'contact_us') {
-            $page = 'Contact Us';
-            $validated = Validator::make($request->all(), [
-                'full_name' => 'required|string|max:255',
-                'mobile' => 'required|string|max:20',
-                'email' => 'required|email|max:255',
-                'message' => 'nullable|string|max:500',
-            ]);
-        }
-        elseif ($formType === 'career') {
-            $page = 'Career';
-            $validated = Validator::make($request->all(), [
-                'full_name' => 'required|string|max:255',
-                'mobile' => 'required|string|max:20',
-                'email' => 'required|email|max:255',
-                'apply_for' => 'required|string|max:255',
-                'type_code' => 'required|string|max:255',
-                'message' => 'nullable|string|max:500',
-            ]);
-        }
+    //     // Validate data based on form type
+    //     if ($formType === 'partner_us') {
+    //         $page = 'Partner Us';
+    //         $validated = Validator::make($request->all(), [
+    //             'company_name' => 'required|string|max:255',
+    //             'full_name' => 'required|string|max:255',
+    //             'mobile' => 'required|string|max:20',
+    //             'email' => 'required|email|max:255',
+    //             'product' => 'required|string|max:255',
+    //             'message' => 'nullable|string|max:500',
+    //         ]);
+    //     } 
+    //     elseif ($formType === 'contact_us') {
+    //         $page = 'Contact Us';
+    //         $validated = Validator::make($request->all(), [
+    //             'full_name' => 'required|string|max:255',
+    //             'mobile' => 'required|string|max:20',
+    //             'email' => 'required|email|max:255',
+    //             'message' => 'nullable|string|max:500',
+    //         ]);
+    //     }
+    //     elseif ($formType === 'career') {
+    //         $page = 'Career';
+    //         $validated = Validator::make($request->all(), [
+    //             'full_name' => 'required|string|max:255',
+    //             'mobile' => 'required|string|max:20',
+    //             'email' => 'required|email|max:255',
+    //             'apply_for' => 'required|string|max:255',
+    //             'type_code' => 'required|string|max:255',
+    //             'message' => 'nullable|string|max:500',
+    //         ]);
+    //     }
 
-        if ($validated->fails()) {
-            return response()->json([
-                'status' => false,
-                'notification' => $validated->errors()->all()
-            ], 200);
-        }
+    //     if ($validated->fails()) {
+    //         return response()->json([
+    //             'status' => false,
+    //             'notification' => $validated->errors()->all()
+    //         ], 200);
+    //     }
 
-        // Store inquiry in the contact table and get the inserted ID
-        $enquiryId = DB::table('contact')->insertGetId([
-            'page' => $page,
-            'company_name' => $request->input('company_name', null),
-            'full_name' => $request->input('full_name'),
-            'mobile' => $request->input('mobile'),
-            'email' => $request->input('email'),
-            'product' => $request->input('product', null),
-            'apply_for' => $request->input('apply_for', null),
-            'type_code' => $request->input('type_code', null),
-            'message' => $request->input('message', null),
-            'created_at' => now(),
-            'updated_at' => now(),
-        ]);
+    //     // Store inquiry in the contact table and get the inserted ID
+    //     $enquiryId = DB::table('contact')->insertGetId([
+    //         'page' => $page,
+    //         'company_name' => $request->input('company_name', null),
+    //         'full_name' => $request->input('full_name'),
+    //         'mobile' => $request->input('mobile'),
+    //         'email' => $request->input('email'),
+    //         'product' => $request->input('product', null),
+    //         'apply_for' => $request->input('apply_for', null),
+    //         'type_code' => $request->input('type_code', null),
+    //         'message' => $request->input('message', null),
+    //         'created_at' => now(),
+    //         'updated_at' => now(),
+    //     ]);
 
 
-        // Prepare data for sending the email
-        $data = [
-            'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
-            'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
-            'subject' => 'New Contact Form Submission',
-            'htmlContent' => "
-                <h2>Contact Form Submission</h2>
-                <p><b>Page:</b> {$page}</p>"
-                . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
-                . "<p><b>Full Name:</b> {$request->full_name}</p>"
-                . "<p><b>Mobile:</b> {$request->mobile}</p>"
-                . "<p><b>Email:</b> {$request->email}</p>"
-                . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
-                . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
-                . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
-                . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
-        ];
+    //     // Prepare data for sending the email
+    //     $data = [
+    //         'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
+    //         'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
+    //         'subject' => 'New Contact Form Submission',
+    //         'htmlContent' => "
+    //             <h2>Contact Form Submission</h2>
+    //             <p><b>Page:</b> {$page}</p>"
+    //             . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
+    //             . "<p><b>Full Name:</b> {$request->full_name}</p>"
+    //             . "<p><b>Mobile:</b> {$request->mobile}</p>"
+    //             . "<p><b>Email:</b> {$request->email}</p>"
+    //             . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
+    //             . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
+    //             . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
+    //             . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
+    //     ];
 
-        // Send the email using Brevo API
-        $apiKey = env('MAIL_API');
+    //     // Send the email using Brevo API
+    //     $apiKey = env('MAIL_API');
 
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json',
-            'api-key' => $apiKey,
-        ])->post('https://api.brevo.com/v3/smtp/email', $data);
+    //     $response = Http::withHeaders([
+    //         'Content-Type' => 'application/json',
+    //         'api-key' => $apiKey,
+    //     ])->post('https://api.brevo.com/v3/smtp/email', $data);
 
-        if ($response->successful()) {
-            return response()->json([
-                'status' => true,
-                'notification' => 'Thank you for contacting Saagar SCPL! Your query has been received and our concerned team will reach out to you within 24 hours.',
-            ]);
-        } else {
-            return response()->json([
-                'status' => false,
-                'notification' => 'Error submitting form. Please try again later.',
-            ]);
-        }
-    }
+    //     if ($response->successful()) {
+    //         return response()->json([
+    //             'status' => true,
+    //             'notification' => 'Thank you for contacting Saagar SCPL! Your query has been received and our concerned team will reach out to you within 24 hours.',
+    //         ]);
+    //     } else {
+    //         return response()->json([
+    //             'status' => false,
+    //             'notification' => 'Error submitting form. Please try again later.',
+    //         ]);
+    //     }
+    // }
 
 
     public function index()
@@ -148,9 +143,6 @@ class IndexController extends Controller
     }
 
 
-
-
-
 //--------------=============================== other ================================------------------------------
 
     public function not_found(){
@@ -162,11 +154,6 @@ class IndexController extends Controller
         return view('frontend.pages.thankyou.index');
     }
 
-    public function cookie_policy(){
-
-        return view('frontend.pages.cookiePolicy.index');
-    }
-
 //--------------=============================== other ================================------------------------------
 
 //--------------=============================== Pages ================================------------------------------
@@ -175,157 +162,38 @@ class IndexController extends Controller
         
         $page = DB::table('pages')->where('type','about_us')->first();
         
-        return view('frontend.pages.company_profile.index',compact('page'));
+        return view('frontend.pages.about_us.index',compact('page'));
     }
-    public function contact_us(){
-        $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
-        $contacts = json_decode($footer->contacts);
+
+    public function works_page(){
+        
+        $page = DB::table('pages')->where('type','works')->first();
+        
+        return view('frontend.pages.works.index',compact('page'));
+    }
+
+    public function achievements_page(){
+        
+        $page = DB::table('pages')->where('type','achivements')->first();
+        
+        return view('frontend.pages.achivements.index',compact('page'));
+    }
+
+    public function gallery_page(){
+        
+        $page = DB::table('pages')->where('type','gallery')->first();
+        
+        return view('frontend.pages.gallery.index',compact('page'));
+    }
+
+    public function contact_us_page(){
+        // $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+        // $contacts = json_decode($footer->contacts);
+        $contacts = '';
 
         return view('frontend.pages.contact_us.index',compact('contacts'));
     }
-    public function career(){
-        return view('frontend.pages.career.index');
-    }
     
-    public function partner_with_us(){
-        $page = DB::table('pages')->where('type','partner_with_us')->first();
-        return view('frontend.pages.partner.index',compact('page'));
-    }
-    public function what_we_do(){
-        return view('frontend.pages.what_we_do.index');
-    }
-
-// ProductController.php
-// public function products_category(Request $request)
-// {
-//     // Fetch all product categories
-//     $productCategories = ProductCategory::where('is_active', 1)->get();
-
-//     // Initialize query for products
-//     $query = Product::where('is_active', 1)->query();
-
-//     // Filter products by category if category_id is present in the request
-//     if ($request->has('category_id')) {
-//         $categoryId = $request->input('category_id');
-//         $query->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode([$categoryId])]);
-//     }else{
-//         $categoryId = 10;
-//         $query->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode([$categoryId])]);
-//     }
-
-//     // Fetch all products (filtered by category if applicable)
-//     $products = $query->get();
-
-//     return view('frontend.pages.product.product_category', compact('productCategories', 'products'));
-// }
-
-public function products_category(Request $request)
-{
-    // Fetch all active product categories with pagination (12 per page)
-    $productCategories = ProductCategory::where('is_active', 1)->paginate(12);
-
-    return view('frontend.pages.product.product_category', compact('productCategories'));
-}
-
-public function products_s(Request $request)
-{
-    // Fetch all product categories with pagination
-    $productCategories = ProductCategory::where('is_active', 1)->get();
-
-    // Initialize query for products
-    $query = Product::where('is_active', 1);
-
-    // Get the category_id from the query parameter, default to 1 if not present
-    $categoryId = $request->query('category_id');
-    $searchQuery = $request->query('search', '');
-
-    // Filter products by category using LIKE
-    $query->where('product_category_ids', 'LIKE', '%' . $categoryId . '%');
-
-    // Filter products by search query
-    if ($searchQuery) {
-        $query->where('title', 'LIKE', '%' . $searchQuery . '%');
-    }
-
-    // Fetch products with pagination
-    $products = $query->paginate(9);
-
-    return view('frontend.pages.product.products', compact('productCategories', 'products', 'categoryId', 'searchQuery'));
-}
-
-public function product_detail($slug) {
-    // Fetch the product details
-    $product_detail = DB::table('products')
-        ->where('slug', $slug)
-        ->where('is_active', 1)
-        ->first();
-
-    if (!$product_detail) {
-        abort(404, 'Product not found');
-    }
-
-    // Extract product details
-    $page_name = $product_detail->title;
-    $image = $product_detail->image;
-    $product_category_ids = json_decode($product_detail->product_category_ids, true);
-    $function_description = $product_detail->function_description;
-    $product_description = $product_detail->product_description;
-    $product_information = $product_detail->product_information;
-    $delivery_description = $product_detail->delivery_description;
-    $meta_title = $product_detail->meta_title;
-    $meta_description = $product_detail->meta_description;
-    $is_active = $product_detail->is_active;
-
-    // Fetch the previous product
-    $previous_product = DB::table('products')
-        ->where('id', '<', $product_detail->id)
-        ->where('is_active', 1)
-        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
-        ->orderBy('id', 'desc')
-        ->first();
-
-    // Fetch the next product
-    $next_product = DB::table('products')
-        ->where('id', '>', $product_detail->id)
-        ->where('is_active', 1)
-        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
-        ->orderBy('id', 'asc')
-        ->first();
-
-    // Fetch related products
-    $related_products = DB::table('products')
-        ->where('id', '!=', $product_detail->id) // Exclude the current product
-        ->where('is_active', 1)
-        ->whereRaw('JSON_CONTAINS(product_category_ids, ?)', [json_encode($product_category_ids)])
-        ->limit(4)
-        ->get();
-
-    return view('frontend.pages.product.product_detail', compact('previous_product','next_product','product_detail', 'is_active', 'function_description',  'product_description', 'product_information', 'delivery_description', 'product_category_ids', 'slug', 'page_name', 'image', 'meta_title', 'meta_description', 'related_products'));
-}
-
-public function page_detail($page_slug) {
-    // Fetch the product details
-    $page_detail = DB::table('pages')
-        ->where('slug', $page_slug)
-        ->where('is_active', 1)
-        ->first();
-
-    if (!$page_detail) {
-        abort(404, 'Page not found');
-    }
-
-    // Extract product details
-    $page_name = $page_detail->title;
-    $page_slug = $page_detail->slug;
-    $content = $page_detail->content;
-    $meta_title = $page_detail->meta_title;
-    $meta_description = $page_detail->meta_description;
-    $is_active = $page_detail->is_active;
-
-    return view('frontend.pages.custom_page', compact('page_detail', 'page_name', 'page_slug', 'content', 'is_active', 'meta_title','meta_description',
-    ));
-}
-
 
 //--------------=============================== Pages ================================------------------------------
 
@@ -432,54 +300,5 @@ public function page_detail($page_slug) {
     // }
    //--------------=============================== contact form save ===========================--------------------------
    
-
-
-//--------------=============================== other feature ====================================---------------------
-
-    public function search(Request $request){
-
-        $query = $request->input('query');
-
-        // $blogs = Blog::where(function ($queryBuilder) use ($query) {
-        //     $queryBuilder->where('title', 'like', "%$query%")
-        //         ->orWhere('short_description', 'like', "%$query%")
-        //         ->orWhere('content', 'like', "%$query%");
-        // })->where('status', 1)->get();
-        
-        // $practiceAreas = PracticeArea::where(function ($queryBuilder) use ($query) {
-        //     $queryBuilder->where('title', 'like', "%$query%")
-        //         ->orWhere('short_description', 'like', "%$query%")
-        //         ->orWhere('content', 'like', "%$query%");
-        // })->where('status', 1)->get();
-
-        return view('frontend.pages.search.index', compact('blogs','practiceAreas'));
-    }
-
-    public function comment_save(Request $request)
-    {
-        $commentData = $request->all();
-    
-        // Create the contact record
-        // BlogComment::create($commentData);
-    
-        $response = [
-            'status' => true,
-            'notification' => 'Comment added successfully!',
-        ];
-    
-        return response()->json($response);
-    }
-
-// =====================--------------- Privacy Policy -------------====================
-
-    public function terms_page(){
-        return view('frontend.pages.terms.index');
-    }
-
-    public function refund_policy(){
-        return view('frontend.pages.refund_policy.index');
-    }
-
-
 
 }
