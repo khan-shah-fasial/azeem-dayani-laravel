@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 
 class IndexController extends Controller
@@ -114,32 +115,48 @@ class IndexController extends Controller
 
     public function index()
     {
-        // Fetch the page content
-        $page = DB::table('pages')->where('type', 'home_page')->first();
-        $data = $page->content;
-        $decoded_data = json_decode($data);
+        // Cache the page content query for 60 minutes
+        $page = Cache::remember('home_page_content', 60, function () {
+            return DB::table('pages')->where('type', 'home_page')->first();
+        });
 
-        // Check if product_ids exists and is an array
-        $productIds = isset($decoded_data->product_ids) ? explode(',', $decoded_data->product_ids) : [];
+        $data_page = $page->content;
+        $decoded_data = json_decode($data_page);
 
-        // Check if product_category_id exists and is an array
-        $productCategoryIds = isset($decoded_data->product_category_id) ? explode(',', $decoded_data->product_category_id) : [];
+        // Cache film categories
+        $film_catg_list = isset($decoded_data->film_catg) ? $decoded_data->film_catg : [];
+        $data['film_catg'] = Cache::remember('film_catg', 60, function () use ($film_catg_list) {
+            return !empty($film_catg_list) 
+                ? Product::where('is_active', 1)
+                    ->whereIn('id', json_decode($film_catg_list))
+                    ->select('title', 'slug', 'image')
+                    ->get()
+                : [];
+        });
 
-        // Fetch the products that are active and match the IDs, order by ID descending, and limit to 8
-        $products = Product::where('is_active', 1)
-            ->whereIn('id', $productIds)
-            ->orderBy('id', 'desc')
-            ->limit(8)
-            ->get();
+        // Cache non-film categories
+        $non_film_catg_list = isset($decoded_data->non_film_catg) ? $decoded_data->non_film_catg : [];
+        $data['non_film_catg'] = Cache::remember('non_film_catg', 60, function () use ($non_film_catg_list) {
+            return !empty($non_film_catg_list)
+                ? Product::where('is_active', 1)
+                    ->whereIn('id', json_decode($non_film_catg_list))
+                    ->select('title', 'slug', 'image')
+                    ->get()
+                : [];
+        });
 
-        // Fetch the ProductCategory that are active and match the IDs, order by ID descending, and limit to 9
-        $productCategories = ProductCategory::where('is_active', 1)
-            ->whereIn('id', $productCategoryIds)
-            ->orderBy('id', 'asc')
-            ->limit(9)
-            ->get();
+        // Directly assign remaining data (no caching needed here)
+        $data['about_content'] = $decoded_data->about_content ?? '';
+        $data['banner_text'] = $decoded_data->banner_text ?? '';
+        $data['ows_content'] = $decoded_data->ows_content ?? '';
+        $data['achivements_content'] = $decoded_data->achivements_content ?? '';
+        $data['banner_img'] = $decoded_data->banner ?? '';
+        $data['about_image'] = $decoded_data->about_image ?? '';
+        $data['ows_image'] = $decoded_data->ows_image ?? '';
+        $data['achivements_image'] = $decoded_data->achivements_image ?? '';
+        $data['achivements_banner_bg'] = $decoded_data->achivements_banner_bg ?? '';
 
-        return view('frontend.pages.home.index', compact('page', 'products', 'productCategories'));
+        return view('frontend.pages.home.index', compact('page', 'data'));
     }
 
 
@@ -160,16 +177,55 @@ class IndexController extends Controller
 
     public function about_us(){
         
-        $page = DB::table('pages')->where('type','about_us')->first();
+        $page = Cache::remember('about_us_page', 60, function () {
+            return DB::table('pages')->where('type', 'about_us')->first();
+        });
+
+        $data_page = $page->content;
+        $decoded_data = json_decode($data_page);
+
+        $data['ab_title'] = $decoded_data->ab_title ?? '';
+        $data['ab_description'] = $decoded_data->ab_description ?? '';
+        $data['ab_journey_title'] = $decoded_data->ab_journey_title ?? '';
+        $data['ab_journey_description'] = $decoded_data->ab_journey_description ?? '';
+        $data['ab_vision_title'] = $decoded_data->ab_vision_title ?? '';
+        $data['ab_vision_sub_title'] = $decoded_data->ab_vision_sub_title ?? '';
+        $data['ab_vision_description'] = $decoded_data->ab_vision_description ?? '';
+        $data['ab_img_1'] = $decoded_data->ab_img_1 ?? '';
+        $data['ab_img_2'] = $decoded_data->ab_img_2 ?? '';
+        $data['ab_vision_img'] = $decoded_data->ab_vision_img ?? '';
         
-        return view('frontend.pages.about_us.index',compact('page'));
+        return view('frontend.pages.about_us.index',compact('page', 'data'));
     }
 
     public function works_page(){
         
-        $page = DB::table('pages')->where('type','works')->first();
+        $page = Cache::remember('works_page', 60, function () {
+            return DB::table('pages')->where('type', 'works')->first();
+        });
         
-        return view('frontend.pages.works.index',compact('page'));
+        $data_page = $page->content;
+        $decoded_data = json_decode($data_page);
+
+        $description = $decoded_data->description ?? '';
+
+        // Cache the 'flims' query for 60 minutes
+        $flims = Cache::remember('flims_list', 60, function () {
+            return DB::table('products')
+                ->where('categories_id', 1)
+                ->orderBy('id', 'desc')
+                ->get();
+        });
+        
+        // Cache the 'non_flims' query for 60 minutes
+        $non_flims = Cache::remember('non_flims_list', 60, function () {
+            return DB::table('products')
+                ->where('categories_id', 2)
+                ->orderBy('id', 'desc')
+                ->get();
+        });
+        
+        return view('frontend.pages.works.index',compact('page','description','flims','non_flims'));
     }
 
     public function achievements_page(){

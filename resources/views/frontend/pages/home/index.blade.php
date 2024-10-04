@@ -7,65 +7,19 @@
 @section('page.type', 'website')
 
 @section('page.content')
-
-    @php
-        if (!empty($page)) {
-            $title = $page->title;
-            $slug = $page->slug;
-            $meta_title = $page->meta_title;
-            $meta_description = $page->meta_description;
-        } else {
-            $title = '';
-            $slug = '';
-            $meta_title = '';
-            $meta_description = '';
-        }
-        if (!empty($page->content)) {
-            $data = $page->content;
-            $decoded_data = json_decode($data);
-            $banners = $decoded_data->banner ?? '';
-            $about_content = $decoded_data->about_content ?? '';
-            $about_image = $decoded_data->about_image ?? '';
-            $wwd = $decoded_data->wwd_image ?? '';
-            $activities = $decoded_data->activities ?? '';
-            $scp_content = $decoded_data->scp_content ?? '';
-            $scp_image1 = $decoded_data->scp_image1 ?? '';
-            $scp_pdf1 = $decoded_data->scp_pdf1 ?? '';
-            $scp_text1 = $decoded_data->scp_text1 ?? '';
-            $scp_image2 = $decoded_data->scp_image2 ?? '';
-            $scp_text2 = $decoded_data->scp_text2 ?? '';
-            $scp_url = $decoded_data->scp_url ?? '';
-            $scp_image3 = $decoded_data->scp_image3 ?? '';
-            $scp_pdf2 = $decoded_data->scp_pdf2 ?? '';
-            $scp_text3 = $decoded_data->scp_text3 ?? '';
-            $cocs_description = $decoded_data->cocs_description ?? '';
-            $cocs_pdf = $decoded_data->cocs_pdf ?? '';
-        } else {
-            // If content is empty, set default empty values
-            $banners = '';
-            $about_content = '';
-            $about_image = '';
-            $wwd = '';
-            $activities = '';
-            $scp_content = '';
-            $scp_image1 = '';
-            $scp_pdf1 = '';
-            $scp_text1 = '';
-            $scp_image2 = '';
-            $scp_text2 = '';
-            $scp_url = '';
-            $scp_image3 = '';
-            $scp_pdf2 = '';
-            $scp_text3 = '';
-            $cocs_description = '';
-            $cocs_pdf = '';
-        }
-    @endphp
-
     <style>
         .footer_logo_text {
             display: none;
         }
+
+        .music_section {
+            background: url({{ asset('storage/' .$data['banner_img']) }}) no-repeat !important;
+        }
+
+        .middle_description {
+            background: url({{ asset('storage/' .$data['achivements_banner_bg']) }}) !important;
+        }
+
     </style>
 
     <div class="preloader">
@@ -140,29 +94,24 @@
                 <div class="header_logo_div">
                     <div class="content">
                         <a href="index.html">
-                            <!-- <img class="main_logo" src="/assets/frontend/images/Homepage/Top_Logo.png"> -->
-
+                           {{--
+                            <img class="main_logo" src="/assets/frontend/images/Homepage/Top_Logo.png">
+                            --}}
                         </a>
                         <h1 class="main_logo font_miedinger text-light logo_text">Azeem Dayani</h1>
                         <div class="heading-anim-main" id="text">
-                            <h2 class="heading-anim font_miedinger music_director">INDIA'S 1ST MUSIC SUPERVISOR</h2>
+                            <h2 class="heading-anim font_miedinger music_director">{{ $data['banner_text'] }}</h2>
                         </div>
-                        <!-- <img class="wavylines_white" src="/assets/frontend/images/Homepage/Music-Lines_2.png"> -->
+                         {{--<img class="wavylines_white" src="/assets/frontend/images/Homepage/Music-Lines_2.png">--}}
                         <div class="text-white" id="bars1"></div>
                     </div>
                 </div>
                 <div class="zip_zap_bg_img_container zip_zap_bg_img ">
                     <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png">
-                    <img class="scaleup-element headphone_text_img" src="/assets/frontend/images/Homepage/Headphone_new.png">
-                    <p class="animated-para col-md-9 description">
-                        Revolutionised Bollywood by introducing the concept of a Music Supervisor, a role that seamlessly
-                        blends music selection
-                        with cinematic storytelling. Azeem Dayanis visionary approach has garnered the respect of India's
-                        top filmmakers, music
-                        labels and musicians, making him a trusted name in the industry. Azeem's work bridges tradition with
-                        innovation, setting a
-                        new standard for how music enhances the narrative of Indian cinema.
-                    </p>
+                    <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}">
+                    <div class="animated-para col-md-9 description">
+                        {!! $data['about_content'] !!}
+                    </div>
 
                 </div>
             </div>
@@ -172,6 +121,7 @@
         <section data-icon-height="50vh" id="icon-container" class="floating-icons middle_description icon-container">
 
             <div class="slidercircle">
+                {{--
                 <div class="circle-one">
                     <!-- <a href="#"> -->
                     <!-- <div class="text-white circle-arround-two-1 anima">
@@ -222,52 +172,50 @@
                             <path d="m.455 16.512 10.969 7.314c.374.23.774.233 1.152 0l10.969-7.314c.281-.187.455-.522.455-.857v-7.312c0-.335-.174-.67-.455-.857l-10.969-7.313c-.374-.23-.774-.232-1.152 0l-10.969 7.313c-.281.187-.455.522-.455.857v7.312c0 .335.174.67.455.857zm10.514 4.528-8.076-5.384 3.603-2.411 4.473 2.987zm2.062 0v-4.808l4.473-2.987 3.603 2.411zm8.907-7.314-2.585-1.727 2.585-1.728zm-8.907-10.767 8.076 5.384-3.603 2.411-4.473-2.987zm-1.031 6.602 3.643 2.438-3.643 2.438-3.643-2.438zm-1.031-6.602v4.808l-4.473 2.987-3.603-2.411zm-8.906 7.314v-.001l2.585 1.728-2.585 1.728z" />
                         </svg>
                     </div> -->
+                --}}
             </div>
             <div class="row ">
                 <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
                     <div class="d-flex flex-column align-items-end justify-content-between">
                         <h2 class="animated-heading section-heading">His Work</h2>
-                        <p class="animated-para section_contents text-end">Azeem Dayani's body of work as a music
-                            supervisor in Bollywood is characterized by a unique blend of commercial appeal and artistic
-                            innovation. As one of the very few music supervisors in the Indian film industry, he has been at
-                            the forefront of redefining how music is curated, created, and marketed in Bollywood films.</p>
-                        <a href="works.html" class="view-more py-md-4">View More..</a>
+                        <div class="animated-para section_contents text-end">
+                            {!!  $data['ows_content'] !!}
+                        </div>
+                        <a href="{{ url(route('works')) }}" class="view-more py-md-4">View More..</a>
                     </div>
                     <div class="reveal-img image_div">
-                        <img src="/assets/frontend/images/home/kesari.png" class="keasri_img mt-3" alt="Kesari Image">
+                        <img src="{{ asset('storage/' .$data['achivements_image']) }}" class="keasri_img mt-3" alt="Achievements">
                     </div>
                 </div>
                 <div class="col-md-8 d-flex flex-column align-items-start ps-md-4 sooryavanshi_divs">
                     <div class="reveal-img">
-                        <img src="/assets/frontend/images/home/sooryavanshi.png" class="sooryavanshi_img" alt="Achievement Image">
+                        <img src="{{ asset('storage/' .$data['ows_image']) }}" class="sooryavanshi_img" alt="work">
                     </div>
 
                     <div class="col-md-8 d-flex flex-column align-items-start">
                         <h2 class="animated-heading section-heading">Achievements</h2>
-                        <p class="animated-para section_contents text-start">A pioneering music supervisor in Bollywood,
-                            Azeem is recognized for his innovative approach to curating and marketing soundtracks that
-                            resonate with audiences. While Bollywood lacks a specific award category for music supervision,
-                            his contributions are acknowledged through the Awards presented to the soundtracks curated by
-                            him on a global industry recognition.</p>
-                        <a href="achievements.html" class="view-more mt-md-2">View More..</a>
+                        <p class="animated-para section_contents text-start">{!! $data['achivements_content'] !!}</p>
+                        <a href="{{ url(route('achievements')) }}" class="view-more mt-md-2">View More..</a>
                     </div>
                 </div>
             </div>
+            {{--
             <!-- <div class="col-md-11 tshirt_img_div text-center">
                     <img src="/assets/frontend/images/Homepage/T-shirt.png" alt="" class="tshirt_img">
                 </div> -->
+            --}}
         </section>
 
 
 
 
 
-
+        {{--
         <!-- questions -->
         <!-- <a href="" target="_blank" class="creator">
                 <i class="fab fa-instagram circle-icon"></i> ogzozbn
             </a> -->
-
+        --}}
 
         <section class="zip_zap_bg_img_container section film_section" data-bg="#fff">
             <div class="text-white" id="bars2"></div>
@@ -278,76 +226,16 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="animated-heading section-heading text-dark pb-md-3">Film</h2>
-                    <ul class="film_list">
-                        <li data-img="img1">
-                            <a href="#" class="film_link">KAPOOR-&-SONS</a>
-                            <img id="img1" src="/assets/frontend/images/home/kapoor-and-sons.jpg" class="film_img">
-                        </li>
-                        <li data-img="img2">
-                            <a href="#" class="film_link">BAAR BAAR DEKHO</a>
-                            <img id="img2" src="/assets/frontend/images/home/baar-baar-dekho.jpg" class="film_img">
-                        </li>
-                        <li data-img="img3">
-                            <a href="#" class="film_link">OK JAANU - THE HUMMA SONG</a>
-                            <img id="img3" src="/assets/frontend/images/home/ok-jaanu-the-humma.jpg" class="film_img">
-                        </li>
-                        <li data-img="img4">
-                            <a href="#" class="film_link">BADRINATH KI DULHANIA</a>
-                            <img id="img4" src="/assets/frontend/images/home/badrinath-ki-dulhania.jpg" class="film_img">
-                        </li>
-                        <li data-img="img5">
-                            <a href="#" class="film_link">BAREILLY KI BARFI</a>
-                            <img id="img5" src="/assets/frontend/images/home/bareilly-ki-barfi.jpg" class="film_img">
-                        </li>
-                        <li data-img="img6">
-                            <a href="#" class="film_link">LOVEYATRI</a>
-                            <img id="img6" src="/assets/frontend/images/home/loveyatri.jpg" class="film_img">
-                        </li>
-                        <li data-img="img7">
-                            <a href="#" class="film_link">BADHAAI HO - SPECIAL THA</a>
-                            <img id="img7" src="/assets/frontend/images/home/badhaai-ho.jpg" class="film_img">
-                        </li>
-                        <li data-img="img8">
-                            <a href="#" class="film_link">SIMMBA</a>
-                            <img id="img8" src="/assets/frontend/images/home/simmba.jpg" class="film_img">
-                        </li>
-                        <li data-img="img9">
-                            <a href="#" class="film_link">KESARI</a>
-                            <img id="img9" src="/assets/frontend/images/home/kesari.jpg" class="film_img">
-                        </li>
-                        <li data-img="img10">
-                            <a href="#" class="film_link">GOOD NEWWZ</a>
-                            <img id="img10" src="/assets/frontend/images/home/good-newwz.jpg" class="film_img">
-                        </li>
-                        <li data-img="img11">
-                            <a href="#" class="film_link">LAXMII</a>
-                            <img id="img11" src="/assets/frontend/images/home/laxmii.jpg" class="film_img">
-                        </li>
-                        <li data-img="img12">
-                            <a href="#" class="film_link">SHERSHAH</a>
-                            <img id="img12" src="/assets/frontend/images/home/shershah.jpeg" class="film_img">
-                        </li>
-                        <li data-img="img13">
-                            <a href="#" class="film_link">JUGJUGG JEEYO</a>
-                            <img id="img13" src="/assets/frontend/images/home/jugjugg-jeeyo.jpg" class="film_img">
-                        </li>
-                        <li data-img="img14">
-                            <a href="#" class="film_link">SELFIEE</a>
-                            <img id="img14" src="/assets/frontend/images/home/selfiee.jpeg" class="film_img">
-                        </li>
-                        <li data-img="img15">
-                            <a href="#" class="film_link">YODHA</a>
-                            <img id="img15" src="/assets/frontend/images/home/yodha.jpg" class="film_img">
-                        </li>
-                        <li data-img="img16">
-                            <a href="#" class="film_link">MR. & MRS. MAHI</a>
-                            <img id="img16" src="/assets/frontend/images/home/mr-and-mrs-mahi.jpg" class="film_img">
-                        </li>
-                        <li data-img="img17">
-                            <a href="#" class="film_link">BAD NEWZ</a>
-                            <img id="img17" src="/assets/frontend/images/home/bad-newz.jpg" class="film_img">
-                        </li>
-                    </ul>
+
+                    @foreach ($data['film_catg'] as $index => $row)
+                        <ul class="film_list">
+                            <li data-img="img{{ $index }}">
+                                <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
+                                <img id="img{{ $index }}" src="{{ asset('storage/' . $row->image) }}" class="film_img">
+                            </li>
+                        </ul>
+                    @endforeach
+
                 </div>
             </div>
             </div>
@@ -366,7 +254,9 @@
                     alt="side headphone">
             </div>
             <div class="slidercircle">
+                {{--
                 <div class="circle-one">
+
                     <!-- <a href="#"> -->
                     <!-- <div class="text-white circle-arround-two-1 anima">
                                 <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_6.png">
@@ -387,9 +277,11 @@
                                 <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_3.png">
                             </div> -->
                     <!-- </a> -->
+
                 </div>
 
                 <div class="circle-two">
+
                     <!-- <a href="#"> -->
                     <!-- <div class="text-white circle-arround-two-1 anima">
                                 <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_5.png">
@@ -410,44 +302,28 @@
                                 <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_1.png">
                             </div> -->
                     <!-- </a> -->
+
+
                 </div>
                 <!-- <div class="circle-middle">
                         <svg fill="#fff" id="Bold" enable-background="new 0 0 24 24" height="73" viewBox="0 0 24 24" width="73" xmlns="http://www.w3.org/2000/svg">
                             <path d="m.455 16.512 10.969 7.314c.374.23.774.233 1.152 0l10.969-7.314c.281-.187.455-.522.455-.857v-7.312c0-.335-.174-.67-.455-.857l-10.969-7.313c-.374-.23-.774-.232-1.152 0l-10.969 7.313c-.281.187-.455.522-.455.857v7.312c0 .335.174.67.455.857zm10.514 4.528-8.076-5.384 3.603-2.411 4.473 2.987zm2.062 0v-4.808l4.473-2.987 3.603 2.411zm8.907-7.314-2.585-1.727 2.585-1.728zm-8.907-10.767 8.076 5.384-3.603 2.411-4.473-2.987zm-1.031 6.602 3.643 2.438-3.643 2.438-3.643-2.438zm-1.031-6.602v4.808l-4.473 2.987-3.603-2.411zm-8.906 7.314v-.001l2.585 1.728-2.585 1.728z" />
                         </svg>
                     </div> -->
+                --}}
             </div>
             <div class="non_film_music">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="animated-heading section-heading pb-md-3">Non Film</h2>
-                        <ul class="film_list">
-                            <li data-img="img18">
-                                <a href="#" class="film_link">VAASTE</a>
-                                <img id="img18" src="/assets/frontend/images/home/vaaste.jpg" class="film_img">
-                            </li>
-                            <li data-img="img19">
-                                <a href="#" class="film_link">FILHAAL - CO-PRODUCED & MUSIC SUPERVISOR</a>
-                                <img id="img19" src="/assets/frontend/images/home/filhaal.jpg" class="film_img">
-                            </li>
-                            <li data-img="img20">
-                                <a href="#" class="film_link">FILHAAL 2 - CO-PRODUCED & MUSIC SUPERVISOR</a>
-                                <img id="img20" src="/assets/frontend/images/home/filhaal2.jpg" class="film_img">
-                            </li>
-                            <li data-img="img21">
-                                <a href="#" class="film_link">TU MILE DIL KHILE - REMIX (2023) </a>
-                                <img id="img21" src="/assets/frontend/images/home/tu-mile-dil-khile.jpg" class="film_img">
-                            </li>
-                            <li data-img="img22">
-                                <a href="#" class="film_link">HEERIYE</a>
-                                <img id="img22" src="/assets/frontend/images/home/heeriye.jpg" class="film_img">
-                            </li>
-
-                            <li data-img="img23">
-                                <a href="#" class="film_link">KYA LOGE TUM - CO-PRODUCED & MUSIC SUPERVISOR</a>
-                                <img id="img23" src="/assets/frontend/images/home/kya-loge-tum.jpg" class="film_img">
-                            </li>
-                        </ul>
+                        @foreach ($data['non_film_catg'] as $index => $row)
+                            <ul class="film_list">
+                                <li data-img="img{{ $index }}01">
+                                    <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
+                                    <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->image) }}" class="film_img">
+                                </li>
+                            </ul>
+                        @endforeach
                     </div>
                 </div>
             </div>

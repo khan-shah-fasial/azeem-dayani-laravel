@@ -1,5 +1,7 @@
 @php
-    $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
 <header id="header" class="header">

@@ -1,5 +1,7 @@
 @php
-$frontend = DB::table('frontend_settings')->where('id', 1)->first();
+    $frontend = Cache::remember('frontend_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });
 $meta_description=$frontend->meta_description;
 $meta_title=$frontend->meta_title;
 
