@@ -25,95 +25,24 @@
                 <img class="scale-img-contact contact_us_heading_img" src="/assets/frontend/images/contact-us/Headphone.png" />
             </div>
             <div class="masonry_gallery">
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_1.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_1.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_2.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_2.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_3.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_3.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_8.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_8.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_9.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_9.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_10.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_10.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_11.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_11.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_12.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_12.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_13.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_13.jpeg" /></a>
-                </div>
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_14.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_14.jpeg" /></a>
-                </div>
-
-                <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                    <a href="images/Gallery/gallery_image_15.jpeg" data-fancybox="images" data-caption="Image1"><img
-                            class="reveal-img-top" src="/assets/frontend/images/Gallery/gallery_image_15.jpeg" /></a>
-                </div>
+                @foreach ($image as $index => $row)
+                    <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+                        <a href="{{ asset('storage/' .$row) }}" data-fancybox="images" data-caption="Image{{ $index }}"><img
+                                class="reveal-img-top" src="{{ asset('storage/' .$row) }}" /></a>
+                    </div>
+                @endforeach
             </div>
 
             <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
-                <div class="gallery-video-item item col-md-3">
-                    <img src="/assets/frontend/images/Gallery/gallery_image_14.png" />
-                    <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="/assets/frontend/images/Gallery/gallery_video1.mp4"></button>
-                    <!-- <i class="fa-regular fa-circle-play"></i> -->
-                </div>
 
+            @foreach ($video_image as $index => $row)
                 <div class="gallery-video-item item col-md-3">
-                    <img src="/assets/frontend/images/Gallery/gallery_video2-0.jpg" alt="Video 1 Thumbnail" />
+                    <img src="{{ asset('storage/' . $row) }}" />
                     <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="/assets/frontend/images/Gallery/gallery_video2.mp4"></button>
-                    <!-- <i class="fa-regular fa-circle-play"></i> -->
+                        data-youtube-url="{{ $url[$index] }}"></button>
                 </div>
+            @endforeach
 
-                <div class="gallery-video-item item col-md-3">
-                    <img src="/assets/frontend/images/Gallery/gallery_image_15.png" alt="Video 1 Thumbnail" />
-                    <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="/assets/frontend/images/Gallery/gallery_video3.mp4"></button>
-                    <!-- <i class="fa-regular fa-circle-play"></i> -->
-                </div>
-                <div class="gallery-video-item item col-md-3">
-                    <img src="/assets/frontend/images/Gallery/gallery_image_13.png" alt="Video 1 Thumbnail" />
-                    <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="/assets/frontend/images/Gallery/gallery_video4.mp4"></button>
-                    <!-- <i class="fa-regular fa-circle-play"></i> -->
-                </div>
-
-                <div class="gallery-video-item item col-md-3">
-                    <img src="/assets/frontend/images/Gallery/gallery_image_2.png" alt="Video 1 Thumbnail" />
-                    <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="/assets/frontend/images/Gallery/gallery_video5.mp4"></button>
-                    <!-- <i class="fa-regular fa-circle-play"></i> -->
-                </div>
 
                 <!-- Add more items as needed -->
             </div>

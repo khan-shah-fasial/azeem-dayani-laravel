@@ -20,8 +20,7 @@
             <div class="container-fluid pt-md-5">
                 <div class="row">
                     <div class="col-md-6 px-0 azeem_dayani_contact_us_long_img_div">
-                        <img class="reveal-img-toptobottom-contact azeem_dayani_contact_us_long_img"
-                            src="/assets/frontend/images/contact-us/azeem_long_img_2.jpg" />
+                        <img class="{{ asset('storage/' . $image) }}" />
                     </div>
                     <div class="col-md-6 px-0 object_bg_img">
                         <div class="zip_zap_bg_img_container">
@@ -60,7 +59,7 @@
                                       info@azeemdayani.com
                                   </a>
                               </div>
-                          </div>                     -->
+                          </div>  -->
                         <div class="contact_buffer_div">
                             <h3 class="heading-anim buffering_text">Buffering</h3>
                             <img class="scaleup-element contact_headphone_image" src="/assets/frontend/images/contact-us/Headphone_2.png" />

@@ -13,104 +13,77 @@ use Illuminate\Support\Facades\Cache;
 
 class IndexController extends Controller
 {
-    // public function Form_Save(Request $request)
-    // {
-    //     $formType = $request->input('form_type');
+    public function Form_Save(Request $request)
+    {
 
-    //     // Validate data based on form type
-    //     if ($formType === 'partner_us') {
-    //         $page = 'Partner Us';
-    //         $validated = Validator::make($request->all(), [
-    //             'company_name' => 'required|string|max:255',
-    //             'full_name' => 'required|string|max:255',
-    //             'mobile' => 'required|string|max:20',
-    //             'email' => 'required|email|max:255',
-    //             'product' => 'required|string|max:255',
-    //             'message' => 'nullable|string|max:500',
-    //         ]);
-    //     } 
-    //     elseif ($formType === 'contact_us') {
-    //         $page = 'Contact Us';
-    //         $validated = Validator::make($request->all(), [
-    //             'full_name' => 'required|string|max:255',
-    //             'mobile' => 'required|string|max:20',
-    //             'email' => 'required|email|max:255',
-    //             'message' => 'nullable|string|max:500',
-    //         ]);
-    //     }
-    //     elseif ($formType === 'career') {
-    //         $page = 'Career';
-    //         $validated = Validator::make($request->all(), [
-    //             'full_name' => 'required|string|max:255',
-    //             'mobile' => 'required|string|max:20',
-    //             'email' => 'required|email|max:255',
-    //             'apply_for' => 'required|string|max:255',
-    //             'type_code' => 'required|string|max:255',
-    //             'message' => 'nullable|string|max:500',
-    //         ]);
-    //     }
+        $validated = Validator::make($request->all(), [
+            'full_name' => 'required|string|max:255',
+            'mobile' => 'required|string|max:20',
+            'email' => 'required|email|max:255',
+            'message' => 'nullable|string|max:500',
+        ]);
+        
+        if ($validated->fails()) {
+            return response()->json([
+                'status' => false,
+                'notification' => $validated->errors()->all()
+            ], 200);
+        }
 
-    //     if ($validated->fails()) {
-    //         return response()->json([
-    //             'status' => false,
-    //             'notification' => $validated->errors()->all()
-    //         ], 200);
-    //     }
-
-    //     // Store inquiry in the contact table and get the inserted ID
-    //     $enquiryId = DB::table('contact')->insertGetId([
-    //         'page' => $page,
-    //         'company_name' => $request->input('company_name', null),
-    //         'full_name' => $request->input('full_name'),
-    //         'mobile' => $request->input('mobile'),
-    //         'email' => $request->input('email'),
-    //         'product' => $request->input('product', null),
-    //         'apply_for' => $request->input('apply_for', null),
-    //         'type_code' => $request->input('type_code', null),
-    //         'message' => $request->input('message', null),
-    //         'created_at' => now(),
-    //         'updated_at' => now(),
-    //     ]);
+        // // Store inquiry in the contact table and get the inserted ID
+        // $enquiryId = DB::table('contact')->insertGetId([
+        //     'page' => $page ?? null,
+        //     'company_name' => $request->input('company_name', null),
+        //     'full_name' => $request->input('full_name'),
+        //     'mobile' => $request->input('mobile'),
+        //     'email' => $request->input('email'),
+        //     'product' => $request->input('product', null),
+        //     'apply_for' => $request->input('apply_for', null),
+        //     'type_code' => $request->input('type_code', null),
+        //     'message' => $request->input('message', null),
+        //     'created_at' => now(),
+        //     'updated_at' => now(),
+        // ]);
 
 
-    //     // Prepare data for sending the email
-    //     $data = [
-    //         'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
-    //         'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
-    //         'subject' => 'New Contact Form Submission',
-    //         'htmlContent' => "
-    //             <h2>Contact Form Submission</h2>
-    //             <p><b>Page:</b> {$page}</p>"
-    //             . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
-    //             . "<p><b>Full Name:</b> {$request->full_name}</p>"
-    //             . "<p><b>Mobile:</b> {$request->mobile}</p>"
-    //             . "<p><b>Email:</b> {$request->email}</p>"
-    //             . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
-    //             . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
-    //             . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
-    //             . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
-    //     ];
+        // Prepare data for sending the email
+        $data = [
+            'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
+            'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
+            'subject' => 'New Contact Form Submission',
+            'htmlContent' => "
+                <h2>Contact Form Submission</h2>
+                <p><b>Page:</b> {$page}</p>"
+                . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
+                . "<p><b>Full Name:</b> {$request->full_name}</p>"
+                . "<p><b>Mobile:</b> {$request->mobile}</p>"
+                . "<p><b>Email:</b> {$request->email}</p>"
+                . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
+                . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
+                . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
+                . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
+        ];
 
-    //     // Send the email using Brevo API
-    //     $apiKey = env('MAIL_API');
+        // Send the email using Brevo API
+        $apiKey = env('MAIL_API');
 
-    //     $response = Http::withHeaders([
-    //         'Content-Type' => 'application/json',
-    //         'api-key' => $apiKey,
-    //     ])->post('https://api.brevo.com/v3/smtp/email', $data);
+        $response = Http::withHeaders([
+            'Content-Type' => 'application/json',
+            'api-key' => $apiKey,
+        ])->post('https://api.brevo.com/v3/smtp/email', $data);
 
-    //     if ($response->successful()) {
-    //         return response()->json([
-    //             'status' => true,
-    //             'notification' => 'Thank you for contacting Saagar SCPL! Your query has been received and our concerned team will reach out to you within 24 hours.',
-    //         ]);
-    //     } else {
-    //         return response()->json([
-    //             'status' => false,
-    //             'notification' => 'Error submitting form. Please try again later.',
-    //         ]);
-    //     }
-    // }
+        if ($response->successful()) {
+            return response()->json([
+                'status' => true,
+                'notification' => 'Thank you for contacting Saagar SCPL! Your query has been received and our concerned team will reach out to you within 24 hours.',
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'notification' => 'Error submitting form. Please try again later.',
+            ]);
+        }
+    }
 
 
     public function index()
@@ -230,24 +203,51 @@ class IndexController extends Controller
 
     public function achievements_page(){
         
-        $page = DB::table('pages')->where('type','achivements')->first();
-        
-        return view('frontend.pages.achivements.index',compact('page'));
+        $page = Cache::remember('achievements_page', 60, function () {
+            return DB::table('pages')->where('type', 'achivements')->first();
+        });
+
+        $data_page = $page->content ?? '';
+        $decoded_data = json_decode($data_page);
+
+        $image = $decoded_data->image ?? '';
+        $video_image = $decoded_data->video_image ?? '';
+        $url = $decoded_data->url ?? '';
+        $img_title = $decoded_data->img_title ?? '';
+        $video_title = $decoded_data->video_title ?? '';
+        $sec_title = $decoded_data->sec_title ?? '';
+        $sec_description = $decoded_data->sec_description ?? '';
+
+        return view('frontend.pages.achivements.index',compact('page','image','video_image','url','img_title','video_title','sec_title','sec_description'));
     }
 
     public function gallery_page(){
         
-        $page = DB::table('pages')->where('type','gallery')->first();
+        $page = Cache::remember('gallery_page', 60, function () {
+            return DB::table('pages')->where('type', 'gallery')->first();
+        });
         
-        return view('frontend.pages.gallery.index',compact('page'));
+        $data_page = $page->content ?? '';
+        $decoded_data = json_decode($data_page);
+        
+        $image = $decoded_data->image ?? '';
+        $video_image = $decoded_data->video_image ?? '';
+        $url = $decoded_data->url ?? '';
+        
+        return view('frontend.pages.gallery.index',compact('page','image','video_image','url'));
     }
 
     public function contact_us_page(){
-        // $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
-        // $contacts = json_decode($footer->contacts);
-        $contacts = '';
+        $page = Cache::remember('contact_us_page', 60, function () {
+            return DB::table('pages')->where('type', 'contact_us')->first();
+        });
 
-        return view('frontend.pages.contact_us.index',compact('contacts'));
+        $data_page = $page->content ?? '';
+        $decoded_data = json_decode($data_page);
+        
+        $image = $decoded_data->image ?? '';
+
+        return view('frontend.pages.contact_us.index',compact('image'));
     }
     
 
