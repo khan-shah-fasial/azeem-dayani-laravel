@@ -2398,8 +2398,9 @@ footer .top_space {
     font-family: 'miedinger';
     color: #fff;
     font-size: 6vw;
-    z-index: 0;
+    z-index: 11;
     bottom: 6vw;
+
 }
 
 .headphone_heading {
@@ -2557,6 +2558,7 @@ h3.category_title.non_film {
     font-family: 'miedinger';
     font-size: 6.5vw;
     position: absolute;
+    z-index: 11;
 }
 
 .contact_us_heading_img {
@@ -3056,5 +3058,17 @@ button.fancybox-button.fancybox-button--zoom {
     display: none !important;
 }
 
+
+.para_font {
+    font-family: 'montserrat';
+    color: #fff;
+    font-size: 1vw;
+    line-height: 1.6em;
+    margin-bottom: 1.5rem !important;
+}
+
+.padding_left1 {
+    padding-left: 1.6vw;
+}
 
 /* footer css close */

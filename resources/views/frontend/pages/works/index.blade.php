@@ -28,7 +28,7 @@
                 <img class="img-scale-work headphone_heading" src="/assets/frontend/images/Work/Headphones.png" />
                 <div class="text-white" id="bars5"></div>
             </div>
-            <div class="animated-para-work section_description text-center col-md-9 mx-auto pt-md-4">
+            <div class="animated-para-work section_description text-center col-md-9 mx-auto pt-md-4 para_font">
                 @php
                     echo html_entity_decode($description);
                 @endphp

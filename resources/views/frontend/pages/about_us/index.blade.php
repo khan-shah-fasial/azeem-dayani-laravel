@@ -33,8 +33,8 @@
                             <h5 class="animated-heading-about music_director_composer_heading pb-md-2">
                                {{ $data['ab_title'] }}
                             </h5>
-                            <div class="animated-para-about about_azeem_dayani_para">
-                                {!! $data['ab_description'] !!}
+                            <div class="animated-para-about about_azeem_dayani_para para_font">
+                                @php echo html_entity_decode($data['ab_description']) @endphp
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <h2 class="animated-heading the_journey_heading font_tungsten">
                         {{ $data['ab_journey_title'] }}
                     </h2>
-                    <div class="animated-para the_journey_content">
+                    <div class="animated-para the_journey_content para_font">
                         {!! $data['ab_journey_description'] !!}
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="col-md-9">
                     <img class="scaleup-element vision_main_image" src="{{ asset('storage/' . $data['ab_vision_img']) }}" />
                     <div class="col-md-10 azeem_vision_div pt-md-4 text-md-center">
-                        <div class="animated-para azeem_vision">
+                        <div class="animated-para azeem_vision para_font">
                             {!! $data['ab_vision_description'] !!}
                         </div>
                     </div>
