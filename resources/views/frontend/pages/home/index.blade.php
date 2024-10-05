@@ -25,6 +25,9 @@
 
         .middle_description {
             background: url("{{ asset('storage/' .$data['achivements_banner_bg']) }}") !important;
+            background-position: 40% bottom !important;
+    background-repeat: no-repeat !important;
+        background-color: #5aa236 !important;
         }
 
     </style>
