@@ -21,6 +21,18 @@
             </div>
         @endif
 
+        <div class="form-group mb-3 col-sm-{{ !empty($product->home_image) ? 3 : 6 }}">
+            <label>Home Image<span class="red">*</span></label>
+            <input class="form-control" type="file" name="home_image" accept=".jpg,.jpeg,.png,.webp"
+                @if (empty($product->home_image)) required @endif>
+        </div>
+        @if (!empty($product->home_image))
+            <div class="div-preview-image col-3 form-group mb-3">
+                <input type="hidden" name="existing_home_image" value="{{ $product->home_image }}">
+                <img width="180" src="{{ asset('storage/' . $product->home_image) }}">
+            </div>
+        @endif
+
         <div class="form-group col-6 mb-3">
             <label>Status<span class="red">*</span></label>
             <select required name="is_active" class="form-control">

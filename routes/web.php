@@ -49,7 +49,8 @@ Route::get('/contact-us', [IndexController::class, 'contact_us_page'])->name('co
 Route::get('/404', [IndexController::class, 'not_found'])->name('error_page');
 // Route::get('/thank-you', [IndexController::class, 'thank_you'])->name('thank_you');
 
-Route::post('/contact-save', [IndexController::class, 'contact_save'])->name('contact.create');
+// Route::post('/contact-save', [IndexController::class, 'contact_save'])->name('contact.create');
+Route::post('/form-save', [IndexController::class, 'Form_Save'])->name('form.save');
 
 Route::get('/key-generate', function () {
     Artisan::call('key:generate', ['--show' => true]);

@@ -20,7 +20,7 @@
             <div class="container-fluid pt-md-5">
                 <div class="row">
                     <div class="col-md-6 px-0 azeem_dayani_contact_us_long_img_div">
-                        <img class="{{ asset('storage/' . $image) }}" />
+                        <img class="reveal-img-toptobottom-contact azeem_dayani_contact_us_long_img" src="{{ asset('storage/' . $image) }}" style="clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 0px 100%);">
                     </div>
                     <div class="col-md-6 px-0 object_bg_img">
                         <div class="zip_zap_bg_img_container">
@@ -28,19 +28,21 @@
                         </div>
                         <div class="col-md-10 contact_form contact_form_animate p-md-5">
                             <h4 class="form_heading">get in touch</h4>
-                            <form>
+                            <form id="add_contact_us_form" action="{{ route('form.save') }}" method="post"
+                            enctype="multipart/form-data">
+                            @csrf
                                 <div class="mb-4">
-                                    <input type="text" class="form-control" placeholder="Name" required />
+                                    <input type="text" name="full_name" class="form-control" placeholder="Name" required />
                                 </div>
                                 <div class="mb-4">
-                                    <input type="text" class="form-control" placeholder="Contact Us" required
+                                    <input type="text" name="mobile" class="form-control" placeholder="Contact Us" required
                                         maxlength="12" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
                                 </div>
                                 <div class="mb-4">
-                                    <input type="email" class="form-control" placeholder="Email Id" required />
+                                    <input type="email" name="email" class="form-control" placeholder="Email Id" required />
                                 </div>
                                 <div class="mb-4">
-                                    <textarea class="form-control" rows="3" placeholder="Message" required></textarea>
+                                    <textarea class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
                                 </div>
                                 <button type="submit" class="btn submit_btn">SUBMIT</button>
                             </form>
@@ -73,4 +75,24 @@
 
 @endsection
 @section('page.scripts')
+
+<script>
+    $(document).ready(function() {
+        initValidate('#add_contact_us_form');
+        $("#add_contact_us_form").submit(function(e) {
+            var form = $(this);
+            ajaxSubmit(e, form, responseHandler);
+        });
+
+        var responseHandler = function(response) {
+            $('input, textarea').val('');
+            $("select option:first").prop('selected', true);
+            setTimeout(function() {
+                location.reload();
+            }, 5000);
+        }
+    });
+</script>
+
 @endsection
+

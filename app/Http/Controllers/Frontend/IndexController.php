@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Product;
-use App\Models\ProductCategory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 
 class IndexController extends Controller
@@ -48,24 +48,19 @@ class IndexController extends Controller
 
         // Prepare data for sending the email
         $data = [
-            'sender' => ['name' => 'Saagar SCPL', 'email' => 'rashid.makent@gmail.com'],
-            'to' => [['email' => 'umair.makent@gmail.com', 'name' => 'Saagar SCPL']],
+            'sender' => ['name' => 'Website Enquiry', 'email' => 'rashid.makent@gmail.com'],
+            'to' => [['email' => 'khanfaisal.makent@gmail.com', 'name' => 'Azeem Dayani']],
             'subject' => 'New Contact Form Submission',
             'htmlContent' => "
-                <h2>Contact Form Submission</h2>
-                <p><b>Page:</b> {$page}</p>"
-                . ($request->filled('company_name') ? "<p><b>Company Name:</b> {$request->company_name}</p>" : "")
+                <h2>Contact Form Submission</h2>"
                 . "<p><b>Full Name:</b> {$request->full_name}</p>"
                 . "<p><b>Mobile:</b> {$request->mobile}</p>"
                 . "<p><b>Email:</b> {$request->email}</p>"
-                . ($request->filled('product') ? "<p><b>Product:</b> {$request->product}</p>" : "")
-                . ($request->filled('apply_for') ? "<p><b>Apply For:</b> {$request->apply_for}</p>" : "")
-                . ($request->filled('type_code') ? "<p><b>Type Code:</b> {$request->type_code}</p>" : "")
                 . ($request->filled('message') ? "<p><b>Message:</b> {$request->message}</p>" : ""),
         ];
 
         // Send the email using Brevo API
-        $apiKey = env('MAIL_API');
+        $apiKey = env('BREVO_API_KEY');
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
@@ -75,7 +70,7 @@ class IndexController extends Controller
         if ($response->successful()) {
             return response()->json([
                 'status' => true,
-                'notification' => 'Thank you for contacting Saagar SCPL! Your query has been received and our concerned team will reach out to you within 24 hours.',
+                'notification' => 'Thank you for contacting  Azeem Dayani! Your query has been received and our concerned team will reach out to you.',
             ]);
         } else {
             return response()->json([
@@ -102,7 +97,7 @@ class IndexController extends Controller
             return !empty($film_catg_list) 
                 ? Product::where('is_active', 1)
                     ->whereIn('id', json_decode($film_catg_list))
-                    ->select('title', 'slug', 'image')
+                    ->select('title', 'slug', 'home_image')
                     ->get()
                 : [];
         });
@@ -113,7 +108,7 @@ class IndexController extends Controller
             return !empty($non_film_catg_list)
                 ? Product::where('is_active', 1)
                     ->whereIn('id', json_decode($non_film_catg_list))
-                    ->select('title', 'slug', 'image')
+                    ->select('title', 'slug', 'home_image')
                     ->get()
                 : [];
         });

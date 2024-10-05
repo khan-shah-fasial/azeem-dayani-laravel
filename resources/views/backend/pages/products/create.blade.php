@@ -12,6 +12,11 @@
         </div>
 
         <div class="form-group col-6 mb-3">
+            <label>Home Image<span class="red">*</span></label>
+            <input required type="file" name="home_image" class="form-control">
+        </div>
+
+        <div class="form-group col-6 mb-3">
             <label>Status<span class="red">*</span></label>
             <select required name="is_active" class="form-control">
                 <option value="1" {{ old('is_active') == 1 ? 'selected' : '' }}>Active</option>

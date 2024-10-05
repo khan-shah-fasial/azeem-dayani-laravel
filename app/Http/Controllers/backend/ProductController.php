@@ -29,7 +29,8 @@ class ProductController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'slug' => 'required',
-            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'home_image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
             'is_active' => 'required|boolean',
             'category' => 'required',
         ]);
@@ -49,10 +50,18 @@ class ProductController extends Controller
             $image = null;
         }
 
+        // Handle the image upload
+        if ($request->hasFile('home_image')) {
+            $home_image = $request->file('home_image')->store('assets/images', 'public');
+        } else {
+            $home_image = $request->input('existing_home_image');
+        }
+
         $product->title = $request->title;
         $product->slug = $request->slug;
         $product->is_active = $request->is_active;
         $product->image = $image;
+        $product->home_image = $home_image;
         $product->categories_id = $request->category;
 
 
@@ -82,6 +91,7 @@ class ProductController extends Controller
         'title' => 'required|string|max:255',
         'slug' => 'required',
         'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        'home_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         'is_active' => 'required|boolean',
         'category' => 'required',
     ]);
@@ -104,11 +114,19 @@ class ProductController extends Controller
         $image = $request->input('existing_image');
     }
 
+    // Handle the image upload
+    if ($request->hasFile('home_image')) {
+        $home_image = $request->file('home_image')->store('assets/images', 'public');
+    } else {
+        $home_image = $request->input('existing_home_image');
+    }
+
     // Update the product details
     $product->title = $request->title;
     $product->slug = $request->slug;
     $product->is_active = $request->is_active;
     $product->image = $image;
+    $product->home_image = $home_image;
     $product->categories_id = $request->category;
 
 

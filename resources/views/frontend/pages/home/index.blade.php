@@ -231,7 +231,7 @@
                         <ul class="film_list">
                             <li data-img="img{{ $index }}">
                                 <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                <img id="img{{ $index }}" src="{{ asset('storage/' . $row->image) }}" class="film_img">
+                                <img id="img{{ $index }}" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
                             </li>
                         </ul>
                     @endforeach
@@ -320,7 +320,7 @@
                             <ul class="film_list">
                                 <li data-img="img{{ $index }}01">
                                     <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                    <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->image) }}" class="film_img">
+                                    <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
                                 </li>
                             </ul>
                         @endforeach
