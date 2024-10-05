@@ -14,13 +14,13 @@
         <div class="col-md-12 footer_links_div">
             <ul class="list-group list-group-horizontal list-unstyled justify-content-center">
                 <li class="list-group-item footer_list">
-                    <a href="{{ url(route('about_us')) }}" class="footer_link">about us</a>
+                    <a href="{{ url(route('about_us')) }}" class="footer_link">about</a>
                 </li>
                 <li class="list-group-item footer_list">
                     <a href="{{ url(route('works')) }}" class="footer_link">His works</a>
                 </li>
                 <li class="list-group-item footer_list">
-                    <a href="{{ url(route('achievements')) }}" class="footer_link">Achievements & Accolades</a>
+                    <a href="{{ url(route('achievements')) }}" class="footer_link">Achievements</a>
                 </li>
                 {{-- <!-- <li class="list-group-item footer_list">
                     <a href="playlist.php" class="footer_link">playlist</a>
@@ -29,7 +29,7 @@
                     <a href="{{ url(route('gallery')) }}" class="footer_link">gallery</a>
                 </li>
                 <li class="list-group-item footer_list">
-                    <a href="{{ url(route('contact-us')) }}" class="footer_link">contact us</a>
+                    <a href="{{ url(route('contact-us')) }}" class="footer_link">contact</a>
                 </li>
             </ul>
         </div>
@@ -41,12 +41,6 @@
             <li class="list-item">
                 <a href="" class="social_media_links">
                     <i class="fa fa-facebook"></i>
-                </a>
-            </li>
-
-            <li class="list-item">
-                <a href="" class="social_media_links">
-                    <i class="fa fa-x-twitter"></i>
                 </a>
             </li>
 
