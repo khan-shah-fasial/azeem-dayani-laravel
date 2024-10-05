@@ -25,7 +25,8 @@ class FrontendSettingsController extends Controller
     {
         $frontendSetting = new FrontendSetting();
         $validator = Validator::make($request->all(), [
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            // 'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'logo' => 'required|string',
             'meta_title' => 'required|string',
             'meta_description' => 'required|string',
             // 'pdf' => 'nullable|file|mimes:pdf',
@@ -45,16 +46,16 @@ class FrontendSettingsController extends Controller
         }
 
 
-        // Handle About Image Upload
-        if ($request->hasFile('logo')) {
-            if ($frontendSetting->logo ?? false) {
-                Storage::delete($frontendSetting->logo);
-            }
-            $logo = $request->file('logo')->store('assets/images', 'public');
-        } else {
-            // Retain the existing image
-            $logo = $request->input('existing_logo') ?? $frontendSetting->logo;
-        }
+        // // Handle About Image Upload
+        // if ($request->hasFile('logo')) {
+        //     if ($frontendSetting->logo ?? false) {
+        //         Storage::delete($frontendSetting->logo);
+        //     }
+        //     $logo = $request->file('logo')->store('assets/images', 'public');
+        // } else {
+        //     // Retain the existing image
+        //     $logo = $request->input('existing_logo') ?? $frontendSetting->logo;
+        // }
         
 
         // Prepare contacts array
@@ -117,7 +118,8 @@ class FrontendSettingsController extends Controller
             $frontendSetting->pdf = $request->input('existing_pdf') ?? $frontendSetting->pdf;
         }
 
-        $frontendSetting->logo = $logo;
+        // $frontendSetting->logo = $logo;
+        $frontendSetting->logo = strtoupper($request->input('logo', ''));
         $frontendSetting->meta_title = $request->meta_title;
         $frontendSetting->meta_description = $request->meta_description;
         $frontendSetting->contacts = json_encode($contacts);
@@ -142,7 +144,8 @@ class FrontendSettingsController extends Controller
     {
         $frontendSetting = FrontendSetting::findOrFail($id);
         $validator = Validator::make($request->all(), [
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            // 'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'logo' => 'required|string',
             'meta_title' => 'required|string',
             'meta_description' => 'required|string',
             // 'pdf' => 'nullable|file|mimes:pdf',
@@ -163,15 +166,15 @@ class FrontendSettingsController extends Controller
 
 
         // Handle About Image Upload
-        if ($request->hasFile('logo')) {
-            if ($frontendSetting->logo ?? false) {
-                Storage::delete($frontendSetting->logo);
-            }
-            $logo = $request->file('logo')->store('assets/images', 'public');
-        } else {
-            // Retain the existing image
-            $logo = $request->input('existing_logo') ?? $frontendSetting->logo;
-        }
+        // if ($request->hasFile('logo')) {
+        //     if ($frontendSetting->logo ?? false) {
+        //         Storage::delete($frontendSetting->logo);
+        //     }
+        //     $logo = $request->file('logo')->store('assets/images', 'public');
+        // } else {
+        //     // Retain the existing image
+        //     $logo = $request->input('existing_logo') ?? $frontendSetting->logo;
+        // }
         
 
         // Prepare contacts array
@@ -234,7 +237,8 @@ class FrontendSettingsController extends Controller
             $frontendSetting->pdf = $request->input('existing_pdf') ?? $frontendSetting->pdf;
         }
 
-        $frontendSetting->logo = $logo;
+        // $frontendSetting->logo = $logo;
+        $frontendSetting->logo = strtoupper($request->input('logo', ''));
         $frontendSetting->meta_title = $request->meta_title;
         $frontendSetting->meta_description = $request->meta_description;
         $frontendSetting->contacts = json_encode($contacts);

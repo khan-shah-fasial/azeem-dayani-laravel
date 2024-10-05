@@ -28,7 +28,7 @@
             <div class="row">
                 <input type="hidden" name="id" value="{{ isset($settings->id) ? $settings->id : '' }}">
 
-                <div class="col-6 form-group mb-3">
+                {{-- <div class="col-6 form-group mb-3">
                     <label>Image</label>
                     <input class="form-control" type="file" name="logo" accept=".jpg,.jpeg,.png,.webp" 
                         @if (empty($settings->logo)) required @endif>
@@ -39,9 +39,14 @@
                         <input type="hidden" name="existing_logo" value="{{ $settings->logo }}">
                         <img width="180" src="{{ asset('storage/' . $settings->logo) }}">
                     </div>
-                @endif
+                @endif --}}
 
-               
+                <div class="col-6 form-group mb-3">
+                    <label>Logo</label>
+                    <input class="form-control" type="text" name="logo" value="{{ $settings->logo }}"
+                        @if (empty($settings->logo)) required @endif>
+                </div>
+
                 <div class="col-12">
                     <div class="form-group mb-3">
                         <label>Meta Title<span class="red">*</span></label>

@@ -6,6 +6,13 @@
 
 @section('page.type', 'website')
 
+@php
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
+    $logo = $footer->logo ?? '';
+@endphp
+
 @section('page.content')
     <style>
         .footer_logo_text {
@@ -98,7 +105,7 @@
                             <img class="main_logo" src="/assets/frontend/images/Homepage/Top_Logo.png">
                             --}}
                         </a>
-                        <h1 class="main_logo font_miedinger text-light logo_text">Azeem Dayani</h1>
+                        <h1 class="main_logo font_miedinger text-light logo_text">{{ $logo }}</h1>
                         <div class="heading-anim-main" id="text">
                             <h2 class="heading-anim font_miedinger music_director">{{ $data['banner_text'] }}</h2>
                         </div>

@@ -7,7 +7,7 @@
 <header id="header" class="header">
     <a href="{{ url(route('index')) }}">
         <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-        <h4 class="footer_logo_text">azeem dayani</h4>
+        <h4 class="footer_logo_text">{{  $logo }}</h4>
     </a>
     <input class="menu-trigger" type="checkbox" id="menu_trigger" />
     <div class="overlay" id="fullscreen_nav">

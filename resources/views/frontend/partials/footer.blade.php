@@ -1,8 +1,15 @@
+@php
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
+    $logo = $footer->logo ?? '';
+@endphp
+
 <footer class="footer pt_6">
     <div class=" text-center">
         <a href="index.php" class="text-decoration-none">
             <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-            <h4 class="footer_logo_text">azeem dayani</h4>
+            <h4 class="footer_logo_text">{{ $logo }}</h4>
         </a>
         <div class="col-md-12 footer_links_div">
             <ul class="list-group list-group-horizontal list-unstyled justify-content-center">

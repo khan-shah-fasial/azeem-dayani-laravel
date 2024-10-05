@@ -6,6 +6,13 @@
 
 @section('page.type', 'website')
 
+@php
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
+    $logo = $footer->logo ?? '';
+@endphp
+
 @section('page.content')
     <main id="about_us_page">
         <section class="about_azeem_dayani bg_green">
@@ -19,7 +26,7 @@
                     <div class="col-md-12 about">
                         <div class="position-relative">
                             <!-- <img class="image_heading azeem_heading" src="/assets/frontend/images/about-us/Top_Logo.png"> -->
-                            <h4 class="about_main_name footer_logo_text">azeem dayani</h4>
+                            <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                         </div>
 
                         <div class="about_content">

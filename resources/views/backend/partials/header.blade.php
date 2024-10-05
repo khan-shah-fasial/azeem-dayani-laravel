@@ -1,4 +1,9 @@
-
+@php
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
+    $logo = $footer->logo ?? '';
+@endphp
 <!-- ================== Header Start =========================== -->
             <div class="navbar-custom">
                 <div class="topbar container-fluid">
@@ -9,10 +14,12 @@
                             <!-- Logo light -->
                             <a href="#" class="logo-light">
                                 <span class="logo-lg">
-                                    <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" >
+                                    {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                                    <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                                 </span>
                                 <span class="logo-sm">
-                                    <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" >
+                                    {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                                    <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                                 </span>
                             </a>
 

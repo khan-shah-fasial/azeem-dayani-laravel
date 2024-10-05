@@ -1,5 +1,7 @@
 @php
-    $footer = DB::table('frontend_settings')->where('id', 1)->first(); // Use `first()` instead of `get()` to get a single record
+    $footer = Cache::remember('footer_settings', 60, function () {
+        return DB::table('frontend_settings')->where('id', 1)->first();
+    });// Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
 <!DOCTYPE html>
@@ -33,10 +35,12 @@
                 <!-- Logo -->
                 <div class="auth-brand text-center text-lg-start">
                     <a href="/" class="logo-dark"> 
-                        <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"></span>
+                        {{-- <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"></span> --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </a>
                     <a href="/" class="logo-light">
-                        <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:200px; height:50px;" ></span>
+                        {{-- <span><img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:200px; height:50px;" ></span> --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </a>
                 </div>
 
