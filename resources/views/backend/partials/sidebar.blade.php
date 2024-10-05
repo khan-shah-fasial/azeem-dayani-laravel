@@ -136,7 +136,7 @@
                         <li class="side-nav-item">
                             <a href="{{ route('website.pages') }}" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
                                 <i class="ri-discuss-line"></i>                                
-                                <span> Pages Listing </span>
+                                <span> Pages </span>
                             </a>
                         </li>
                         <li class="side-nav-item">
