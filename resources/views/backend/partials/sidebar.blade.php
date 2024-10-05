@@ -3,26 +3,22 @@
             <div class="leftside-menu menuitem-active">
 
                 <!-- Brand Logo Light -->
-                <a href="#" class="logo-light">
+                <a href="#" class="logo logo-light">
                     <span class="logo-lg">
-                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
-                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">  --}}
                     </span>
                     <span class="logo-sm">
-                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
-                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">  --}}
                     </span>
                 </a>
 
-                <!-- Logo Dark -->
-                <a href="#" class="logo-dark">
+                <!-- Brand Logo Dark -->
+                <a href="#" class="logo logo-dark">
                     <span class="logo-lg">
-                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
-                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> --}}
                     </span>
                     <span class="logo-sm">
-                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
-                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> --}}
                     </span>
                 </a>
 
