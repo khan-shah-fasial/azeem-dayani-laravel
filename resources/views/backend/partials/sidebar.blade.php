@@ -37,7 +37,7 @@
                     <!-- Leftbar User -->
                     <div class="leftbar-user">
                         <a href="#">
-                            <img src="/assets/images/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm">
+                            {{-- <img src="/assets/images/avatar-1.jpg" alt="user-image" height="42" class="rounded-circle shadow-sm"> --}}
                             <span class="leftbar-user-name mt-2">{{ auth()->user()->name }}</span>
                         </a>
                     </div>
