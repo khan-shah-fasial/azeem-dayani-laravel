@@ -14,7 +14,7 @@ referrerpolicy="no-referrer"
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.theme.default.min.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+<link rel="stylesheet" href="/assets/frontend/css/locomotive-scroll.min.css">
 
 <link rel="stylesheet" type="text/css" href="assets/frontend/css/fancybox.min.css" />
 
