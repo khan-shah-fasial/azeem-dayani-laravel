@@ -28,9 +28,7 @@
                         <h1 class="achievements_main_name achievement_title">
                             {{ $sec_title }}
                         </h1>
-                        <p class="achievement_top_desecription animated-para-achievements">
-                            {!! $sec_description !!}
-                        </p>
+                        <div class="achievement_top_desecription animated-para-achievements">{!! $sec_description !!}</div>
                     </div>
                 </div>
                 <div class="zip_zap_bg_img_container">
