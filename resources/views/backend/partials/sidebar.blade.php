@@ -3,22 +3,26 @@
             <div class="leftside-menu menuitem-active">
 
                 <!-- Brand Logo Light -->
-                <a href="#" class="logo logo-light">
+                <a href="#" class="logo-light">
                     <span class="logo-lg">
-                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> 
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </span>
                     <span class="logo-sm">
-                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo"> 
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </span>
                 </a>
 
-                <!-- Brand Logo Dark -->
-                <a href="#" class="logo logo-dark">
+                <!-- Logo Dark -->
+                <a href="#" class="logo-dark">
                     <span class="logo-lg">
-                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </span>
                     <span class="logo-sm">
-                        <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo">
+                        {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                        <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                     </span>
                 </a>
 
