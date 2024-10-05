@@ -3,6 +3,7 @@
         return DB::table('frontend_settings')->where('id', 1)->first();
     });// Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
+    $social_media = json_decode($footer->social_media);
 @endphp
 
 <footer class="footer pt_6">
@@ -36,48 +37,19 @@
     </div>
     <div class="col-md-12 footer_social_links_div">
         <div id="bars3"></div>
-        <ul
-            class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
-            <li class="list-item">
-                <a href="" class="social_media_links">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </li>
 
-            <li class="list-item">
-                <a href="" class="social_media_links">
-                    <i class="fa fa-x-twitter"></i>
-                </a>
-            </li>
-
-            <li class="list-item">
-                <a href="" class="social_media_links">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </li>
-
-            <li class="list-item">
-                <a href="" class="social_media_links">
-                    <i class="fa fa-linkedin-in"></i>
-                </a>
-            </li>
-        </ul>
-
-
-        {{-- <div class="sidebar_social_media">
-            @if (isset($social_media) && !empty($social_media))
-                <ul class="list-group-item list-unstyled mb-0 mt-1">
-                    @foreach ($social_media as $index => $row)
-                        <li class="list-item">
-                            <a href="{{ $row->url }}" class="sidebar_social_media_link"
-                                aria-label="sidebar social media links">
-                                {!! $row->icon !!}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            @endif
-        </div> --}}
+        @if (isset($social_media) && !empty($social_media))
+            <ul
+                class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
+                @foreach ($social_media as $index => $row)
+                    <li class="list-item">
+                        <a href="{{ $row->url }}" class="social_media_links">
+                            {!! $row->icon !!}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
 
 
     </div>
