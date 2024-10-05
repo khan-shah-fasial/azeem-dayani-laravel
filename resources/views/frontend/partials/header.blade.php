@@ -13,11 +13,11 @@
     <div class="overlay" id="fullscreen_nav">
         <ul class="menu-links">
             <li><a href="{{ url(route('index')) }}">Home</a></li>
-            <li><a href="{{ url(route('about_us')) }}">About Us</a></li>
+            <li><a href="{{ url(route('about_us')) }}">About</a></li>
             <li><a href="{{ url(route('works')) }}">His Works</a></li>
-            <li><a href="{{ url(route('achievements')) }}">Achievements & Accolades</a></li>
+            <li><a href="{{ url(route('achievements')) }}">Achievements</a></li>
             <li><a href="{{ url(route('gallery')) }}">Gallery</a></li>
-            <li><a href="{{ url(route('contact-us')) }}">Contact Us</a></li>
+            <li><a href="{{ url(route('contact-us')) }}">Contact</a></li>
         </ul>
     </div>
     <label class="hamburger-menu" for="menu_trigger"><span></span><span></span><span></span></label>

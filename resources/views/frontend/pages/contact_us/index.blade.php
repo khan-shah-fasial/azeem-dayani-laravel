@@ -12,7 +12,7 @@
         <section class="animate-contact-first-section contact_heading_n_form bg_green pt-md-5">
             <div class="contact_heading_div text-center">
                 <h1 class="contact_main_name text-light contact_heading mb-0">
-                    contact us
+                    contact
                 </h1>
                 <!-- <h1 class="section_title">HIS WORK</h1> -->
                 <img class="scale-img-contact contact_us_heading_img" src="/assets/frontend/images/contact-us/Headphone.png" />

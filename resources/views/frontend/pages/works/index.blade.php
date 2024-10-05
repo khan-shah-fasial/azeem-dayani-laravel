@@ -26,7 +26,7 @@
             <div class="works_headphone_heading">
                 <h1 class="work_main_name section_title">HIS WORK</h1>
                 <img class="img-scale-work headphone_heading" src="/assets/frontend/images/Work/Headphones.png" />
-                <div class="text-white" id="bars5"></div>
+                <!-- <div class="text-white" id="bars5"></div> -->
             </div>
             <div class="animated-para-work section_description text-center col-md-9 mx-auto pt-md-4 para_font">
                 @php
@@ -35,7 +35,7 @@
             </div>
 
             <div
-                class="d-flex col-md-10 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading pb-md-4">
+                class="d-flex col-md-10 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading pb-md-4 pt5">
                 <div class="text-white" id="bars6"></div>
 
                 <h3 class="col-md-8 text-center text-white category_title non_film">
@@ -61,7 +61,7 @@
         </section>
         <section class="works_section non_film_section">
             <div
-                class="d-flex col-md-11 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading pb-md-4">
+                class="d-flex col-md-11 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading pb-md-4 pt5">
                 <div class="text-white" id="bars8"></div>
                 <h3 class="col-md-8 text-center category_title non_film">
                     NON FILM SINGLES

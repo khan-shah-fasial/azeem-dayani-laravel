@@ -110,15 +110,16 @@
                             <h2 class="heading-anim font_miedinger music_director">{{ $data['banner_text'] }}</h2>
                         </div>
                          {{--<img class="wavylines_white" src="/assets/frontend/images/Homepage/Music-Lines_2.png">--}}
-                        <div class="text-white" id="bars1"></div>
+                        <!-- <div class="text-white" id="bars1"></div> -->
                     </div>
                 </div>
                 <div class="zip_zap_bg_img_container zip_zap_bg_img ">
                     <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png">
                     <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}">
                     <div class="animated-para col-md-9 description para_font">
-                        {!! $data['about_content'] !!}
+                        {!! $data['about_content'] !!} 
                     </div>
+                    <a class="decoration-underline" href="/about-us">View More</a>
 
                 </div>
             </div>
@@ -128,58 +129,11 @@
         <section data-icon-height="50vh" id="icon-container" class="floating-icons middle_description icon-container">
 
             <div class="slidercircle">
-                {{--
-                <div class="circle-one">
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-1 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_1.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-2 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_7.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="" target="_blank"> -->
-                    <!-- <div class="text-white circle-arround-two-3 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_4.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-4 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_3.png">
-                            </div> -->
-                    <!-- </a> -->
-                </div>
+              
+                <div class="circle-one"> </div>
 
-                <div class="circle-two">
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-1 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_5.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-2 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_7.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="" target="_blank"> -->
-                    <!-- <div class="text-white circle-arround-two-3 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_6.png">
-                            </div> -->
-                    <!-- </a> -->
-                    <!-- <a href="#"> -->
-                    <!-- <div class="text-white circle-arround-two-4 anima">
-                                <img class="fade-in-effect" src="/assets/frontend/images/Homepage/Music_2.png">
-                            </div> -->
-                    <!-- </a> -->
-                </div>
-                <!-- <div class="circle-middle">
-                        <svg fill="#fff" id="Bold" enable-background="new 0 0 24 24" height="73" viewBox="0 0 24 24" width="73" xmlns="http://www.w3.org/2000/svg">
-                            <path d="m.455 16.512 10.969 7.314c.374.23.774.233 1.152 0l10.969-7.314c.281-.187.455-.522.455-.857v-7.312c0-.335-.174-.67-.455-.857l-10.969-7.313c-.374-.23-.774-.232-1.152 0l-10.969 7.313c-.281.187-.455.522-.455.857v7.312c0 .335.174.67.455.857zm10.514 4.528-8.076-5.384 3.603-2.411 4.473 2.987zm2.062 0v-4.808l4.473-2.987 3.603 2.411zm8.907-7.314-2.585-1.727 2.585-1.728zm-8.907-10.767 8.076 5.384-3.603 2.411-4.473-2.987zm-1.031 6.602 3.643 2.438-3.643 2.438-3.643-2.438zm-1.031-6.602v4.808l-4.473 2.987-3.603-2.411zm-8.906 7.314v-.001l2.585 1.728-2.585 1.728z" />
-                        </svg>
-                    </div> -->
-                --}}
+                <div class="circle-two"></div>
+              
             </div>
             <div class="row ">
                 <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
