@@ -26,10 +26,12 @@
                             <!-- Logo Dark -->
                             <a href="#" class="logo-dark">
                                 <span class="logo-lg">
-                                    <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:200px; height:50px;" >
+                                    {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                                    <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                                 </span>
                                 <span class="logo-sm">
-                                    <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:200px; height:50px;" > 
+                                    {{-- <img class="header_logo" src="{{ asset('storage/' . $logo) }}" alt="Sagar Logo" style="width:170px; height:auto;" > --}}
+                                    <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                                 </span>
                             </a>
                         </div>
