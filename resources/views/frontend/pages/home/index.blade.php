@@ -13,11 +13,11 @@
         }
 
         .music_section {
-            background: url({{ asset('storage/' .$data['banner_img']) }}) no-repeat !important;
+            background: url("{{ asset('storage/' .$data['banner_img']) }}") no-repeat; !important;     background-size: cover !important;
         }
 
         .middle_description {
-            background: url({{ asset('storage/' .$data['achivements_banner_bg']) }}) !important;
+            background: url("{{ asset('storage/' .$data['achivements_banner_bg']) }}") !important;
         }
 
     </style>
@@ -109,7 +109,7 @@
                 <div class="zip_zap_bg_img_container zip_zap_bg_img ">
                     <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png">
                     <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}">
-                    <div class="animated-para col-md-9 description">
+                    <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!}
                     </div>
 
@@ -178,7 +178,7 @@
                 <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
                     <div class="d-flex flex-column align-items-end justify-content-between">
                         <h2 class="animated-heading section-heading">His Work</h2>
-                        <div class="animated-para section_contents text-end">
+                        <div class="animated-para section_contents text-end para_font">
                             {!!  $data['ows_content'] !!}
                         </div>
                         <a href="{{ url(route('works')) }}" class="view-more py-md-4">View More..</a>
@@ -187,14 +187,14 @@
                         <img src="{{ asset('storage/' .$data['achivements_image']) }}" class="keasri_img mt-3" alt="Achievements">
                     </div>
                 </div>
-                <div class="col-md-8 d-flex flex-column align-items-start ps-md-4 sooryavanshi_divs">
+                <div class="col-md-8 d-flex flex-column align-items-start sooryavanshi_divs padding_left1">
                     <div class="reveal-img">
                         <img src="{{ asset('storage/' .$data['ows_image']) }}" class="sooryavanshi_img" alt="work">
                     </div>
 
                     <div class="col-md-8 d-flex flex-column align-items-start">
                         <h2 class="animated-heading section-heading">Achievements</h2>
-                        <p class="animated-para section_contents text-start">{!! $data['achivements_content'] !!}</p>
+                        <div class="animated-para section_contents text-start para_font">{!! $data['achivements_content'] !!}</div>
                         <a href="{{ url(route('achievements')) }}" class="view-more mt-md-2">View More..</a>
                     </div>
                 </div>
@@ -227,14 +227,16 @@
                 <div class="col-md-12 text-center">
                     <h2 class="animated-heading section-heading text-dark pb-md-3">Film</h2>
 
-                    @foreach ($data['film_catg'] as $index => $row)
+                   
                         <ul class="film_list">
+                             @foreach ($data['film_catg'] as $index => $row)
                             <li data-img="img{{ $index }}">
                                 <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
                                 <img id="img{{ $index }}" src="{{ asset('storage/' . $row->image) }}" class="film_img">
                             </li>
+                              @endforeach
                         </ul>
-                    @endforeach
+                  
 
                 </div>
             </div>
@@ -316,14 +318,16 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="animated-heading section-heading pb-md-3">Non Film</h2>
-                        @foreach ($data['non_film_catg'] as $index => $row)
+                        
                             <ul class="film_list">
+                                @foreach ($data['non_film_catg'] as $index => $row)
                                 <li data-img="img{{ $index }}01">
                                     <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
                                     <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->image) }}" class="film_img">
                                 </li>
+                                 @endforeach
                             </ul>
-                        @endforeach
+                       
                     </div>
                 </div>
             </div>
