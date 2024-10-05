@@ -24,6 +24,13 @@
     <!-- Icons css -->
     <link href="/assets/backend/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+<style>
+    .auth-fluid .auth-fluid-left, .auth-fluid .auth-fluid-right {
+    background-image: url(h /storage/assets/images/o6O2w5RbOdMZnt09P0nReONyhp5PFoIGXA641FWc.jpg);
+    background-size: cover;
+}
+</style>
+
 </head>
 <body class="authentication-bg pb-0">
 
