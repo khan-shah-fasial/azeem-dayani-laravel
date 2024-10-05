@@ -15,6 +15,11 @@
         }
     @endphp
 
+    <style>
+        footer {
+    background: #59a246;
+}
+    </style>
     <main id="achievements_page">
         <section class="animate-achievements-first-section achievements_section">
             <div class="row">

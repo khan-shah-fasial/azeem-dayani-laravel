@@ -18,7 +18,7 @@
 <!--jQuery Validate-->
 <script defer src="/assets/frontend/js/jquery.validate.min.js"></script>
 
-<script type="text/javascript" defer src="/assets/frontend/js/init.js"></script>
+<script type="text/javascript" defer src="/assets/frontend/js/Init.js"></script>
 
 
 <script>

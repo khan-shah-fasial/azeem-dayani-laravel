@@ -181,7 +181,7 @@ class IndexController extends Controller
         $flims = Cache::remember('flims_list', 60, function () {
             return DB::table('products')
                 ->where('categories_id', 1)
-                ->orderBy('id', 'desc')
+                ->orderBy('id', 'asc')
                 ->get();
         });
         
@@ -189,7 +189,7 @@ class IndexController extends Controller
         $non_flims = Cache::remember('non_flims_list', 60, function () {
             return DB::table('products')
                 ->where('categories_id', 2)
-                ->orderBy('id', 'desc')
+                ->orderBy('id', 'asc')
                 ->get();
         });
         
