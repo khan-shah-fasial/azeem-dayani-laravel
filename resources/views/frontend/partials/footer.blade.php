@@ -43,7 +43,7 @@
                 class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
                 @foreach ($social_media as $index => $row)
                     <li class="list-item">
-                        <a href="{{ $row->url }}" class="social_media_links">
+                        <a href="{{ $row->url }}" class="social_media_links" target="_blank">
                             {!! $row->icon !!}
                         </a>
                     </li>
