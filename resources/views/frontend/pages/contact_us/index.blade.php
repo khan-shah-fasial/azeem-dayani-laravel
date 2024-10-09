@@ -9,7 +9,7 @@
 @section('page.content')
 
     <main id="contact_page">
-        <section class="animate-contact-first-section contact_heading_n_form bg_green pt-md-5">
+        <section class="animate-contact-first-section contact_heading_n_form bg_green pt-md-5 pt-4">
             <div class="contact_heading_div text-center">
                 <h1 class="contact_main_name text-light contact_heading mb-0">
                     contact
@@ -31,17 +31,17 @@
                             <form id="add_contact_us_form" action="{{ route('form.save') }}" method="post"
                             enctype="multipart/form-data">
                             @csrf
-                                <div class="mb-4">
+                                <div class="mb-md-4 mb-3">
                                     <input type="text" name="full_name" class="form-control" placeholder="Name" required />
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-md-4 mb-3">
                                     <input type="text" name="mobile" class="form-control" placeholder="Contact Us" required
                                         maxlength="12" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-md-4 mb-3">
                                     <input type="email" name="email" class="form-control" placeholder="Email Id" required />
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-md-4 mb-3">
                                     <textarea class="form-control" name="message" rows="3" placeholder="Message" required></textarea>
                                 </div>
                                 <button type="submit" class="btn submit_btn">SUBMIT</button>
