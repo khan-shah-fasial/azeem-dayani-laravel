@@ -1020,7 +1020,7 @@ body {
     padding-right: 0vw !important;
 }
 
-.col-md-4 .card {
+.non_film_row .non_film_card, .film_row .card {
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -1029,13 +1029,13 @@ body {
 }
 
 
-.col-md-4 .card-title {
+.non_film_row .non_film_card_title {
     font-family: 'tungsten', sans-serif !important;
     font-size: 2vw;
     line-height: 2.3vw;
 }
 
-.col-md-4 .card-body {
+.non_film_row .non_film_card_body {
     padding: 1vw 0 0;
 }
 

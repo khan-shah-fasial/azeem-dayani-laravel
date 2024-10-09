@@ -34,7 +34,7 @@
                 <div class="zip_zap_bg_img_container">
                     <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png" />
                 </div>
-                <div class="col-md-2 d-flex align-items-center position-relative h_63">
+                <div class="col-md-2 d-md-flex align-items-center d-none position-relative h_63">
                     <!-- <div class="side_text">
                               <h2>Achievements</h2>
                           </div> -->

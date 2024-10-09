@@ -26,8 +26,15 @@
         .middle_description {
             background: url("{{ asset('storage/' .$data['achivements_banner_bg']) }}") !important;
             background-position: 40% bottom !important;
-    background-repeat: no-repeat !important;
-        background-color: #5aa236 !important;
+            background-repeat: no-repeat !important;
+            background-color: #5aa236 !important;
+        }
+
+        .header {
+            position: absolute;
+            background: transparent;
+            height: 0px;
+            padding: 0px;
         }
 
     </style>
@@ -152,8 +159,8 @@
                     </div>
                 </div>                
             </div>
-            <div class="text-center">
-                <h2 class="animated-heading section-heading pb-md-4 pt-md-5">His Work</h2>
+            <div class="home_his_work text-center">
+                <h2 class="animated-heading section-heading pb-md-4 pt-md-5 pb-3">His Work</h2>
                 <div class="row col-md-11 mx-auto">
                     <div class="reveal-img col-md-3 col-12">
                         <a href="{{ $data['ows_image_1_url'] }}" target="_blank">

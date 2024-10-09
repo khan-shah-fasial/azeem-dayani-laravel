@@ -1,0 +1,503 @@
+@media screen and (max-width:767px) {
+
+    p {  
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* home page start */
+
+    .header {
+        position: relative;        
+        background: #5aa236;
+        height: 60px;
+    }
+
+    header>a { 
+        position: relative;
+        top: 14px;
+    }
+
+    header .footer_logo_text {
+        font-size: 18px;
+    }
+
+    .hamburger-menu {
+        width: 30px;
+        height: 25px;
+        top: 14px;
+        right: 14px;
+    }
+
+    .hamburger-menu span:nth-child(1), .hamburger-menu span:nth-child(3) {
+        width: 20px;
+    }
+
+    .hamburger-menu span {
+        width: 28px;
+        height: 5px;
+    }
+
+    .menu-trigger:checked~.hamburger-menu span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg); 
+    }
+    .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg); 
+    }
+    
+    .menu-links {
+        font-size: 22px;
+    }
+    .menu-links li a {
+        letter-spacing: 2px;
+        line-height: 40px;
+    }
+
+    .logo_text {
+        font-size: 28px;
+    }
+
+    .music_director {
+        font-size: 18px;
+        padding: 0px 12px;
+    }
+
+    .headphone_text_img {
+        width: 100%;
+        margin-top: 0em;
+        padding: 0px 12px;
+    }
+
+    .para_font, .achievement_top_desecription p { 
+        margin-bottom: 10px !important;
+        padding: 0px 10px;
+    }
+
+    .sooryavanshi_divs .para_font {  
+        padding: 0px 0px;
+        margin-bottom: 0px !important;
+    }    
+
+    .para_font p, .achievement_top_desecription p { 
+        font-size: 14px; 
+        margin-bottom: 10px !important;
+        text-align: start;
+    }
+
+    .section-heading { 
+        font-size: 40px; 
+        margin-top: 20px;
+    }
+
+    .view-more { 
+        font-size: 14px;
+    }
+
+    .home_his_work .reveal-img {
+        padding: 10px 12px;
+    }
+
+    .middle_description {
+        padding-bottom: 30px;
+    }
+
+    .section_contents.para_font {
+        text-align: start;
+    }
+
+    .home_his_work .view-more {
+        position: relative;
+        top: 10px;
+    }
+
+    #bars2 { 
+        top: -20px; 
+        height: 40px;
+        width: 37%;
+    }
+
+    #bars2 .bar {
+        position: absolute;
+        bottom: 20px;
+    }
+
+    @keyframes sound2 {
+        0% {
+            opacity: .35;
+            height: 5px;
+        }
+    
+        100% {
+            opacity: 1;
+            height: 35px;
+        }
+    }
+
+    .film_section .section-heading {
+        font-size: 50px;
+    }
+
+    .film_list li { 
+        height: auto;
+    }
+
+    .film_link {
+        font-size: 16px;
+    }
+
+    .film_link:hover, .film_link:focus { 
+        font-size: 18px;
+    }
+
+    #home_page .non_film_section .side_headphone {
+        width: 40%;
+        height: auto; 
+        top: -22em;
+        opacity: 0.4;
+    }
+
+    .playlist_heading_div { 
+        bottom: 8em;
+        left: 12em;
+    }
+
+    .playlist_heading { 
+        font-size: 40px;
+        opacity: 0.4;
+    }
+
+    .non_film_music {
+        padding: 0px 12px;
+    }
+    
+    .non_film_section {
+        position: relative;
+        height: 80vh;
+    }
+
+    .non_film_music .film_list li { 
+        margin-top: 10px;
+    }
+
+    /* home page end */
+
+    /* contact us page start */
+
+    main>section:nth-child(1) {
+        padding-top: 20px !important;
+    }
+
+    .contact_heading_div { 
+        padding-bottom: 20px;
+    }
+
+    .contact_heading, .section_title { 
+        font-size: 40px;
+        bottom: inherit;
+    }
+
+    .contact_us_heading_img {
+        width: 25%;
+    }
+
+    .contact_form { 
+        padding: 20px 12px;
+    }
+
+    .object_bg_img .zip_zap_bg_og_img {
+        position: absolute;
+        width: 100%;
+        right: 0px;
+        top: 60px;
+    }
+
+    .form_heading { 
+        font-size: 40px; 
+    }
+
+    .contact_form .form-control { 
+        font-size: 14px;
+    }
+    .contact_form .submit_btn { 
+        font-size: 14px;
+    }
+
+    .contact_form .submit_btn { 
+        border-radius: 6px; 
+        width: 6em;
+        height: 36px;
+    }
+
+    .contact_buffer_div { 
+        top: 0px;
+        padding: 20px 0px;
+    }
+
+    .buffering_text { 
+        left: 30px;
+        top: 1.2em;
+        font-size: 60px;
+    }
+
+    img.contact_headphone_image {
+        width: 50%;
+    }
+
+    /* contact page end */
+
+    /* gallery page start */
+
+    div.masonry_gallery {
+        column-width: 100vw !important;
+        column-gap: 2em !important;
+        padding: 12px 12px 20px;
+        width: 100%;
+    }
+
+    div.masonry_gallery .masonry_gallery_div {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    #gallery_videos .item { 
+        margin-bottom: 12px;
+    }
+
+    button.btn.gallery_yt_video {
+        width: 4em !important;
+        height: 4em !important; 
+        background-size: 100% !important;
+    }
+
+    /* gallery page end */
+
+    /* works page start */
+
+    #works_page .film_section {
+        background: linear-gradient(180deg, #218ee3 86.5%, #fff 13.5%);
+    }
+
+    #works_page .non_film_section {
+        background: linear-gradient(180deg, #fff 9%, #59a246 8%);
+    }
+
+    .headphone_heading {
+        position: relative;
+        width: 25%;
+    }
+
+    .works_headphone_heading { 
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .category_title { 
+        font-size: 20px;
+    }
+
+    #bars6  { 
+        left: 10px;
+    }
+
+    #bars7  { 
+        right: -70px;
+    }
+
+    .none_film_heading.pt5 {
+        padding: 20px 0px;
+    }
+
+    .film_row, .non_film_row {
+        padding: 0px 12px;
+    }
+
+    #works_page .film_row .card-title, .non_film_row .non_film_card_title { 
+        font-size: 28px;
+        line-height: inherit;
+        text-align: center;
+        padding-top: 8px;
+    }
+
+    /* works page end */
+
+    /* achievements page start */
+
+    .achievements_main_name { 
+        font-size: 60px;
+    }
+
+    .achievements_section {
+        background: linear-gradient(180deg, #218ee3 0%, #218ee3 7%, #ffffff 7%, #ffffff 12%, #59a246 12%, #59a246 100%);
+    }
+
+    .achievement_card .card-body {
+        padding: 0px 12px;
+    }
+
+    .award_name {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .achievement_page_gallery {
+        padding: 20px 12px 15px !important;
+    }
+
+    .achievement_card img { 
+        width: 100% !important;
+    }
+
+    .h_63 {
+        height: inherit !important;
+    }
+
+    .headphones_icon {
+        width: 29%;
+        position: relative;
+        top: 10px;
+        left: 0px;
+    }
+
+    .video_div { 
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    #gallery_videos img { 
+        height: auto;
+    }
+
+    /* achievements page end */
+
+    /* about us page start */
+
+    .azeem_big_photo {
+        width: 100%;  
+        right: 0px;
+        padding: 0px 12px 15px;
+    }
+
+    /* .music_director_composer_main_div .zip_zap_bg_og_img {
+        width: 100%;
+        right: 0px;
+        top: inherit !important;
+        bottom: 9em;
+    } */
+
+    .about_azeem_dayani {
+        padding-bottom: 130%;
+    }
+
+    .about {
+        left: 0px;
+        position: relative;
+        padding-top: 20px;
+        top: 0px;
+    }
+
+    .music_director_composer_heading {
+        font-size: 18px;
+        padding: 0px 12px;
+    }
+
+    .about_main_div .footer_logo_text {
+        font-size: 22px;
+        width: 100%;
+        bottom: 10px;
+        right: 0px;
+        margin-top: 0px;
+        padding: 0px 12px;
+    }
+
+    .music_director_composer_main_div:after {
+        display: none;
+    }
+
+    .azeem_stadium_img_div { 
+        bottom: 0px;
+    }
+
+    .azeem_stadium_img { 
+        right: 0px;
+        width: 100%; 
+        padding: 0px 12px 20px;
+    }
+
+    .small_heading { 
+        font-size: 16px;
+        padding: 10px 12px;
+        margin-bottom: 0px !important;
+    }
+
+    .work_with_team_heading { 
+        font-size: 30px;
+    }
+
+    .vision_main_section {
+        background: linear-gradient(180deg, #fff 47%, #218ee3 47%);
+    }
+
+    .vision_main_image {
+        width: 100%; 
+        padding: 10px 12px;
+    }
+
+    #about_us_page .slidercircle {
+        display: none;
+    }
+
+    .film_music_zig_zag_img {  
+        width: 100%;
+        top: 4em;
+    }
+
+    .vision_main_section { 
+        padding: 8vw 0 5vw;
+    }
+    
+    #about_us_page .vision_heading {
+        transform: rotate(0deg);
+        position: absolute;
+        top: -30px;
+        left: 0px; 
+        text-align: center;
+        font-size: 26px !important;
+        color: #218ee3 !important;
+    }
+
+
+
+    /* footer */
+
+    .footer_logo_text { 
+        font-size: 24px;
+    }
+
+    .footer_link { 
+        font-size: 14px;
+    }
+
+    .social_media_links { 
+        font-size: 16px;
+    }
+
+    #bars3 .bar { 
+        bottom: -10px;
+        height: 3px;
+        width: 2px;
+    }
+    
+    @keyframes sound3 {
+        0% {
+            opacity: .35;
+            height: 5px;
+        }
+    
+        100% {
+            opacity: 1;
+            height: 50px;
+        }
+    }
+
+    
+}

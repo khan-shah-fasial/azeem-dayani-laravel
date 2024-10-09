@@ -13,7 +13,7 @@
             <h4 class="footer_logo_text">{{ $logo }}</h4>
         </a>
         <div class="col-md-12 footer_links_div">
-            <ul class="list-group list-group-horizontal list-unstyled justify-content-center">
+            <ul class="list-group list-group-horizontal list-unstyled justify-content-md-center justify-content-start flex-wrap">
                 <li class="list-group-item footer_list">
                     <a href="{{ url(route('about_us')) }}" class="footer_link">about</a>
                 </li>
