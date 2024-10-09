@@ -1415,16 +1415,23 @@ a.decoration-underline {
 }
 
 .sooryavanshi_img {
-    width: 60vw;
+    /* width: 60vw; */
+    width: 100%;
+    height: 100%;
+}
+
+.section_contents.para_font{
+    text-align: center;
+    padding-top: 2vw;
 }
 
 .reveal-img .keasri_img {
-    width: 30vw;
+    width: 100%;
 }
 
 .middle_description img {
     position: relative;
-    z-index: 9;
+    z-index: 9; 
 }
 
 .middle_description {
@@ -1433,7 +1440,7 @@ a.decoration-underline {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: 40% bottom;
-    padding-bottom: 35vw;
+    padding-bottom: 3vw;
     position: relative;
 }
 
