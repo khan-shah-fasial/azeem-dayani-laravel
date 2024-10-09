@@ -12,7 +12,14 @@
         $about_content = $decoded_data->about_content ?? '';
         $about_image = $decoded_data->about_image ?? '';
 
-        $ows = $decoded_data->ows_image ?? '';
+        $ows1 = $decoded_data->ows_image_1 ?? '';
+        $ows2 = $decoded_data->ows_image_2 ?? '';
+        $ows3 = $decoded_data->ows_image_3 ?? '';
+        $ows4 = $decoded_data->ows_image_4 ?? '';
+        $url1 = $decoded_data->ows_image_1_url ?? '';
+        $url2 = $decoded_data->ows_image_2_url ?? '';
+        $url3 = $decoded_data->ows_image_3_url ?? '';
+        $url4 = $decoded_data->ows_image_4_url ?? '';
         $ows_content = $decoded_data->ows_content ?? '';
 
         $achivements_image = $decoded_data->achivements_image ?? '';
@@ -32,7 +39,14 @@
         $about_content = '';
         $about_image = '';
 
-        $ows = '';
+        $ows1 = '';
+        $ows2 = '';
+        $ows3 = '';
+        $ows4 = '';
+        $url1 = '';
+        $url2 = '';
+        $url3 = '';
+        $url4 = '';
         $ows_content = '';
 
         $achivements_image = '';
@@ -115,20 +129,86 @@
         </div>
 
         <div class="col-sm-4 form-group mb-3">
-            <label>Our Work Section Image <span class="red">*</span></label>
-            <input class="form-control" type="file" id="ows_image" name="ows_image"
-                accept=".jpg,.jpeg,.png,.webp" @if (empty($ows)) required @endif>
+            <label>Our Work Section Image 1 <span class="red">*</span></label>
+            <input class="form-control" type="file" id="ows_image" name="ows_image_1"
+                accept=".jpg,.jpeg,.png,.webp" @if (empty($ows1)) required @endif>
         </div>
 
         <div class="col-sm-2 form-group mb-3">
-            @if (!empty($ows))
+            @if (!empty($ows1))
                 <div class="div-preview-image col-3 form-group mb-3">
-                    <img width="180" src="{{ asset('storage/' . $ows) }}">                                       
+                    <img width="180" src="{{ asset('storage/' . $ows1) }}">                                       
                 </div>
             @endif
         </div>
 
         <div class="col-sm-6 form-group mb-3">
+            <label>Image 1 url <span class="red">*</span></label>
+            <input class="form-control" type="text" id="ows_image_1" name="ows_image_1_url" value="{{ $url1 }}"
+            required>
+        </div>
+
+        <div class="col-sm-4 form-group mb-3">
+            <label>Our Work Section Image 2 <span class="red">*</span></label>
+            <input class="form-control" type="file" id="ows_image" name="ows_image_2"
+                accept=".jpg,.jpeg,.png,.webp" @if (empty($ows2)) required @endif>
+        </div>
+
+        <div class="col-sm-2 form-group mb-3">
+            @if (!empty($ows2))
+                <div class="div-preview-image col-3 form-group mb-3">
+                    <img width="180" src="{{ asset('storage/' . $ows2) }}">                                       
+                </div>
+            @endif
+        </div>
+
+        <div class="col-sm-6 form-group mb-3">
+            <label>Image 2 url <span class="red">*</span></label>
+            <input class="form-control" type="text" id="ows_image_2" name="ows_image_2_url" value="{{ $url2 }}"
+            required>
+        </div>
+
+        <div class="col-sm-4 form-group mb-3">
+            <label>Our Work Section Image 3 <span class="red">*</span></label>
+            <input class="form-control" type="file" id="ows_image" name="ows_image_3"
+                accept=".jpg,.jpeg,.png,.webp" @if (empty($ows3)) required @endif>
+        </div>
+
+        <div class="col-sm-2 form-group mb-3">
+            @if (!empty($ows3))
+                <div class="div-preview-image col-3 form-group mb-3">
+                    <img width="180" src="{{ asset('storage/' . $ows3) }}">                                       
+                </div>
+            @endif
+        </div>
+
+        <div class="col-sm-6 form-group mb-3">
+            <label>Image 3 url <span class="red">*</span></label>
+            <input class="form-control" type="text" id="ows_image_3" name="ows_image_3_url" value="{{ $url3 }}"
+            required>
+        </div>
+
+        <div class="col-sm-4 form-group mb-3">
+            <label>Our Work Section Image 4 <span class="red">*</span></label>
+            <input class="form-control" type="file" id="ows_image" name="ows_image_4"
+                accept=".jpg,.jpeg,.png,.webp" @if (empty($ows4)) required @endif>
+        </div>
+
+        <div class="col-sm-2 form-group mb-3">
+            @if (!empty($ows4))
+                <div class="div-preview-image col-3 form-group mb-3">
+                    <img width="180" src="{{ asset('storage/' . $ows4) }}">                                       
+                </div>
+            @endif
+        </div>
+
+        <div class="col-sm-6 form-group mb-3">
+            <label>Image 4 url <span class="red">*</span></label>
+            <input class="form-control" type="text" id="ows_image_4" name="ows_image_4_url" value="{{ $url4 }}"
+            required>
+        </div>
+
+        <div class="col-sm-12 form-group mb-3">
             <label>Our Work Section Content <span class="red">*</span></label>
             <textarea class="form-control trumbowyg" name="ows_content" rows="3"  @if (empty($ows_content)) required @endif>{{ $ows_content }}</textarea>
         </div>

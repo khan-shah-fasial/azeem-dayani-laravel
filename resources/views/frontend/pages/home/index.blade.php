@@ -153,7 +153,24 @@
                 </div>
                 <div class="col-md-8 d-flex flex-column align-items-start sooryavanshi_divs padding_left1">
                     <div class="reveal-img">
-                        <img src="{{ asset('storage/' .$data['ows_image']) }}" class="sooryavanshi_img" alt="work">
+                        <a href="{{ $data['ows_image_1_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_1']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img">
+                        <a href="{{ $data['ows_image_2_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_2']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img">
+                        <a href="{{ $data['ows_image_3_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_3']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img">
+                        <a href="{{ $data['ows_image_4_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_4']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
                     </div>
 
                     <div class="col-md-8 d-flex flex-column align-items-start">

@@ -120,7 +120,14 @@ class IndexController extends Controller
         $data['achivements_content'] = $decoded_data->achivements_content ?? '';
         $data['banner_img'] = $decoded_data->banner ?? '';
         $data['about_image'] = $decoded_data->about_image ?? '';
-        $data['ows_image'] = $decoded_data->ows_image ?? '';
+        $data['ows_image_1'] = $decoded_data->ows_image_1 ?? '';
+        $data['ows_image_2'] = $decoded_data->ows_image_2 ?? '';
+        $data['ows_image_3'] = $decoded_data->ows_image_3 ?? '';
+        $data['ows_image_4'] = $decoded_data->ows_image_4 ?? '';
+        $data['ows_image_1_url'] = $decoded_data->ows_image_1_url ?? '';
+        $data['ows_image_2_url'] = $decoded_data->ows_image_2_url ?? '';
+        $data['ows_image_3_url'] = $decoded_data->ows_image_3_url ?? '';
+        $data['ows_image_4_url'] = $decoded_data->ows_image_4_url ?? '';
         $data['achivements_image'] = $decoded_data->achivements_image ?? '';
         $data['achivements_banner_bg'] = $decoded_data->achivements_banner_bg ?? '';
 

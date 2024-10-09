@@ -132,7 +132,14 @@ class PageController extends Controller
                     'about_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                     'about_content' => 'required',
 
-                    'ows_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'ows_image_1' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'ows_image_2' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'ows_image_3' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'ows_image_4' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'ows_image_1_url' => 'required',
+                    'ows_image_2_url' => 'required',
+                    'ows_image_3_url' => 'required',
+                    'ows_image_4_url' => 'required',
                     'ows_content' => 'required',
 
                     'achivements_image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
@@ -162,6 +169,10 @@ class PageController extends Controller
                     'about_content' => $request->input('about_content'),
                     'banner_text' => $request->input('banner_text'),
                     'ows_content' => $request->input('ows_content'),
+                    'ows_image_1_url' => $request->input('ows_image_1_url'),
+                    'ows_image_2_url' => $request->input('ows_image_2_url'),
+                    'ows_image_3_url' => $request->input('ows_image_3_url'),
+                    'ows_image_4_url' => $request->input('ows_image_4_url'),
                     'achivements_content' => $request->input('achivements_content'),
                     'film_catg' => json_encode($request->input('film_catg')),
                     'non_film_catg' => json_encode($request->input('non_film_catg')),
@@ -190,14 +201,47 @@ class PageController extends Controller
                 }
 
                 // Handle About Image Upload
-                if ($request->hasFile('ows_image')) {
-                    if (isset($page_content->ows_image)) {
-                        Storage::disk('public')->delete($page_content->ows_image);
+                if ($request->hasFile('ows_image_1')) {
+                    if (isset($page_content->ows_image_1)) {
+                        Storage::disk('public')->delete($page_content->ows_image_1);
                     }
-                    $content['ows_image'] = $request->file('ows_image')->store('assets/images', 'public');
+                    $content['ows_image_1'] = $request->file('ows_image_1')->store('assets/images', 'public');
                 } else {
                     // Retain the existing image
-                    $content['ows_image'] = $page_content->ows_image ?? null;
+                    $content['ows_image_1'] = $page_content->ows_image_1 ?? null;
+                }
+
+                // Handle About Image Upload
+                if ($request->hasFile('ows_image_2')) {
+                    if (isset($page_content->ows_image_2)) {
+                        Storage::disk('public')->delete($page_content->ows_image_2);
+                    }
+                    $content['ows_image_2'] = $request->file('ows_image_2')->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $content['ows_image_2'] = $page_content->ows_image_2 ?? null;
+                }
+
+                // Handle About Image Upload
+                if ($request->hasFile('ows_image_3')) {
+                    if (isset($page_content->ows_image_3)) {
+                        Storage::disk('public')->delete($page_content->ows_image_3);
+                    }
+                    $content['ows_image_3'] = $request->file('ows_image_3')->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $content['ows_image_3'] = $page_content->ows_image_3 ?? null;
+                }
+
+                // Handle About Image Upload
+                if ($request->hasFile('ows_image_4')) {
+                    if (isset($page_content->ows_image_4)) {
+                        Storage::disk('public')->delete($page_content->ows_image_4);
+                    }
+                    $content['ows_image_4'] = $request->file('ows_image_4')->store('assets/images', 'public');
+                } else {
+                    // Retain the existing image
+                    $content['ows_image_4'] = $page_content->ows_image_4 ?? null;
                 }
 
                 // Handle About Image Upload
