@@ -20,7 +20,7 @@
         }
 
         .music_section {
-            background: url("{{ asset('storage/' .$data['banner_img']) }}") no-repeat; !important;     background-size: cover !important;
+            background: url("{{ asset('storage/' .$data['banner_img']) }}") no-repeat !important;     background-size: cover !important;
         }
 
         .middle_description {
@@ -122,7 +122,7 @@
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
                     </div>
-                    <a class="decoration-underline" href="/about-us">View More</a>
+                    {{-- <a class="decoration-underline" href="/about-us">View More</a>--}}
 
                 </div>
             </div>
@@ -131,54 +131,55 @@
 
         <section data-icon-height="50vh" id="icon-container" class="floating-icons middle_description icon-container">
 
-            <div class="slidercircle">
+            {{-- <div class="slidercircle">
               
                 <div class="circle-one"> </div>
 
                 <div class="circle-two"></div>
               
-            </div>
-            <div class="row ">
+            </div> --}}
+            <div class="row col-md-9 mx-auto">
                 <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
-                    <div class="d-flex flex-column align-items-end justify-content-between">
-                        <h2 class="animated-heading section-heading">His Work</h2>
-                        <div class="animated-para section_contents text-end para_font">
-                            {!!  $data['ows_content'] !!}
-                        </div>
-                        <a href="{{ url(route('works')) }}" class="view-more py-md-4">View More..</a>
-                    </div>
                     <div class="reveal-img image_div">
                         <img src="{{ asset('storage/' .$data['achivements_image']) }}" class="keasri_img mt-3" alt="Achievements">
                     </div>
                 </div>
-                <div class="col-md-8 d-flex flex-column align-items-start sooryavanshi_divs padding_left1">
-                    <div class="reveal-img">
-                        <a href="{{ $data['ows_image_1_url'] }}" target="_blank">
-                            <img src="{{ asset('storage/' .$data['ows_image_1']) }}" class="sooryavanshi_img" alt="work">
-                        </a>
-                    </div>
-                    <div class="reveal-img">
-                        <a href="{{ $data['ows_image_2_url'] }}" target="_blank">
-                            <img src="{{ asset('storage/' .$data['ows_image_2']) }}" class="sooryavanshi_img" alt="work">
-                        </a>
-                    </div>
-                    <div class="reveal-img">
-                        <a href="{{ $data['ows_image_3_url'] }}" target="_blank">
-                            <img src="{{ asset('storage/' .$data['ows_image_3']) }}" class="sooryavanshi_img" alt="work">
-                        </a>
-                    </div>
-                    <div class="reveal-img">
-                        <a href="{{ $data['ows_image_4_url'] }}" target="_blank">
-                            <img src="{{ asset('storage/' .$data['ows_image_4']) }}" class="sooryavanshi_img" alt="work">
-                        </a>
-                    </div>
-
-                    <div class="col-md-8 d-flex flex-column align-items-start">
+                <div class="col-md-8 d-flex flex-column justify-content-center sooryavanshi_divs padding_left1">
+                    <div class="d-flex flex-column align-items-start">
                         <h2 class="animated-heading section-heading">Achievements</h2>
                         <div class="animated-para section_contents text-start para_font">{!! $data['achivements_content'] !!}</div>
                         <a href="{{ url(route('achievements')) }}" class="view-more mt-md-2">View More..</a>
                     </div>
+                </div>                
+            </div>
+            <div class="text-center">
+                <h2 class="animated-heading section-heading pb-md-4 pt-md-5">His Work</h2>
+                <div class="row col-md-11 mx-auto">
+                    <div class="reveal-img col-md-3 col-12">
+                        <a href="{{ $data['ows_image_1_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_1']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img col-md-3 col-12">
+                        <a href="{{ $data['ows_image_2_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_2']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img col-md-3 col-12">
+                        <a href="{{ $data['ows_image_3_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_3']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
+                    <div class="reveal-img col-md-3 col-12">
+                        <a href="{{ $data['ows_image_4_url'] }}" target="_blank">
+                            <img src="{{ asset('storage/' .$data['ows_image_4']) }}" class="sooryavanshi_img" alt="work">
+                        </a>
+                    </div>
                 </div>
+                <div class="col-md-10 mx-auto animated-para section_contents para_font">
+                    {!!  $data['ows_content'] !!}
+                    <a href="{{ url(route('works')) }}" class="view-more py-md-4">View More..</a>
+                </div>                    
             </div>
             {{--
             <!-- <div class="col-md-11 tshirt_img_div text-center">
