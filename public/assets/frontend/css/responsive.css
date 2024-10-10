@@ -58,6 +58,10 @@
         font-size: 28px;
     }
 
+    .music_section > div {
+        padding-top: 10em;
+    }
+
     .music_director {
         font-size: 18px;
         padding: 0px 12px;

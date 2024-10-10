@@ -25,7 +25,7 @@
 
         .middle_description {
             background: url("{{ asset('storage/' .$data['achivements_banner_bg']) }}") !important;
-            background-position: 40% bottom !important;
+            background-position: -35vw -21vw !important;
             background-repeat: no-repeat !important;
             background-color: #5aa236 !important;
         }
@@ -35,6 +35,13 @@
             background: transparent;
             height: 0px;
             padding: 0px;
+        }
+
+        @media screen and (max-width: 767px) {
+            
+            .music_section {
+                background-position: 25% top !important;
+            }
         }
 
     </style>
