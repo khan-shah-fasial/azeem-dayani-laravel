@@ -8,6 +8,10 @@
 
     /* home page start */
 
+    .preloader svg { 
+        width: 95%;
+    }
+
     .header {
         position: relative;        
         background: #5aa236;
@@ -47,7 +51,12 @@
     }
     
     .menu-links {
-        font-size: 22px;
+        font-size: 24px;
+        padding: 10px 12px;
+    }
+    .menu-links li {
+        text-align: center;
+        margin: 28px 0;
     }
     .menu-links li a {
         letter-spacing: 2px;
@@ -522,4 +531,81 @@
     }
 
     
+}
+
+@media screen and (max-width:768px) and  (max-width:991px) {
+    p {  
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .preloader svg { 
+        width: 95%;
+    }
+
+    
+    .view-more { 
+        font-size: 14px;
+    }
+    
+    .home_his_work .view-more {
+        position: relative;
+        top: 10px;
+    }
+
+
+    .film_link {
+        font-size: 18px;
+    }
+
+    .film_link:hover, .film_link:focus { 
+        font-size: 20px;
+    }
+
+    .film_link:hover + .film_img, .film_link:focus + .film_img {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(3.5) rotate(15deg) !important ;
+        transition: all 0.5s ease;
+    }
+
+    
+    .film_list li { 
+        height: auto;
+    }
+
+    .non_film_music .film_list li { 
+        margin-top: 10px;
+    }
+
+    .footer_logo_text { 
+        font-size: 24px;
+    }
+
+    .footer_link { 
+        font-size: 14px;
+    }
+
+    .social_media_links { 
+        font-size: 16px;
+    }
+
+    #bars3 .bar { 
+        bottom: -10px;
+        height: 3px;
+        width: 2px;
+    }
+    
+    @keyframes sound3 {
+        0% {
+            opacity: .35;
+            height: 5px;
+        }
+    
+        100% {
+            opacity: 1;
+            height: 50px;
+        }
+    }
 }
