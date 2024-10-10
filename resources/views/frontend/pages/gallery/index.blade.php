@@ -63,7 +63,7 @@
                 <div class="modal-body">
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe id="videoIframe" width="100%" height="480"
-                            src="https://www.youtube.com/embed/z2XS_RryJGk"
+                            src=""
                             title="Introduction to Resin Art by Poonam Bukalsaria Shah | GoodHomes Craft Studio"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
