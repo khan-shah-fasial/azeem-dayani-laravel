@@ -41,7 +41,7 @@
                     <img src="/assets/frontend/images/Achievements/Headphone_new_2.png"
                         class="left-scaleup-element img-fluid headphones_icon left-scaleup-element" alt="Headphones" />
                 </div>
-                <div class="col-md-9 pb-md-5 d-flex flex-md-row flex-column">
+                <div class="col-md-9 pb-md-5 row">
                     <div class="float-up">
                         <div class="row pb-md-5">
                             <!-- Add your achievement items here -->
