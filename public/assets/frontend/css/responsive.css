@@ -374,6 +374,14 @@
         padding: 20px 12px 15px !important;
     }
 
+    .float-up {
+        padding-right: 0px !important;
+    }
+
+    .award_main_div {
+        padding-right: 0px !important;
+    }
+
     .achievement_card img { 
         width: 100% !important;
     }
