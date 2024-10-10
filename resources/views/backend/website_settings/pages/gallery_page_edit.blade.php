@@ -107,22 +107,24 @@
                             <div class="col-8 form-group mb-3">
                                 <label>video <span class="red">*</span></label>
                                 <input class="form-control" type="file" id="video" name="video[]"
-                                    accept=".jpg,.jpeg,.png,.webp" @if (empty($banner)) required @endif>
+                                accept=".mp4,.mkv,.avi,.mov,.wmv" @if (empty($banner)) required @endif>
                                 <input type="hidden" name="video_count[]" value="1">
                             </div>
                             @if (!empty($banner))
                                 <div class="div-preview-video col-3 form-group mb-3">
                                     <input type="hidden" name="existing_banner_video[]" value="{{ $banner }}">
-                                    <img width="180" src="{{ asset('storage/' . $banner) }}">
+                                    <video width="180" controls>
+                                        <source src="{{ asset('storage/' . $banner) }}" type="video/mp4">
+                                    </video>
                                 </div>
                             @endif
                         </div>
 
-                        <div class="col-sm-6 form-group mb-3">
+                        {{-- <div class="col-sm-6 form-group mb-3">
                             <label>Video URL <span class="red">*</span></label>
                             <input class="form-control" type="text" id="url" name="url[]" value="{{ $url[$index] }}"
                                 required>
-                        </div>
+                        </div> --}}
 
                     </div>
                     <div class="add-row-col-3-div col-md-3">
@@ -142,14 +144,14 @@
                         <div class="col-6 form-group mb-3">
                             <label>video <span class="red">*</span></label>
                             <input class="form-control" type="file" id="video" name="video[]"
-                                accept=".jpg,.jpeg,.png,.webp" required>
+                            accept=".mp4,.mkv,.avi,.mov,.wmv" required>
                             <input type="hidden" name="video_count[]" value="1">
                         </div>
-                        <div class="col-sm-6 form-group mb-3">
+                        {{-- <div class="col-sm-6 form-group mb-3">
                             <label>Video URL <span class="red">*</span></label>
                             <input class="form-control" type="text" id="url" name="url[]"
                                 required>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="add-row-col-3-div col-md-3">
