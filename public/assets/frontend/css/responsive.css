@@ -67,10 +67,21 @@
         padding: 0px 12px;
     }
 
+    .music_section .zip_zap_bg_img { 
+        align-items: start;
+        margin-top: 0px;
+    }
+
     .headphone_text_img {
         width: 100%;
         margin-top: 0em;
+        padding: 0px 12px 5px;
+    }
+
+    a.decoration-underline { 
+        margin-top: -10px; 
         padding: 0px 12px;
+        font-size: 14px;
     }
 
     .para_font, .achievement_top_desecription p { 
@@ -152,6 +163,13 @@
 
     .film_link:hover, .film_link:focus { 
         font-size: 18px;
+    }
+
+    .film_link:hover + .film_img, .film_link:focus + .film_img {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1.5) rotate(15deg) !important ;
+        transition: all 0.5s ease;
     }
 
     #home_page .non_film_section .side_headphone {

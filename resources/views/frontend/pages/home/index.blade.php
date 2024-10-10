@@ -136,7 +136,7 @@
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
                     </div>
-                    {{-- <a class="decoration-underline" href="/about-us">View More</a>--}}
+                    <a class="decoration-underline" href="/about-us">View More</a>
 
                 </div>
             </div>
