@@ -77,11 +77,12 @@
                         <div class="col-md-4 mx-auto row pt-md-5" id="gallery_videos">
                             <div class="item col-12 d-flex flex-column">
                                 <div class="video_div">
-                                    <img class="youtube_bg_img" src="{{ asset('storage/' . $row) }}"
-                                        alt="Video 1 Thumbnail" />
+                                    <video>
+                                        <source src="{{ asset('storage/' . $row) }}" type="video/mp4">
+                                    </video>
                                     <button type="button" class="btn gallery_yt_video" data-toggle="modal"
                                         data-target="#exampleModal"
-                                        data-youtube-url="{{ $url[$index] }}">
+                                        data-youtube-url="{{ asset('storage/' . $row) }}">
                                         {{-- <!-- <i class="fa-regular fa-circle-play"></i>       -->
                                         <!-- <img class="play_btn_img" src="/assets/frontend/images/Achievements/play_button.png"> --> --}}
                                     </button>

@@ -314,9 +314,11 @@ class PageController extends Controller
                     'is_active' => 'required|boolean',
 
                     'image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                    'video.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    // 'video.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
-                    'url.*' => 'required',
+                    'video.*' => 'nullable|mimes:mp4,mkv,avi,mov,wmv|max:15360', // 5120 KB = 5 MB
+
+                    // 'url.*' => 'required',
     
                     'meta_title' => 'required|max:255',
                     'meta_description' => 'required|max:255',
@@ -375,7 +377,7 @@ class PageController extends Controller
                 $newvideo = [];
                 if ($request->has('video')) {
                     foreach ($request->file('video') as $index => $file) {
-                        $imagePath_v = $file->store('assets/images', 'public');
+                        $imagePath_v = $file->store('assets/videos', 'public');
                         $newvideo[$index] = $imagePath_v;
                     }
                 }
@@ -403,7 +405,7 @@ class PageController extends Controller
                 }
 
                 $content['video_image'] = $video;
-                $content['url'] = $request->input('url') ?? [];
+                // $content['url'] = $request->input('url') ?? [];
 
 
                 $page->title = $request->title;
@@ -435,6 +437,9 @@ class PageController extends Controller
 
                     'image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
                     'img_title.*' => 'required',
+
+                    'video.*' => 'nullable|mimes:mp4,mkv,avi,mov,wmv|max:15360', // 5120 KB = 5 MB
+                    'video_title.*' => 'required',
     
                     'meta_title' => 'required|max:255',
                     'meta_description' => 'required|max:255',
@@ -493,7 +498,7 @@ class PageController extends Controller
                 $newvideo = [];
                 if ($request->has('video')) {
                     foreach ($request->file('video') as $index => $file) {
-                        $imagePath_v = $file->store('assets/images', 'public');
+                        $imagePath_v = $file->store('assets/videos', 'public');
                         $newvideo[$index] = $imagePath_v;
                     }
                 }

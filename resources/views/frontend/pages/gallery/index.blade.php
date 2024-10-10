@@ -37,9 +37,11 @@
 
             @foreach ($video_image as $index => $row)
                 <div class="gallery-video-item item col-md-3">
-                    <img src="{{ asset('storage/' . $row) }}" />
+                    <video>
+                        <source src="{{ asset('storage/' . $row) }}" type="video/mp4">
+                    </video>
                     <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="{{ $url[$index] }}"></button>
+                        data-youtube-url="{{ asset('storage/' . $row) }}"></button>
                 </div>
             @endforeach
 
