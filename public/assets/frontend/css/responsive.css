@@ -359,7 +359,7 @@
     }
 
     .achievements_section {
-        background: linear-gradient(180deg, #218ee3 0%, #218ee3 7%, #ffffff 7%, #ffffff 12%, #59a246 12%, #59a246 100%);
+        background: linear-gradient(180deg, #218ee3 0%, #218ee3 40%, #59a246 40%, #59a246 100%);
     }
 
     .achievement_card .card-body {
@@ -548,7 +548,7 @@
     .view-more { 
         font-size: 14px;
     }
-    
+
     .home_his_work .view-more {
         position: relative;
         top: 10px;

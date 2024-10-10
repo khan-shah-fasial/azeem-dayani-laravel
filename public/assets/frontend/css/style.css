@@ -2253,6 +2253,7 @@ div.masonry_gallery.achievement_page_gallery {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 16px;
 }
 
 .video_div button.btn.gallery_yt_video {

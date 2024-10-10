@@ -41,7 +41,7 @@
                     <img src="/assets/frontend/images/Achievements/Headphone_new_2.png"
                         class="left-scaleup-element img-fluid headphones_icon left-scaleup-element" alt="Headphones" />
                 </div>
-                <div class="col-md-9 pb-md-5">
+                <div class="col-md-9 pb-md-5 d-flex flex-md-row flex-column">
                     <div class="float-up">
                         <div class="row pb-md-5">
                             <!-- Add your achievement items here -->
@@ -74,8 +74,8 @@
                     </div>
 
                     @foreach ($video_image as $index => $row)
-                        <div class="col-md-12 mx-auto row pt-md-5" id="gallery_videos">
-                            <div class="item col-md-4 d-flex flex-column">
+                        <div class="col-md-4 mx-auto row pt-md-5" id="gallery_videos">
+                            <div class="item col-12 d-flex flex-column">
                                 <div class="video_div">
                                     <img class="youtube_bg_img" src="{{ asset('storage/' . $row) }}"
                                         alt="Video 1 Thumbnail" />
