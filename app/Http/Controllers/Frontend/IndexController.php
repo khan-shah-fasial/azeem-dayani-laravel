@@ -214,13 +214,13 @@ class IndexController extends Controller
 
         $image = $decoded_data->image ?? '';
         $video_image = $decoded_data->video_image ?? '';
-        $url = $decoded_data->url ?? '';
+        // $url = $decoded_data->url ?? '';
         $img_title = $decoded_data->img_title ?? '';
         $video_title = $decoded_data->video_title ?? '';
         $sec_title = $decoded_data->sec_title ?? '';
         $sec_description = $decoded_data->sec_description ?? '';
 
-        return view('frontend.pages.achivements.index',compact('page','image','video_image','url','img_title','video_title','sec_title','sec_description'));
+        return view('frontend.pages.achivements.index',compact('page','image','video_image','img_title','video_title','sec_title','sec_description'));
     }
 
     public function gallery_page(){
@@ -234,9 +234,9 @@ class IndexController extends Controller
         
         $image = $decoded_data->image ?? '';
         $video_image = $decoded_data->video_image ?? '';
-        $url = $decoded_data->url ?? '';
+        // $url = $decoded_data->url ?? '';
         
-        return view('frontend.pages.gallery.index',compact('page','image','video_image','url'));
+        return view('frontend.pages.gallery.index',compact('page','image','video_image'));
     }
 
     public function contact_us_page(){

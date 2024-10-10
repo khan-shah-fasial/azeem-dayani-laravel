@@ -94,6 +94,7 @@
         <div class="col-sm-12 form-group mb-3">
             <h3>Video Section </h3>
             <hr>
+            <span><strong>Note :</strong> Each upload can include videos with a total size of up to 30 MB.</span>
         </div>
 
         @if (!empty($video))
