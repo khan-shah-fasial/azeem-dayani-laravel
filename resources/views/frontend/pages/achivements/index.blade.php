@@ -77,9 +77,7 @@
                         <div class="col-md-4 mx-auto row pt-md-5" id="gallery_videos">
                             <div class="item col-12 d-flex flex-column">
                                 <div class="video_div">
-                                    <video>
-                                        <source src="{{ asset('storage/' . $row) }}" type="video/mp4">
-                                    </video>
+                                    <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />
                                     <button type="button" class="btn gallery_yt_video" data-toggle="modal"
                                         data-target="#exampleModal"
                                         data-youtube-url="{{ asset('storage/' . $row) }}">

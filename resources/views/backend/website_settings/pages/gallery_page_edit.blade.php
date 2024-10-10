@@ -8,7 +8,8 @@
 
             $image = $decoded_data["image"] ?? '';
             $video = $decoded_data["video_image"] ?? '';
-            $url = $decoded_data["url"] ?? '';
+            $video_img = $decoded_data["video_image_i"] ?? '';
+            // $url = $decoded_data["url"] ?? '';
 
             $meta_title = $page->meta_title ?? '';
             $meta_description = $page->meta_description ?? '';
@@ -16,7 +17,8 @@
             // If content is empty, set default empty values
             $image = '';
             $video = '';
-            $url = '';
+            $video_img = '';
+            // $url = '';
 
             $meta_title = '';
             $meta_description = '';
@@ -121,6 +123,21 @@
                             @endif
                         </div>
 
+                        <div class="form-group row mb-3 ">
+                            <div class="col-8 form-group mb-3">
+                                <label>video Image <span class="red">*</span></label>
+                                <input class="form-control" type="file" id="video_img" name="video_img[]"
+                                accept=".jpg,.jpeg,.png,.webp" @if (empty($video_img[$index])) required @endif>
+                                <input type="hidden" name="video_img_count[]" value="1">
+                            </div>
+                            @if (!empty($video_img))
+                                <div class="div-preview-video col-3 form-group mb-3">
+                                    <input type="hidden" name="existing_video_img[]" value="{{ $video_img[$index] }}">
+                                    <img width="180" src="{{ asset('storage/' . $video_img[$index]) }}"> "
+                                </div>
+                            @endif
+                        </div>
+
                         {{-- <div class="col-sm-6 form-group mb-3">
                             <label>Video URL <span class="red">*</span></label>
                             <input class="form-control" type="text" id="url" name="url[]" value="{{ $url[$index] }}"
@@ -148,6 +165,16 @@
                             accept=".mp4,.mkv,.avi,.mov,.wmv" required>
                             <input type="hidden" name="video_count[]" value="1">
                         </div>
+
+                        <div class="form-group row mb-3 ">
+                            <div class="col-8 form-group mb-3">
+                                <label>video Image <span class="red">*</span></label>
+                                <input class="form-control" type="file" id="video_img" name="video_img[]"
+                                accept=".jpg,.jpeg,.png,.webp" required>
+                                <input type="hidden" name="video_img_count[]" value="1">
+                            </div>
+                        </div>
+
                         {{-- <div class="col-sm-6 form-group mb-3">
                             <label>Video URL <span class="red">*</span></label>
                             <input class="form-control" type="text" id="url" name="url[]"

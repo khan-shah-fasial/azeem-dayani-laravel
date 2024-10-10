@@ -314,7 +314,7 @@ class PageController extends Controller
                     'is_active' => 'required|boolean',
 
                     'image.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
-                    // 'video.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+                    'video_img.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
 
                     'video.*' => 'nullable|mimes:mp4,mkv,avi,mov,wmv|max:15360', // 5120 KB = 5 MB
 
@@ -405,6 +405,43 @@ class PageController extends Controller
                 }
 
                 $content['video_image'] = $video;
+
+
+                $oldData_video_img = $request->input('existing_video_img') ?? [];
+
+                // Storing new images
+                $newvideo_img = [];
+                if ($request->has('video_img')) {
+                    foreach ($request->file('video_img') as $index => $file) {
+                        $imagePath_v_i = $file->store('assets/images', 'public');
+                        $newvideo_img[$index] = $imagePath_v_i;
+                    }
+                }
+                
+                // Handling image count and merging old/new images
+                $video_img = [];
+                $video_imgCount = count($request->input('video_img_count'));
+                
+                for ($key = 0; $key < $video_imgCount; $key++) {
+                    if (isset($newvideo_img[$key])) {
+                        $video_img[$key] = $newvideo_img[$key];
+
+
+                    } else {
+                        // $oldImageKey = "oldData[$key]";
+                        
+                        if (isset($oldData_video_img[$key])) {
+
+                            $video_img[$key] = $oldData_video_img[$key];
+                        } else {
+
+                            $video_img[$key] = $oldData_video_img[$key + 1] ?? null;
+                        }
+                    }
+                }
+
+                $content['video_image_i'] = $video_img;
+
                 // $content['url'] = $request->input('url') ?? [];
 
 
@@ -440,6 +477,7 @@ class PageController extends Controller
 
                     'video.*' => 'nullable|mimes:mp4,mkv,avi,mov,wmv|max:15360', // 5120 KB = 5 MB
                     'video_title.*' => 'required',
+                    'video_img.*' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
     
                     'meta_title' => 'required|max:255',
                     'meta_description' => 'required|max:255',
@@ -536,6 +574,43 @@ class PageController extends Controller
                 // exit();
 
                 $content['video_image'] = $video;
+
+                $oldData_video_img = $request->input('existing_video_img') ?? [];
+
+                // Storing new images
+                $newvideo_img = [];
+                if ($request->has('video_img')) {
+                    foreach ($request->file('video_img') as $index => $file) {
+                        $imagePath_v_i = $file->store('assets/images', 'public');
+                        $newvideo_img[$index] = $imagePath_v_i;
+                    }
+                }
+                
+                // Handling image count and merging old/new images
+                $video_img = [];
+                $video_imgCount = count($request->input('video_img_count'));
+                
+                for ($key = 0; $key < $video_imgCount; $key++) {
+                    if (isset($newvideo_img[$key])) {
+                        $video_img[$key] = $newvideo_img[$key];
+
+
+                    } else {
+                        // $oldImageKey = "oldData[$key]";
+                        
+                        if (isset($oldData_video_img[$key])) {
+
+                            $video_img[$key] = $oldData_video_img[$key];
+                        } else {
+
+                            $video_img[$key] = $oldData_video_img[$key + 1] ?? null;
+                        }
+                    }
+                }
+
+                $content['video_image_i'] = $video_img;
+
+
                 $content['url'] = $request->input('url') ?? [];
 
                 $content["img_title"] = $request->input('img_title') ?? [];
