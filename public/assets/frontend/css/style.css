@@ -2007,9 +2007,18 @@ footer {
     z-index: 1;
 }
 
+#about_us_page .vision_main_div {
+    display: none;
+}
+
+#about_us_page .music-icon {
+    display: none;
+}
+
+
 .vision_main_section {
-    background: linear-gradient(180deg, #fff 56%, #218ee3 25%);
-    padding: 8vw 0 20vw;
+    background: linear-gradient(180deg, #fff 100%, #218ee3 0%);
+    padding: 8vw 0 15vw;
     position: relative;
     z-index: 1;
 }
@@ -2028,8 +2037,14 @@ footer {
 
 .vision_main_section .film_music_zig_zag_img_div {
     position: absolute;
-    width: 90vw;
-    top: -11vw;
+    width: 100%;
+    top: -15vw;
+    text-align: center;
+    left: -30vw;
+}
+
+.vision_main_section .film_music_zig_zag_img_div .film_music_zig_zag_img {
+    width: 70vw;
 }
 
 .vision_main_section .slidercircle {
