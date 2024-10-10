@@ -716,7 +716,7 @@ function createIcon(container) {
 
   // Start icons at a random horizontal position, at the bottom
   icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
-  icon.style.bottom = `50px`; // Start from slightly below the container
+  icon.style.bottom = `0px`; // Start from slightly below the container
 
   return icon;
 }
@@ -758,7 +758,7 @@ function animateIcon(icon, container) {
 
   // Animate the icon to move up randomly within the section
   timeline.to(icon, {
-    y: randomY, // Set y movement based on data-height attribute
+    y: Math.random() * -40 + "vh", // Set y movement based on data-height attribute // Set y movement within -30vh
     x: randomX, // Small zigzag movement for variation
     opacity: 1, // Fade in to full opacity
     scale: 1, // Grow to full size
@@ -1322,11 +1322,47 @@ function setupAboutSectionAnimation() {
     }
   );
 
+  function initMobileAnimation() {
+    const isMobile = window.innerWidth <= 768; // Define mobile view (width <= 768px)
+  
+    if (isMobile) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Trigger GSAP animation when the element is in the viewport
+            gsap.fromTo(
+              ".reveal-img-toptobottom_mobile",
+              {
+                clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)", // Initial state (invisible, clipped to top)
+              },
+              {
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)", // Final state (revealed from top to bottom)
+                duration: 2,
+                ease: "power2.inOut",
+              }
+            );
+            observer.unobserve(entry.target); // Stop observing once the animation is triggered
+          }
+        });
+      });
+  
+      // Target the image element for intersection observer
+      const target = document.querySelector(".reveal-img-toptobottom_mobile");
+      if (target) {
+        observer.observe(target); // Start observing the target
+      }
+    }
+  }
+  
+  // Run the function on page load
+  window.addEventListener("load", initMobileAnimation);
+  
+
   // Step 2: Animate .about_main_name (from right to left)
   tl.fromTo(
     ".about_main_name",
     { x: "100%", opacity: 0 }, // Starting state (offscreen to the right and transparent)
-    { x: "0%", opacity: 1, duration: 0.6, ease: "back.out(1.7)" } // Ending state (onscreen and fully visible)
+    { x: "0%", opacity: 1, duration: 0.6, ease: "back.out(2)" } // Ending state (onscreen and fully visible)
   );
 
   // Step 3: Animate .animated-heading-about with SplitText effect
@@ -1521,10 +1557,17 @@ const tl5 = gsap.timeline({
   },
 });
 gsap.utils.toArray(".award_main_div").forEach((div, index) => {
+  const isMobile = window.innerWidth <= 768; // Define mobile view (width <= 768px)
+
   tl5.fromTo(
     div,
-    { opacity: 0, y: "20%" }, // Start state
-    { opacity: 1, y: 0, duration: 1, stagger: 0.3 }, // End state with stagger
+    { opacity: 0, y: "40%" }, // Start state
+    { 
+      opacity: 1, 
+      y: 0, 
+      duration: isMobile ? 0.2 : 1, // Use 0.3s duration for mobile, 1s for desktop
+      stagger: 0.3 
+    },
     "<+=0.1" // Staggering effect
   );
 });

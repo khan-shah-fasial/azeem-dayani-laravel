@@ -20,7 +20,9 @@
                 <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png" />
                 <div class="col-md-7">
                     <img src="{{ asset('storage/' . $data['ab_img_1']) }}" alt="azeem dayani"
-                        class="reveal-img-toptobottom azeem_big_photo" />
+                        class="reveal-img-toptobottom azeem_big_photo d-md-block d-none" />
+                    <img src="{{ asset('storage/' . $data['ab_img_1']) }}" alt="azeem dayani"
+                        class="reveal-img-toptobottom_mobile azeem_big_photo d-md-none d-block" />
                 </div>
                 <div class="col-md-4 about_main_div animate-about-first-section">
                     <div class="col-md-12 about">
