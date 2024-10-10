@@ -168,7 +168,7 @@
     .film_link:hover + .film_img, .film_link:focus + .film_img {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: scale(1.5) rotate(15deg) !important ;
+        transform: scale(2.5) rotate(15deg) !important ;
         transition: all 0.5s ease;
     }
 
