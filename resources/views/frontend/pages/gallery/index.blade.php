@@ -39,7 +39,8 @@
                 <div class="gallery-video-item item col-md-3">
                     <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />
                     <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="{{ asset('storage/' . $row) }}"></button>
+                        data-youtube-url="{{ asset('storage/' . $row) }}"
+                        data-title=""></button>
                 </div>
             @endforeach
 

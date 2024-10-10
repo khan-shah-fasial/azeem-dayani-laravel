@@ -41,9 +41,12 @@
     $(document).ready(function() {
         $(".gallery_yt_video").click(function() {
             var url = $(this).attr("data-youtube-url");
+            var title = $(this).attr("data-title");
             $("#videoIframe").attr("src", url);
+            $("#videoModalLabel").html(title ? title : ''); // Set the title if available, otherwise clear
             $("#videoModal").modal("show");
         });
+
 
         $(".close").click(function() {
             $("#videoModal").modal("hide");
