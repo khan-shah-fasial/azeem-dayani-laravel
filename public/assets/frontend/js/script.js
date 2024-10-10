@@ -158,18 +158,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const container = document.querySelector(containerId);
       if (container) {
         // Check if the container exists
+        container.innerHTML = ''; // Clear any existing bars
         for (let i = 0; i < count; i++) {
           const left = i * spacing + 1;
           const anim = Math.floor(Math.random() * 75 + 500);
           const height = Math.floor(Math.random() * 25 + 30);
-
+  
           container.innerHTML += `<div class="bar" style="left:${left}vw; animation-duration:${anim}ms; height:${height}vw"></div>`;
         }
-      } else {
-        // console.log(`${containerId} does not exist.`);
       }
     }
-
+  
+    // Check screen width to adjust bar count for #bars8 and #bars9 in mobile view
+    const isMobile = window.innerWidth < 768;
+  
     // Create bars for each container
     createBars("#bars1", 120, 0.3);
     createBars("#bars2", 120, 0.3);
@@ -178,10 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
     createBars("#bars5", 80, 0.3);
     createBars("#bars6", 57, 0.3);
     createBars("#bars7", 57, 0.3);
-    createBars("#bars8", 57, 0.3);
-    createBars("#bars9", 57, 0.3);
+  
+    // Show only 20 bars for #bars8 and #bars9 in mobile view, otherwise full count
+    createBars("#bars8", isMobile ? 20 : 57, 0.3);
+    createBars("#bars9", isMobile ? 20 : 57, 0.3);
+  
     createBars("#bars10", 200, 0.8);
   }
+  
 
   createMusicBars();
 
