@@ -136,7 +136,7 @@
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
                     </div>
-                    <a class="text-decoration-none text-light" href="/about-us">View More</a>
+                    <a class="text-decoration-none text-light view-more" href="/about-us">View More</a>
 
                 </div>
             </div>

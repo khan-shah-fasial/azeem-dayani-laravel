@@ -76,11 +76,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("home_page");
   const mainLogo = document.querySelector(".main_logo");
 
-  // Disable scrolling and remove any transform on body while preloader is active
-  document.body.classList.add('no-scroll', 'no-transform');
+  // Only apply the scroll restrictions on the home page (when preloader exists)
+  if (loader && content) {
+    // Disable scrolling and remove any transform on body while preloader is active
+    document.body.classList.add('no-scroll', 'no-transform');
 
-  // Check if the loader exists
-  if (loader) {
     // Initialize GSAP Timeline
     const tl = gsap.timeline({
       onComplete: () => {
@@ -155,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
   }
+
 
   // for music lines
   // Function to create bars for music lines
