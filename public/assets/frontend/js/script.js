@@ -76,6 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const content = document.getElementById("home_page");
   const mainLogo = document.querySelector(".main_logo");
 
+  // Disable scrolling and remove any transform on body while preloader is active
+  document.body.classList.add('no-scroll', 'no-transform');
+
   // Check if the loader exists
   if (loader) {
     // Initialize GSAP Timeline
@@ -86,6 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
           content.style.display = "block";
         }
         loader.style.display = "none";
+
+        // Re-enable scrolling and reset body transformations after preloader
+        document.body.classList.remove('no-scroll', 'no-transform');
       },
     });
 
@@ -127,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "power3.out",
         },
         "-=0.5" // Overlap with preloader fade-out
-      ); // Overlap with preloader fade-out
+      );
     }
 
     // Check and animate header if it exists
@@ -146,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "back.out",
         },
         "-=0.5" // Overlap with preloader fade-out
-      ); // Overlap with preloader fade-out
+      );
     }
   }
 
@@ -1742,3 +1748,12 @@ ScrollTrigger.addEventListener("refresh", function () {
 // потому что могли быть добавлены отступы и т. д.
 
 ScrollTrigger.refresh();
+
+
+document.querySelector('.menu-trigger').addEventListener('change', function() {
+  if (this.checked) {
+    document.body.classList.add('no-scroll', 'no-transform');
+  } else {
+    document.body.classList.remove('no-scroll', 'no-transform');
+  }
+});

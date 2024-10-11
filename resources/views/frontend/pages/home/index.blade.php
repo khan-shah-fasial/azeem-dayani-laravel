@@ -136,7 +136,7 @@
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
                     </div>
-                    <a class="decoration-underline" href="/about-us">View More</a>
+                    <a class="text-decoration-none text-light" href="/about-us">View More</a>
 
                 </div>
             </div>
@@ -162,7 +162,7 @@
                     <div class="d-flex flex-column align-items-start">
                         <h2 class="animated-heading section-heading">Achievements</h2>
                         <div class="animated-para section_contents text-start para_font">{!! $data['achivements_content'] !!}</div>
-                        <a href="{{ url(route('achievements')) }}" class="view-more mt-md-2 text-decoration-underline">View More..</a>
+                        <a href="{{ url(route('achievements')) }}" class="view-more mt-md-2 text-decoration-none">View More..</a>
                     </div>
                 </div>                
             </div>
@@ -192,7 +192,7 @@
                 </div>
                 <div class="col-md-10 mx-auto animated-para section_contents para_font">
                     {!!  $data['ows_content'] !!}
-                    <a href="{{ url(route('works')) }}" class="view-more py-md-4 text-decoration-underline">View More..</a>
+                    <a href="{{ url(route('works')) }}" class="view-more py-md-4 text-decoration-none">View More..</a>
                 </div>                    
             </div>
             {{--
