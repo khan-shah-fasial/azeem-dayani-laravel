@@ -135,6 +135,10 @@
         top: 10px;
     }
 
+    .zip_zap_bg_img_container .view-more {
+        padding: 0px 12px;
+    }
+
     #bars2 { 
         top: -20px; 
         height: 40px;
@@ -209,6 +213,10 @@
 
     .non_film_music .film_list li { 
         margin-top: 10px;
+    }
+
+    .slidercircle {
+        display: none;
     }
 
     /* home page end */
@@ -572,6 +580,10 @@
     
     .view-more { 
         font-size: 14px;
+    }
+
+    .zip_zap_bg_img_container .view-more {
+        padding: 0px 12px;
     }
 
     .home_his_work .view-more {
