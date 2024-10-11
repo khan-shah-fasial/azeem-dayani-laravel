@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.to(filmImages, {
       duration: 1,
-      x: mouseX - window.innerWidth / 2,
+      x: mouseX - window.innerWidth / 1.7,
       y: mouseY - window.innerHeight / 2,
       ease: "expo.ease",
     });

@@ -40,9 +40,9 @@ Route::get('/', [IndexController::class, 'index'])->name('index');
 
 Route::get('/contact-us', [IndexController::class, 'contact_us'])->name('contact_us');
 Route::get('/about-us', [IndexController::class, 'about_us'])->name('about_us');
-Route::get('/works', [IndexController::class, 'works_page'])->name('works');
+Route::get('/his-work', [IndexController::class, 'works_page'])->name('works');
 
-Route::get('/achievements-accolades', [IndexController::class, 'achievements_page'])->name('achievements');
+Route::get('/achievements', [IndexController::class, 'achievements_page'])->name('achievements');
 Route::get('/gallery', [IndexController::class, 'gallery_page'])->name('gallery');
 Route::get('/contact-us', [IndexController::class, 'contact_us_page'])->name('contact-us');
 
