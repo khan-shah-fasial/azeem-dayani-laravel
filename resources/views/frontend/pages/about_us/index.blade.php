@@ -24,7 +24,7 @@
                     <img src="{{ asset('storage/' . $data['ab_img_1']) }}" alt="azeem dayani"
                         class="reveal-img-toptobottom_mobile azeem_big_photo d-md-none d-block" />
                 </div>
-                <div class="col-md-4 about_main_div animate-about-first-section">
+                <div class="col-lg-4 col-md-5 about_main_div animate-about-first-section">
                     <div class="col-md-12 about">
                         <div class="position-relative">
                             <!-- <img class="image_heading azeem_heading" src="/assets/frontend/images/about-us/Top_Logo.png"> -->
