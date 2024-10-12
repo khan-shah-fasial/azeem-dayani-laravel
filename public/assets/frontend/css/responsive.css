@@ -801,3 +801,84 @@
         width: 50%;
     }
 }
+
+
+@media screen and (min-width:992px) and  (max-width:1100px) {
+ 
+    p { 
+        font-size: 14px;
+    }
+
+    .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
+        transform: translateY(-0.9vw) rotate(-45deg);
+    }
+
+    .zip_zap_bg_img { 
+        margin-top: 1.29vw;
+    }
+
+    .view-more {
+        font-size: 14px;
+    }
+
+    .footer_link { 
+        font-size: 16px;
+    }
+
+    /* about us page */
+
+    .about_azeem_dayani {
+        padding-bottom: 38vw;
+    }
+
+    .music_director_composer_main_div:after { 
+        bottom: -30vw;
+    }
+
+    .azeem_stadium_img { 
+        bottom: -6vw;
+    }
+
+    /* achievements page */
+
+    .achievements_section {
+        background: linear-gradient(180deg, #218ee3 0vw, #218ee3 75vw, #ffffff 75vw, #ffffff 95vw, #59a246 95vw, #59a246 100%);
+    }
+
+    .award_name { 
+        font-size: 2.4vw;
+        line-height: 2.3vw;
+    }
+
+    .achievement_card img {  
+        width: 90% !important;
+    }
+
+    .achievements_section .award_main_div {
+        margin-top: 0px !important;
+    }
+
+    /* contact us page */
+
+    .form_heading { 
+        font-size: 5vw;
+    }
+
+    .contact_buffer_div { 
+        top: 0vw;
+    }
+
+    .buffering_text {
+        font: 7.7vw 'tungsten'; 
+        left: 8vw;
+        top: 6vw; 
+    }
+
+    img.contact_headphone_image {
+        width: 50%;
+    }
+
+    .contact_form .form-control { 
+        font-size: 1.5vw;
+    }
+}
