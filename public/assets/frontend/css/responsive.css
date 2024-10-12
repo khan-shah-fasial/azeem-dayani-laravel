@@ -566,20 +566,87 @@
     
 }
 
-@media screen and (max-width:768px) and  (max-width:991px) {
+@media screen and (min-width:768px) and  (max-width:991px) {
     p {  
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 1.5rem !important;
     }
 
+    main>section:nth-child(1) {
+        padding-top: 1em !important;
+    }
+
     .preloader svg { 
         width: 95%;
     }
 
+    .header {
+        position: relative;        
+        background: #5aa236;
+        height: 60px;
+    }
+
+    header>a { 
+        position: relative;
+        top: 14px;
+    }
+
+    header .footer_logo_text {
+        font-size: 22px;
+    }
+
+    .hamburger-menu {
+        width: 30px;
+        height: 25px;
+        top: 14px;
+        right: 14px;
+    }
+
+    .hamburger-menu span:nth-child(1), .hamburger-menu span:nth-child(3) {
+        width: 20px;
+    }
+
+    .hamburger-menu span {
+        width: 28px;
+        height: 5px;
+    }
+
+    .menu-trigger:checked~.hamburger-menu span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg); 
+    }
+    .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg); 
+    }
+    
+    .menu-links {
+        font-size: 24px;
+        padding: 10px 12px;
+    }
+    .menu-links li {
+        text-align: center;
+        margin: 28px 0;
+    }
+    .menu-links li a {
+        letter-spacing: 2px;
+        line-height: 40px;
+    }
+
+    .zip_zap_bg_img { 
+        margin-top: 10px;
+    }
+
+    .para_font, .para_font p {
+        margin-bottom: 5px !important;
+    }
     
     .view-more { 
         font-size: 14px;
+        text-decoration: underline;
+    }
+
+    .middle_description {
+        padding-top: 30px;
     }
 
     .zip_zap_bg_img_container .view-more {
@@ -588,7 +655,16 @@
 
     .home_his_work .view-more {
         position: relative;
-        top: 10px;
+        top: 15px;
+    }
+
+    .reveal-img {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .section_contents.para_font { 
+        padding-top: 30px;
     }
 
 
@@ -603,13 +679,14 @@
     .film_link:hover + .film_img, .film_link:focus + .film_img {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: scale(3.5) rotate(15deg) !important ;
+        transform: scale(1.5) rotate(15deg) !important ;
         transition: all 0.5s ease;
     }
 
     
     .film_list li { 
         height: auto;
+        margin-bottom: 10px;
     }
 
     .non_film_music .film_list li { 
@@ -644,5 +721,83 @@
             opacity: 1;
             height: 50px;
         }
+    }
+
+
+    /* about us page */
+
+    .about_main_div .footer_logo_text { 
+        margin-top: 0px;
+    }
+
+    .music_director_composer_main_div:after { 
+        bottom: -18em;
+    }
+
+    .azeem_stadium_img_div { 
+        position: absolute;
+        right: 0px;
+        bottom: 20px;
+    }
+
+    .about_azeem_dayani {
+        padding-bottom: 22em;
+    }
+
+    /* works page */
+
+    #works_page .film_row .card-title, #works_page .non_film_row .card-title,
+    .award_name { 
+        font-size: 24px;
+        margin-bottom: 0px;
+        line-height: 26px;
+    }
+
+    #works_page .card_main:nth-last-of-type(3) .card-body .card-text,
+    #works_page .card_main:nth-last-of-type(3) .card-title {
+        color: #fff;
+        /* Set text color to white */
+    }
+
+    /* achievements page */
+
+    .achievements_section .award_main_div:nth-last-of-type(1), 
+    .achievements_section .award_main_div:nth-last-of-type(2) {
+        margin-top: 0px;
+    }
+
+    /* gallery page */
+
+    div.masonry_gallery {
+        column-width: 18em;
+        column-gap: 1em;
+    }
+
+    div.masonry_gallery .masonry_gallery_div { 
+        margin-bottom: 1em;
+    }
+
+    /* contact us page */
+    
+    .form_heading { 
+        font-size: 46px;
+    }
+
+    .contact_form .form-control { 
+        font-size: 14px;
+    }
+
+    .contact_buffer_div { 
+        top: 0px;
+    }
+
+    .buffering_text {
+        font: 4em 'tungsten';  
+        left: 1em;
+        top: 50px; 
+    }
+
+    img.contact_headphone_image {
+        width: 50%;
     }
 }

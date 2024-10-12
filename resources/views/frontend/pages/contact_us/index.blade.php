@@ -26,7 +26,7 @@
                         <div class="zip_zap_bg_img_container">
                             <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png" />
                         </div>
-                        <div class="col-md-10 contact_form contact_form_animate p-md-5">
+                        <div class="col-lg-10 col-md-12 contact_form contact_form_animate p-lg-5 p-md-4">
                             <h4 class="form_heading">get in touch</h4>
                             <form id="add_contact_us_form" action="{{ route('form.save') }}" method="post"
                             enctype="multipart/form-data">

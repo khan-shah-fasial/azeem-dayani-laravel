@@ -47,7 +47,7 @@ html.lenis body {
     margin-top: -1px
 }
 
-.no-scroll {
+/* .no-scroll {
     overflow: hidden;
     position: fixed !important;
     width: 100%;
@@ -57,7 +57,7 @@ html.lenis body {
 
 .no-transform {
     transform: none !important; 
-}
+} */
 
 
 /* .header{
@@ -1385,9 +1385,22 @@ a.decoration-underline {
 .description {
     font-size: 1vw;
     line-height: 1.5;
-    padding: 0vw 0vw 1.04vw;
+    /* padding: 0vw 0vw 1.04vw; */
     /* 20px converted to vw */
 }
+
+.para_font {
+    font-family: 'montserrat';
+    color: #fff;
+    font-size: 1vw;
+    line-height: 1.6em;
+    margin-bottom: 0 !important;
+}
+
+.para_font p {
+    margin-bottom: 1vw !important;
+}
+
 
 .middle_description .col-md-4 .animated-heading>div>div {
     left: 1.7vw;
@@ -1878,7 +1891,7 @@ footer {
     position: relative;
     bottom: 4vw;
     right: 15vw;
-    margin-top: 170px;
+    margin-top: 0px;
 }
 
 .about {
@@ -2308,13 +2321,13 @@ div.masonry_gallery.achievement_page_gallery {
     padding: 1vw 0 0;
 }
 
-#works_page .col-md-4:last-of-type .card-body .card-text,
-#works_page .col-md-4:last-of-type .card-title,
-#works_page .col-md-4:nth-last-of-type(1) .card-body .card-text,
-#works_page .col-md-4:nth-last-of-type(1) .card-title .col-md-4:nth-last-of-type(2) .card-body .card-text,
-#works_page .col-md-4:nth-last-of-type(2) .card-title,
-#works_page .col-md-4:nth-last-of-type(3) .card-body .card-text,
-#works_page .col-md-4:nth-last-of-type(3) .card-title {
+#works_page .card_main:last-of-type .card-body .card-text,
+#works_page .card_main:last-of-type .card-title,
+#works_page .card_main:nth-last-of-type(1) .card-body .card-text,
+#works_page .card_main:nth-last-of-type(1) .card-title .card_main:nth-last-of-type(2) .card-body .card-text,
+#works_page .card_main:nth-last-of-type(2) .card-title,
+#works_page .card_main:nth-last-of-type(3) .card-body .card-text,
+#works_page .card_main:nth-last-of-type(3) .card-title {
     color: #000;
     /* Set text color to white */
 }
@@ -3105,14 +3118,6 @@ button.fancybox-button.fancybox-button--zoom {
     display: none !important;
 }
 
-
-.para_font {
-    font-family: 'montserrat';
-    color: #fff;
-    font-size: 1vw;
-    line-height: 1.6em;
-    margin-bottom: 1.5rem !important;
-}
 
 .padding_left1 {
     padding-left: 1.6vw;

@@ -47,7 +47,7 @@
                             <!-- Add your achievement items here -->
 
                             @foreach ($image as $index => $row)
-                                <div class="col-md-4 mb-2 award_main_div">
+                                <div class="col-lg-4 col-md-6 col-12 mb-2 award_main_div">
                                     <a href="" class="text-decoration-none">
                                         <div class="card achievement_card">
                                             <div class="masonry_gallery achievement_page_gallery">
@@ -74,7 +74,7 @@
                     </div>
 
                     @foreach ($video_image as $index => $row)
-                        <div class="col-md-4 mx-auto row pt-md-5" id="gallery_videos">
+                        <div class="col-lg-4 col-md-6 col-12 mx-auto row pt-md-5" id="gallery_videos">
                             <div class="item col-12 d-flex flex-column">
                                 <div class="video_div">
                                     <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />

@@ -45,7 +45,7 @@
             </div>
             <div class="row film_row">
                 @foreach ($flims as $row)
-                    <div class="col-md-4 mb-md-4 mb-3">
+                    <div class="col-lg-4 col-md-6 col-12 mb-md-4 mb-3 card_main">
                         <a href="{{ $row->slug }}" target="_blank" class="card-link">
                             <div class="card">
                                 <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
@@ -70,7 +70,7 @@
             </div>
             <div class="row non_film_row">
                 @foreach ($non_flims as $row)
-                    <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
                         <a href="{{ $row->slug }}" target="_blank" class="card-link">
                             <div class="card non_film_card">
                                 <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
