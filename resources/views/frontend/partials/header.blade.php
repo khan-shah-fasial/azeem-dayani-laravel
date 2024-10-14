@@ -14,7 +14,7 @@
         <ul class="menu-links">
             <li><a href="{{ url(route('index')) }}">Home</a></li>
             <li><a href="{{ url(route('about_us')) }}">About</a></li>
-            <li><a href="{{ url(route('works')) }}">His Works</a></li>
+            <li><a href="{{ url(route('works')) }}">His Work</a></li>
             <li><a href="{{ url(route('achievements')) }}">Achievements</a></li>
             <li><a href="{{ url(route('gallery')) }}">Gallery</a></li>
             <li><a href="{{ url(route('contact-us')) }}">Contact</a></li>
