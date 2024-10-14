@@ -47,7 +47,7 @@ html.lenis body {
     margin-top: -1px
 }
 
-/* .no-scroll {
+.no-scroll {
     overflow: hidden;
     position: fixed !important;
     width: 100%;
@@ -57,7 +57,7 @@ html.lenis body {
 
 .no-transform {
     transform: none !important; 
-} */
+}
 
 
 /* .header{
@@ -3128,3 +3128,26 @@ button.fancybox-button.fancybox-button--zoom {
 }
 
 /* footer css close */
+
+@media screen and (min-width:1400px) and (max-width:1700px) {
+
+    #icon-container.middle_description {
+        background-position: -30vw -18vw !important;
+    }
+
+}
+
+@media screen and (min-width:1700px) and (max-width:1900px) {
+
+    #icon-container.middle_description {
+        background-position: -14vw -16vw !important;
+    }
+
+}
+
+@media screen and (min-width:1901px) {
+    #icon-container.middle_description {
+        background-position: -10vw -13vw !important;
+        background-size: 100% !important;
+    }
+}

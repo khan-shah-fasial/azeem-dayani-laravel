@@ -46,7 +46,7 @@
             <div class="row film_row">
                 @foreach ($flims as $row)
                     <div class="col-lg-4 col-md-6 col-12 mb-md-4 mb-3 card_main">
-                        <a href="{{ $row->slug }}" target="_blank" class="card-link">
+                        <a href="{{ $row->slug }}" target="_blank" class="card-link text-decoration-none">
                             <div class="card">
                                 <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
                                     alt="Kapoor &amp; Sons" />
@@ -71,7 +71,7 @@
             <div class="row non_film_row">
                 @foreach ($non_flims as $row)
                     <div class="col-lg-4 col-md-6 col-12 mb-4">
-                        <a href="{{ $row->slug }}" target="_blank" class="card-link">
+                        <a href="{{ $row->slug }}" target="_blank" class="card-link text-decoration-none">
                             <div class="card non_film_card">
                                 <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
                                     alt="Kapoor &amp; Sons" />

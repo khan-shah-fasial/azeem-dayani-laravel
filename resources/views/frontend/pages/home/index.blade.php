@@ -15,7 +15,7 @@
 
 @section('page.content')
     <style>
-        .footer_logo_text {
+        #header .footer_logo_text {
             display: none;
         }
 
