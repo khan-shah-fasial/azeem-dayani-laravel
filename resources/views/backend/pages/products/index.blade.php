@@ -35,7 +35,7 @@
                 <td>{{$i++}}</td>
                 <td>{{$row->title}}</td>
                 <td>{{$row->slug}}</td>
-                <td>{{ ($row->categories_id == 1) ? 'Flim Albums' : 'Non Flim Albums' }}</td>
+                <td>@if($row->categories_id == 1) Flim Albums @elseif ($row->categories_id == 2) Non Flim Albums @else OTT @endif</td>
                 <td>
                     @if($row->is_active == 1)
                     <span class="badge bg-success" title="Inactive">Active</span>

@@ -113,6 +113,16 @@ class IndexController extends Controller
                 : [];
         });
 
+        $ott_catg_list = isset($decoded_data->ott_catg) ? $decoded_data->ott_catg : [];
+        $data['ott_catg'] = Cache::remember('ott_catg', 60, function () use ($ott_catg_list) {
+            return !empty($ott_catg_list)
+                ? Product::where('is_active', 1)
+                    ->whereIn('id', json_decode($ott_catg_list))
+                    ->select('title', 'slug', 'home_image')
+                    ->get()
+                : [];
+        });
+
         // Directly assign remaining data (no caching needed here)
         $data['about_content'] = $decoded_data->about_content ?? '';
         $data['banner_text'] = $decoded_data->banner_text ?? '';
@@ -199,8 +209,16 @@ class IndexController extends Controller
                 ->orderBy('id', 'asc')
                 ->get();
         });
+
+        // Cache the 'non_flims' query for 60 minutes
+        $ott = Cache::remember('ott_list', 60, function () {
+            return DB::table('products')
+                ->where('categories_id', 3)
+                ->orderBy('id', 'asc')
+                ->get();
+        });
         
-        return view('frontend.pages.works.index',compact('page','description','flims','non_flims'));
+        return view('frontend.pages.works.index',compact('page','description','flims','non_flims','ott'));
     }
 
     public function achievements_page(){

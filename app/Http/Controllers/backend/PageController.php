@@ -81,10 +81,11 @@ class PageController extends Controller
         $page = Page::where('slug', $id)->first();
         $film = Product::where('is_active', 1)->where('categories_id', 1)->get();
         $non_film = Product::where('is_active', 1)->where('categories_id', 2)->get();
+        $ott_film = Product::where('is_active', 1)->where('categories_id', 3)->get();
 
         if ($page != null) {
             if ($page_name == 'home') {
-                return view('backend.website_settings.pages.home_page_edit', compact('page', 'film', 'non_film'));
+                return view('backend.website_settings.pages.home_page_edit', compact('page', 'film', 'non_film','ott_film'));
             } elseif ($page->type == 'about_us') {
                 return view('backend.website_settings.pages.about_page_edit', compact('page'));
             } elseif ($page->type == 'contact_us') {
@@ -148,6 +149,7 @@ class PageController extends Controller
                     
                     'film_catg' => 'required|array',
                     'non_film_catg' => 'required|array',
+                    'ott_catg' => 'required|array',
 
                     'meta_title' => 'required|max:255',
                     'meta_description' => 'required|max:255',
@@ -176,6 +178,7 @@ class PageController extends Controller
                     'achivements_content' => $request->input('achivements_content'),
                     'film_catg' => json_encode($request->input('film_catg')),
                     'non_film_catg' => json_encode($request->input('non_film_catg')),
+                    'ott_catg' => json_encode($request->input('ott_catg')),
                 ];
 
                 // Handle About Image Upload

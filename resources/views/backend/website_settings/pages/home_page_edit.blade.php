@@ -28,6 +28,7 @@
 
         $film_catg = $decoded_data->film_catg ?? '';
         $non_film_catg = $decoded_data->non_film_catg ?? '';
+        $ott_catg = $decoded_data->ott_catg ?? '';
 
         $meta_title = $page->meta_title ?? '';
         $meta_description = $page->meta_description ?? '';
@@ -281,6 +282,20 @@
                     @foreach ($non_film as $film_catg_items )
                         <option value="{{ $film_catg_items->id }}" 
                             {{ in_array($film_catg_items->id,  json_decode($non_film_catg) ?? []) ? 'selected' : '' }}>
+                            {{ $film_catg_items->title }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group mb-3">
+                <label>Playlist Section OTT <span class="red">*</span></label>
+                <select class="form-select select2" name="ott_catg[]" multiple required>                    
+                    @foreach ($ott_film as $film_catg_items )
+                        <option value="{{ $film_catg_items->id }}" 
+                            {{ in_array($film_catg_items->id,  json_decode($ott_catg) ?? []) ? 'selected' : '' }}>
                             {{ $film_catg_items->title }}
                         </option>
                     @endforeach
