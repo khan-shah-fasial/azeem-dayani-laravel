@@ -208,7 +208,7 @@
     
     .non_film_section {
         position: relative;
-        height: 80vh;
+        height: auto;
     }
 
     .non_film_music .film_list li { 
