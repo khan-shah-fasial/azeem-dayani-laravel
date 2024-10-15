@@ -18,7 +18,7 @@
                     <a href="{{ url(route('about_us')) }}" class="footer_link">about</a>
                 </li>
                 <li class="list-group-item footer_list">
-                    <a href="{{ url(route('works')) }}" class="footer_link">His works</a>
+                    <a href="{{ url(route('works')) }}" class="footer_link">His work</a>
                 </li>
                 <li class="list-group-item footer_list">
                     <a href="{{ url(route('achievements')) }}" class="footer_link">Achievements</a>
