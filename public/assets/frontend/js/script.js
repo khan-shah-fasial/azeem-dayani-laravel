@@ -409,67 +409,108 @@ document.addEventListener("DOMContentLoaded", () => {
       element.innerHTML = clutter;
     });
   }
-  splitTexthalf(".heading-anim");
+  // splitTexthalf(".split-text-chars");
 
-  function animateText(selector) {
+  // function animateText(selector) {
     // General ScrollTrigger options
-    const scrollTriggerOptions = {
-      start: "top 90%", // Adjust based on when you want the animation to start
-      end: "center 80%",
-      scrub: false,
-      once: true,
-      markers: false, // Remove or set to false in production
-    };
+    // const scrollTriggerOptions = {
+    //   start: "top 90%", // Adjust based on when you want the animation to start
+    //   end: "center 80%",
+    //   scrub: false,
+    //   once: true,
+    //   markers: false, // Remove or set to false in production
+    // };
 
     // Select all elements matching the selector
-    document.querySelectorAll(selector).forEach((element) => {
-      // Animate chars within each element
-      gsap.from(element.querySelectorAll("span.char1"), {
-        y: 100,
-        opacity: 0,
-        stagger: -0.1,
-        ease: "back.out",
-        duration: 0.2,
-        scrollTrigger: {
-          ...scrollTriggerOptions,
-          trigger: element, // Set specific trigger for each element
-        },
-      });
+    // document.querySelectorAll(selector).forEach((element) => {
+    //   // Animate chars within each element
+    //   gsap.from(element.querySelectorAll("span.char1"), {
+    //     y: 100,
+    //     opacity: 0,
+    //     stagger: -0.1,
+    //     ease: "back.out",
+    //     duration: 0.2,
+    //     scrollTrigger: {
+    //       ...scrollTriggerOptions,
+    //       trigger: element, // Set specific trigger for each element
+    //     },
+    //   });
 
-      gsap.from(element.querySelectorAll("span.char2"), {
-        y: 100,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "back.out",
-        duration: 0.2,
-        scrollTrigger: {
-          ...scrollTriggerOptions,
-          trigger: element, // Set specific trigger for each element
-        },
-      });
-    });
-  }
-  animateText(".heading-anim");
+    //   gsap.from(element.querySelectorAll("span.char2"), {
+    //     y: 100,
+    //     opacity: 0,
+    //     stagger: 0.1,
+    //     ease: "back.out",
+    //     duration: 0.2,
+    //     scrollTrigger: {
+    //       ...scrollTriggerOptions,
+    //       trigger: element, // Set specific trigger for each element
+    //     },
+    //   });
+    // });
+  // }
 
-  // Function to create the scale-up animation
-  function setupScaleUpAnimation() {
-    gsap.utils.toArray(".scaleup-element").forEach((element) => {
-      gsap.fromTo(
-        element,
-        { scale: 0 }, // Starting state
-        {
-          scale: 1, // Ending state
-          scrollTrigger: {
-            trigger: element,
-            start: "top bottom", // Adjust start and end points as needed
-            end: "bottom 40%",
-            scrub: true, // Scrubs animation with scroll
-            markers: false,
-          },
-        }
-      );
+  // Headings --------------------------------------------------------------
+
+  let splitTextChars = [...document.querySelectorAll('.split-text-chars')];
+
+  splitTextChars.forEach(element => {
+    new SplitText(element, { 
+      type: "words, chars",
+      wordsClass: "word",
+      charsClass: "char-perspective" 
     });
-  }
+    
+    let mySplitText = new SplitText(element, {
+      type: "chars",
+      charsClass: "char"
+    });
+
+    // Add ScrollTrigger to ensure the animation starts when the section comes into view
+    gsap.from(mySplitText.chars, {
+      autoAlpha: 0,
+      opacity: 0,
+      rotateY: "90",
+      transform: 'translateZ(-0.8em)',
+      scale: 1.2,
+      x: "100%",
+      duration: 3,
+      ease: Expo.easeOut,
+      stagger: {
+        amount: 1.5,
+        from: "0"
+      },
+      scrollTrigger: {
+        trigger: element, // Use the element as the scroll trigger
+        start: "top 90%", // Animation will start when the top of the section is 90% down the viewport
+        end: "bottom 80%", // Adjust as needed for when the animation should end
+        once: true, // Animation will only happen once
+        markers: false, // Set to true for debugging
+      }
+    });
+  });
+
+  // animateText(".heading-anim");
+
+  // // Function to create the scale-up animation
+  // function setupScaleUpAnimation() {
+  //   gsap.utils.toArray(".scaleup-element").forEach((element) => {
+  //     gsap.fromTo(
+  //       element,
+  //       { scale: 0 }, // Starting state
+  //       {
+  //         scale: 1, // Ending state
+  //         scrollTrigger: {
+  //           trigger: element,
+  //           start: "top bottom", // Adjust start and end points as needed
+  //           end: "bottom 40%",
+  //           scrub: true, // Scrubs animation with scroll
+  //           markers: false,
+  //         },
+  //       }
+  //     );
+  //   });
+  // }
 
   setupScaleUpAnimation();
 

@@ -124,7 +124,7 @@
                         </a>
                         <h1 class="main_logo font_miedinger text-light logo_text">{{ $logo }}</h1>
                         <div class="heading-anim-main" id="text">
-                            <h2 class="heading-anim font_miedinger music_director">{{ $data['banner_text'] }}</h2>
+                            <h2 class="font_miedinger music_director split-text-chars">{{ $data['banner_text'] }}</h2>
                         </div>
                          {{--<img class="wavylines_white" src="/assets/frontend/images/Homepage/Music-Lines_2.png">--}}
                         <!-- <div class="text-white" id="bars1"></div> -->
