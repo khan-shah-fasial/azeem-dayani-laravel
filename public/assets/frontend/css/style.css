@@ -1681,11 +1681,11 @@ footer {
 }
 
 #works_page .ott_music_section {
-    background: linear-gradient(180deg, #fff 17vw, #59a246 0vw);
+    background: linear-gradient(180deg, #fff 22vw, #59a246 0vw);
 }
 
 .ott_music_section {
-    padding-top: 6vw;
+    padding-top: 0vw;
     padding-bottom: 5vw;
 }
 
@@ -1792,7 +1792,7 @@ footer {
 .non_film_section {
     position: relative;
     z-index: 8;
-    padding-bottom: 10vw;
+    padding-bottom: 0vw;
 }
 
 .non_film_music {
@@ -2495,7 +2495,7 @@ footer .top_space {
 /* works page css open */
 
 #works_page .film_section {
-    background: linear-gradient(180deg, #218ee3 90%, #fff 10%);
+    background: linear-gradient(180deg, #218ee3 92%, #fff 10%);
 }
 
 .works_headphone_heading {
@@ -2620,7 +2620,7 @@ img.film_music_lines {
 } */
 
 #works_page .non_film_section {
-    background: linear-gradient(180deg, #fff 17vw, #59a246 0vw);
+    background: linear-gradient(180deg, #fff 22vw, #59a246 0vw);
 }
 
 h3.category_title.non_film {
