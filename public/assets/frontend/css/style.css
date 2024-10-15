@@ -1689,6 +1689,10 @@ footer {
     padding-bottom: 5vw;
 }
 
+.ott_row {
+    justify-content: center;
+}
+
 /* .film_img {
     display: none;
     width: 20vw;

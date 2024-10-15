@@ -318,7 +318,20 @@
     }
 
     #works_page .non_film_section {
-        background: linear-gradient(180deg, #fff 9%, #59a246 8%);
+        background: linear-gradient(180deg, #fff 9%, #59a246 8%);        
+        padding-bottom: 0vw;
+    }
+
+    #works_page .ott_music_section {
+        background: linear-gradient(180deg, #fff 52%, #59a246 48%);
+    }
+
+    #bars11 { 
+        left: 20vw;
+    }
+
+    #bars12 { 
+        right: 14vw;
     }
 
     .headphone_heading {
@@ -348,7 +361,7 @@
     }
     
     #bars9 { 
-        right: -7rem; 
+        right: -1rem; 
     }
 
     .none_film_heading.pt5 {
