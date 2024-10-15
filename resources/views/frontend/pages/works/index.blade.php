@@ -18,12 +18,10 @@
     <style>
         footer {
             background: #59a246;
-        }
-        @media screen and (max-width: 767px) {
+        } 
             .header { 
                 background: #218ee3 !important; 
-            }
-        }
+            } 
     </style>
 
     <main id="works_page">
