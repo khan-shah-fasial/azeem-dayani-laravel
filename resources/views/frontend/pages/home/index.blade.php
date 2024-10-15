@@ -330,16 +330,16 @@
 
 
             @if(count($data['ott_catg']) > 0)
-                <div class="non_film_music">
+                <div class="non_film_music ott_music_section">
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h2 class="animated-heading section-heading pb-md-3">OTT</h2>
                             
                                 <ul class="film_list">
                                     @foreach ($data['ott_catg'] as $index => $row)
-                                    <li data-img="img{{ $index }}01">
+                                    <li data-img="img{{ $index }}51">
                                         <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                        <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
+                                        <img id="img{{ $index }}51" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
                                     </li>
                                     @endforeach
                                 </ul>

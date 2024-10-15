@@ -221,16 +221,16 @@ html::-webkit-scrollbar {
 
 #bars8 {
     position: absolute;
-    left: 2vw;
+    left: 6vw;
     height: 0.5vw;
     width: 0vw;
 }
 
 #bars9 {
     position: absolute;
-    right: -17vw;
+    right: 7vw;
     height: 0.5vw;
-    width: 38%;
+    width: 13%;
 }
 
 #bars10 {
@@ -240,6 +240,20 @@ html::-webkit-scrollbar {
     height: 1vw;
     top: 5vw;
     width: 100vw;
+}
+
+#bars11 {
+    position: absolute;
+    left: 17vw;
+    height: 0.5vw;
+    width: 0vw;
+}
+
+#bars12 {
+    position: absolute;
+    right: 17vw;
+    height: 0.5vw;
+    width: 25%;
 }
 
 #bars1 .bar {
@@ -340,6 +354,26 @@ html::-webkit-scrollbar {
     background: #40566880;
     animation: sound 0ms -800ms linear infinite alternate;
     border-radius: 50px 50px 0px 0px;
+}
+
+#bars11 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #000;
+    animation: sound2 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
+}
+
+#bars12 .bar {
+    position: absolute;
+    bottom: 0px;
+    height: 0vh;
+    width: 0.15vw;
+    background: #000;
+    animation: sound2 0ms -800ms linear infinite alternate;
+    transform: translateY(50%);
 }
 
 body.fancybox-active,
@@ -1641,6 +1675,20 @@ footer {
     top: -10vw;
 }
 
+.ott_music_section .film_img {
+    right: 10vw;
+    top: -10vw;
+}
+
+#works_page .ott_music_section {
+    background: linear-gradient(180deg, #fff 17vw, #59a246 0vw);
+}
+
+.ott_music_section {
+    padding-top: 6vw;
+    padding-bottom: 5vw;
+}
+
 /* .film_img {
     display: none;
     width: 20vw;
@@ -1739,12 +1787,12 @@ footer {
 
 .non_film_section {
     position: relative;
-    height: 105vh;
     z-index: 8;
+    padding-bottom: 10vw;
 }
 
 .non_film_music {
-    position: absolute;
+    position: static;
     z-index: 7;
     top: 1vw;
     left: 0vw;
@@ -1818,6 +1866,9 @@ footer {
     z-index: 4;
     right: 10vw;
 }
+
+
+
 
 
 

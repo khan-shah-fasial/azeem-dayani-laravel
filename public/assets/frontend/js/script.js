@@ -189,10 +189,12 @@ document.addEventListener("DOMContentLoaded", () => {
     createBars("#bars7", 57, 0.3);
   
     // Show only 20 bars for #bars8 and #bars9 in mobile view, otherwise full count
-    createBars("#bars8", isMobile ? 20 : 57, 0.3);
-    createBars("#bars9", isMobile ? 20 : 57, 0.3);
+    createBars("#bars8", isMobile ? 20 : 42, 0.3);
+    createBars("#bars9", isMobile ? 20 : 42, 0.3);
   
-    createBars("#bars10", 200, 0.8);
+    createBars("#bars10", 200, 0.8); 
+    createBars("#bars11", isMobile ? 20 : 80, 0.3);
+    createBars("#bars12", isMobile ? 20 : 80, 0.3);
   }
   
 

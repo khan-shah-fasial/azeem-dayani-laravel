@@ -92,16 +92,16 @@
         @endif
 
         @if(count($ott) > 0)
-            <section class="works_section non_film_section">
+            <section class="works_section ott_section">
                 <div
-                    class="d-flex col-md-11 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading pb-md-4 pt5">
-                    <div class="text-white" id="bars8"></div>
+                    class="d-flex col-md-11 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading ott_heading pb-md-4 pt5">
+                    <div class="text-white" id="bars11"></div>
                     <h3 class="col-md-8 text-center category_title non_film">
                         OTT
                     </h3>
-                    <div class="text-white" id="bars9"></div>
+                    <div class="text-white" id="bars12"></div>
                 </div>
-                <div class="row non_film_row">
+                <div class="row non_film_row ott_row">
                     @foreach ($ott as $row)
                         <div class="col-lg-4 col-md-6 col-12 mb-4">
                             <a href="{{ $row->slug }}" target="_blank" class="card-link text-decoration-none">
