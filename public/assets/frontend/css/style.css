@@ -402,7 +402,7 @@ body.modal-open {
 }
 
 /* heading animation */
-.heading-anim span {
+.split-text-chars span {
     display: inline-block;
 }
 
