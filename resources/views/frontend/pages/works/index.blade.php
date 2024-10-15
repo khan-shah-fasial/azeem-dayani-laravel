@@ -19,6 +19,11 @@
         footer {
             background: #59a246;
         }
+        @media screen and (max-width: 767px) {
+            .header { 
+                background: #218ee3 !important; 
+            }
+        }
     </style>
 
     <main id="works_page">
@@ -92,7 +97,7 @@
         @endif
 
         @if(count($ott) > 0)
-            <section class="works_section ott_section">
+            <section class="works_section ott_music_section">
                 <div
                     class="d-flex col-md-11 justify-content-center align-items-center mx-auto overflow-hidden none_film_heading ott_heading pb-md-4 pt5">
                     <div class="text-white" id="bars11"></div>

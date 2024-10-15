@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
     createBars("#bars9", isMobile ? 20 : 42, 0.3);
   
     createBars("#bars10", 200, 0.8); 
-    createBars("#bars11", isMobile ? 20 : 80, 0.3);
-    createBars("#bars12", isMobile ? 20 : 80, 0.3);
+    createBars("#bars11", isMobile ? 60 : 80, 0.3);
+    createBars("#bars12", isMobile ? 60 : 80, 0.3);
   }
   
 
