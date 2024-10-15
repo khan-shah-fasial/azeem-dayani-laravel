@@ -1760,8 +1760,6 @@ document.querySelector('.menu-trigger').addEventListener('change', function() {
 });
 
 
-// Headings --------------------------------------------------------------
-
 let splitTextChars = [...document.querySelectorAll('.split-text-chars')];
 
 splitTextChars.forEach(element => {
@@ -1770,32 +1768,78 @@ splitTextChars.forEach(element => {
     wordsClass: "word",
     charsClass: "char-perspective" 
   });
-  
+
   let mySplitText = new SplitText(element, {
-    type: "chars",
+    type: "words, chars",
     charsClass: "char"
   });
 
-  // Add ScrollTrigger to ensure the animation starts when the section comes into view
-  gsap.from(mySplitText.chars, {
-    autoAlpha: 0,
-    opacity: 0,
-    rotateY: "90",
-    transform: 'translateZ(-0.8em)',
-    scale: 1.2,
-    x: "100%",
-    duration: 3,
-    ease: Expo.easeOut,
-    stagger: {
-      amount: 1.5,
-      from: "0"
+  // Desktop and general behavior
+  gsap.fromTo(mySplitText.chars,
+    {
+      autoAlpha: 0, // Starting state (invisible)
+      opacity: 0,
+      rotateY: "90",
+      transform: 'translateZ(-0.8em)',
+      scale: 1.2,
+      x: "100%"
     },
-    scrollTrigger: {
-      trigger: element, // Use the element as the scroll trigger
-      start: "top 90%", // Animation will start when the top of the section is 90% down the viewport
-      end: "bottom 80%", // Adjust as needed for when the animation should end
-      once: true, // Animation will only happen once
-      markers: false, // Set to true for debugging
+    {
+      autoAlpha: 1, // Ending state (fully visible)
+      opacity: 1,
+      rotateY: "0",
+      transform: 'translateZ(0)',
+      scale: 1,
+      x: "0%",
+      duration: 3,
+      ease: Expo.easeOut,
+      stagger: {
+        amount: 1.5,
+        from: "0"
+      },
+      scrollTrigger: {
+        trigger: element,
+        start: "top 90%", // Animation starts when the top of the section hits 90% of the viewport
+        once: true, // Ensures animation happens only once
+        markers: false
+      }
+    }
+  );
+
+  // Mobile-specific behavior using matchMedia
+  ScrollTrigger.matchMedia({
+    "(max-width: 768px)": function() {
+      gsap.fromTo(mySplitText.chars,
+        {
+          autoAlpha: 0, // Ensure it starts invisible
+          opacity: 0,
+          rotateY: "90",
+          transform: 'translateZ(-0.8em)',
+          scale: 1.2,
+          x: "100%"
+        },
+        {
+          autoAlpha: 1, // End state should be visible
+          opacity: 1,
+          rotateY: "0",
+          transform: 'translateZ(0)',
+          scale: 1,
+          x: "0%",
+          duration: 3,
+          delay: 5,
+          ease: Expo.easeOut,
+          stagger: {
+            amount: 1.5,
+            from: "0"
+          },
+          scrollTrigger: {
+            trigger: element,
+            start: "top 100%", // Start when fully in view
+            once: true, // Ensure it only happens once
+            markers: false
+          }
+        }
+      );
     }
   });
 });

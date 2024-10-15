@@ -35,7 +35,7 @@
                                     <input type="text" name="full_name" class="form-control" placeholder="Name" required />
                                 </div>
                                 <div class="mb-md-4 mb-3">
-                                    <input type="text" name="mobile" class="form-control" placeholder="Contact Us" required
+                                    <input type="text" name="mobile" class="form-control" placeholder="Contact" required
                                         maxlength="12" oninput="this.value = this.value.replace(/[^0-9]/g, '');" />
                                 </div>
                                 <div class="mb-md-4 mb-3">
