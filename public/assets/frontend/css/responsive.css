@@ -817,6 +817,10 @@
         margin-top: 1.29vw;
     }
 
+    #icon-container.middle_description { 
+        background-position: -65vw -28vw !important;
+    }
+
     .view-more {
         font-size: 14px;
     }
@@ -880,5 +884,11 @@
 
     .contact_form .form-control { 
         font-size: 1.5vw;
+    }
+}
+
+@media screen and (min-width:1101px) and  (max-width:1250px) {
+    #icon-container.middle_description { 
+        background-position: -47vw -25vw !important;
     }
 }
