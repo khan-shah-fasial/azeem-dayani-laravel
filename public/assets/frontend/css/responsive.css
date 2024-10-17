@@ -211,7 +211,7 @@
         height: auto;
     }
 
-    .non_film_music .film_list li { 
+    .non_film_music .film_list li, .film_list li { 
         margin-top: 10px;
     }
 
@@ -376,7 +376,6 @@
         font-size: 28px;
         line-height: inherit;
         text-align: center;
-        padding-top: 8px;
     }
 
     /* works page end */
@@ -429,6 +428,10 @@
     .video_div { 
         width: 100%;
         padding-bottom: 15px;
+    }
+
+    .achievements_section #gallery_videos, #gallery_videos>div {
+        padding-right: 0px;
     }
 
     #gallery_videos img { 
@@ -772,11 +775,24 @@
         /* Set text color to white */
     }
 
+    .works_section .card-body {
+        padding-top: 12px;
+    }
+
     /* achievements page */
 
     .achievements_section .award_main_div:nth-last-of-type(1), 
     .achievements_section .award_main_div:nth-last-of-type(2) {
         margin-top: 0px;
+    }
+
+    button.close span {
+        font-size: 3em;
+        line-height: 30px;
+    }
+
+    .modal-title { 
+        font-size: 16px;
     }
 
     /* gallery page */
