@@ -58,6 +58,9 @@
         text-align: center;
         margin: 28px 0;
     }
+    .menu-links li:hover {
+        transform: scale(1.05) !important;
+    }
     .menu-links li a {
         letter-spacing: 2px;
         line-height: 40px;
@@ -502,6 +505,7 @@
 
     .work_with_team_heading { 
         font-size: 30px;
+        padding: 0px 12px;
     }
 
     .vision_main_section {
@@ -642,6 +646,9 @@
     .menu-links li {
         text-align: center;
         margin: 28px 0;
+    }
+    .menu-links li:hover {
+        transform: scale(1.05) !important;
     }
     .menu-links li a {
         letter-spacing: 2px;
