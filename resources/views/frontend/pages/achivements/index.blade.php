@@ -17,8 +17,11 @@
 
     <style>
         footer {
-    background: #59a246;
-}
+            background: #59a246;
+        }
+        .header { 
+            background: #218ee3 !important; 
+        }
     </style>
     <main id="achievements_page">
         <section class="animate-achievements-first-section achievements_section">

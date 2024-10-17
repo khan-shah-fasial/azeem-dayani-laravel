@@ -19,9 +19,9 @@
         footer {
             background: #59a246;
         } 
-            .header { 
-                background: #218ee3 !important; 
-            } 
+        .header { 
+            background: #218ee3 !important; 
+        } 
     </style>
 
     <main id="works_page">
