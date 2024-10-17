@@ -2976,6 +2976,7 @@ i.fa-regular.fa-circle-play {
     padding: 10px 10px 10px 10px !important;
     border: 0;
     justify-content: space-between;
+    backdrop-filter: blur(21px);
 }
 
 .modal-title {
