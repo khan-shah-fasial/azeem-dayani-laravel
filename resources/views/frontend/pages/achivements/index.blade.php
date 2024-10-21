@@ -81,13 +81,13 @@
                             <div class="item col-12 d-flex flex-column">
                                 <div class="video_div">
                                     <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />
-                                    <button type="button" class="btn gallery_yt_video" data-toggle="modal"
+                                    {{-- <button type="button" class="btn gallery_yt_video" data-toggle="modal"
                                         data-target="#exampleModal"
                                         data-youtube-url="{{ asset('storage/' . $row) }}"
                                         data-title="{{ $video_title[$index] }}">
                                         {{-- <!-- <i class="fa-regular fa-circle-play"></i>       -->
-                                        <!-- <img class="play_btn_img" src="/assets/frontend/images/Achievements/play_button.png"> --> --}}
-                                    </button>
+                                        <!-- <img class="play_btn_img" src="/assets/frontend/images/Achievements/play_button.png"> --> 
+                                    </button>--}}
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title award_name">
