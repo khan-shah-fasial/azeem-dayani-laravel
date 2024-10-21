@@ -310,7 +310,7 @@
                     </div> -->
                 
             </div>
-            <div class="non_film_music">
+            <div class="non_film_music pt-lg-4 py-3 pb-lg-5">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h2 class="animated-heading section-heading text-dark pb-md-3">Non Film</h2>
