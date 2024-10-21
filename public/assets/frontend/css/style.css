@@ -1462,7 +1462,7 @@ a.decoration-underline {
 .section-heading {
     font-family: 'photograph', cursive;
     font-size: 5vw;
-    color: white;
+    color: #fff;
     margin-top: 1.04vw;
     /* 20px converted to vw */
     /* text-transform: capitalize; */
@@ -1487,6 +1487,8 @@ a.decoration-underline {
 .section_contents.para_font{
     text-align: center;
     padding-top: 2vw;
+    position: relative;
+    z-index: 99;
 }
 
 .reveal-img .keasri_img {
@@ -1575,7 +1577,7 @@ footer {
     padding-top: 4vw;
     /* 6rem converted to vw */
     position: relative;
-    padding-bottom: 4.5vw;
+    padding-bottom: 1vw;
 }
 
 .film_section {
@@ -1683,6 +1685,10 @@ footer {
     top: -10vw;
 }
 
+.non_film_music.ott_music_section .section-heading {
+    color: #fff;
+}
+
 #works_page .ott_music_section {
     background: linear-gradient(180deg, #fff 22vw, #59a246 0vw);
 }
@@ -1765,7 +1771,11 @@ footer {
 } */
 
 .non_film_section .film_link {
-    color: #fff;
+    color: #000;
+}
+
+.ott_music_section .film_link {
+    color: #fff !important;
 }
 
 .playlist_heading_div {

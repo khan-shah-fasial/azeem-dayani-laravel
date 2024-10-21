@@ -727,7 +727,7 @@ function createIcon(container) {
   icon.classList.add("music-icon"); // Add class for styling/animation
   icon.style.position = "absolute"; // Ensure icons can move freely
   icon.style.opacity = 0; // Start hidden
-  icon.style.width = "1.6vw"; // Set width
+  icon.style.width = "20px"; // Set width
 
   // Start icons at a random horizontal position, at the bottom
   icon.style.left = `${Math.random() * 100}vw`; // Random horizontal starting point
