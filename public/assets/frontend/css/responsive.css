@@ -214,6 +214,10 @@
         height: auto;
     }
 
+    img.music-icon {
+        width: 10px !important;
+    }
+
     .non_film_music .film_list li, .film_list li { 
         margin-top: 10px;
     }
@@ -716,6 +720,10 @@
         margin-top: 10px;
     }
 
+    img.music-icon {
+        width: 15px !important;
+    }
+
     .footer_logo_text { 
         font-size: 24px;
     }
@@ -859,6 +867,10 @@
 
     .view-more {
         font-size: 14px;
+    }
+
+    img.music-icon {
+        width: 18px !important;
     }
 
     .footer_link { 
