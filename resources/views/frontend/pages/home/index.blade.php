@@ -244,7 +244,7 @@
 
 
 
-        <section data-icon-height="22vh" class="icon-container section bg_blue non_film_section pt-md-5 non_film"
+        <section data-icon-height="22vh" class="icon-container section non_film_section non_film"
             data-bg="#218ee3">
 
             <div class="side_headphone_div">
@@ -313,7 +313,7 @@
             <div class="non_film_music">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="animated-heading section-heading pb-md-3">Non Film</h2>
+                        <h2 class="animated-heading section-heading text-dark pb-md-3">Non Film</h2>
                         
                             <ul class="film_list">
                                 @foreach ($data['non_film_catg'] as $index => $row)
@@ -330,7 +330,7 @@
 
 
             @if(count($data['ott_catg']) > 0)
-                <div class="non_film_music ott_music_section">
+                <div class="non_film_music ott_music_section bg_blue pt-lg-5 pt-3">
                     <div class="row">
                         <div class="col-md-12 text-center">
                             <h2 class="animated-heading section-heading pb-md-3">OTT</h2>
