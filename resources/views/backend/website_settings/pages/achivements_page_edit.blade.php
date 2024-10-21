@@ -16,6 +16,7 @@
             // $url = $decoded_data["url"] ?? '';
             $video_title = $decoded_data["video_title"] ?? '';
             $video_img = $decoded_data["video_image_i"] ?? '';
+            $video_status = $decoded_data["video_status"] ?? '';
 
             $meta_title = $page->meta_title ?? '';
             $meta_description = $page->meta_description ?? '';
@@ -31,6 +32,7 @@
             // $url = '';
             $video_title = '';
             $video_img = '';
+            $video_status = '';
 
             $meta_title = '';
             $meta_description = '';
@@ -182,10 +184,10 @@
 
                         <label for="video_status">Video Status:</label>
                         <select name="video_status[]" id="video_status" required>
-                            <option value="1" @if(isset($video_status[$index]) && $video_status[$index] == 1) selected @endif>Show</option>
-                            <option value="0" @if(isset($video_status[$index]) && $video_status[$index] == 0) selected @endif>Hide</option>
+                            <option value="1" @if(isset($video_status[$index]) && $video_status[$index] == 1) selected @endif >Show</option>
+                            <option value="0" @if(isset($video_status[$index]) && $video_status[$index] == 0) selected @endif >Hide</option>
                         </select>
-
+                        
                         {{-- <div class="col-sm-6 form-group mb-3">
                             <label>Video URL <span class="red">*</span></label>
                             <input class="form-control" type="text" id="url" name="url[]" value="{{ $url[$index] }}"
