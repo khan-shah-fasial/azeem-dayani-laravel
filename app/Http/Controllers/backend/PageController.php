@@ -494,6 +494,7 @@ class PageController extends Controller
                     ], 200);
                 }
 
+
                 if (!empty($request->input('slug'))) {
                     $slug = customSlug($request->input('slug'));
                 }
@@ -618,6 +619,7 @@ class PageController extends Controller
 
                 $content["img_title"] = $request->input('img_title') ?? [];
                 $content["video_title"] = $request->input('video_title') ?? [];
+                $content["video_status"] =  $request->input('video_status') ?? [];
 
                 $content["sec_title"] = $request->input('sec_title') ?? '';
                 $content["sec_description"] = $request->input('sec_description') ?? '';

@@ -236,10 +236,11 @@ class IndexController extends Controller
         $video_image_i = $decoded_data->video_image_i ?? '';
         $img_title = $decoded_data->img_title ?? '';
         $video_title = $decoded_data->video_title ?? '';
+        $video_status = $decoded_data->video_status ?? '';
         $sec_title = $decoded_data->sec_title ?? '';
         $sec_description = $decoded_data->sec_description ?? '';
 
-        return view('frontend.pages.achivements.index',compact('page','image','video_image','img_title','video_title','video_image_i','sec_title','sec_description'));
+        return view('frontend.pages.achivements.index',compact('page','image','video_image','img_title','video_title','video_status','video_image_i','sec_title','sec_description'));
     }
 
     public function gallery_page(){
