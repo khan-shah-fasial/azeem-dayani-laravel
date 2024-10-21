@@ -3071,7 +3071,7 @@ div.masonry_gallery .masonry_gallery_div {
 /* Style the carousel item */
 #gallery_videos .item {
     position: relative;
-    /* cursor: pointer; */
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
