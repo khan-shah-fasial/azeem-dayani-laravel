@@ -237,7 +237,7 @@
                 </div>
             </div>
             </div>
-            <div class="playlist_heading_div">
+            <div class="playlist_heading_div d-none">
                 <h1 class="playlist_heading text-light"><span class="">PLAYLIST</span></h1>
             </div>
         </section>
