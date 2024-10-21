@@ -24,6 +24,19 @@
                 <!-- <h1 class="section_title">HIS WORK</h1> -->
                 <img class="scale-img-contact contact_us_heading_img" src="/assets/frontend/images/contact-us/Headphone.png" />
             </div>
+            
+            <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
+                @foreach ($video_image as $index => $row)
+                    <div class="gallery-video-item item col-lg-3 col-md-6 col-12">
+                        <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />
+                        <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
+                            data-youtube-url="{{ asset('storage/' . $row) }}"
+                            data-title=""></button>
+                    </div>
+                @endforeach
+                <!-- Add more items as needed -->
+            </div>
+
             <div class="masonry_gallery">
                 @foreach ($image as $index => $row)
                     <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
@@ -33,20 +46,6 @@
                 @endforeach
             </div>
 
-            <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
-
-            @foreach ($video_image as $index => $row)
-                <div class="gallery-video-item item col-lg-3 col-md-6 col-12">
-                    <img src="{{ asset('storage/' . $video_image_i[$index]) }}" />
-                    <button type="button" class="btn gallery_yt_video" data-toggle="modal" data-target="#exampleModal"
-                        data-youtube-url="{{ asset('storage/' . $row) }}"
-                        data-title=""></button>
-                </div>
-            @endforeach
-
-
-                <!-- Add more items as needed -->
-            </div>
         </section>
     </main>
 
