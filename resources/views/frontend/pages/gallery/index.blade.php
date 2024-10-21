@@ -24,7 +24,15 @@
                 <!-- <h1 class="section_title">HIS WORK</h1> -->
                 <img class="scale-img-contact contact_us_heading_img" src="/assets/frontend/images/contact-us/Headphone.png" />
             </div>
-            
+            <div class="masonry_gallery">
+                @foreach ($image as $index => $row)
+                    <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
+                        <a href="{{ asset('storage/' .$row) }}" data-fancybox="images" data-caption="Image{{ $index }}"><img
+                                class="reveal-img-top" src="{{ asset('storage/' .$row) }}" /></a>
+                    </div>
+                @endforeach
+            </div>
+
             <div class="col-md-10 mx-auto row gallery_videos" id="gallery_videos">
                 @foreach ($video_image as $index => $row)
                     <div class="gallery-video-item item col-lg-3 col-md-6 col-12">
@@ -36,16 +44,6 @@
                 @endforeach
                 <!-- Add more items as needed -->
             </div>
-
-            <div class="masonry_gallery">
-                @foreach ($image as $index => $row)
-                    <div class="masonry_gallery_div gallery_dt_img the_gallery_img">
-                        <a href="{{ asset('storage/' .$row) }}" data-fancybox="images" data-caption="Image{{ $index }}"><img
-                                class="reveal-img-top" src="{{ asset('storage/' .$row) }}" /></a>
-                    </div>
-                @endforeach
-            </div>
-
         </section>
     </main>
 
