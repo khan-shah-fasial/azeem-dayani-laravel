@@ -674,8 +674,7 @@
     }
 
     header>a { 
-        position: relative;
-        top: 14px;
+        position: relative; 
     }
 
     header .footer_logo_text {
