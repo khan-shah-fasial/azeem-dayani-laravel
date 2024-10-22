@@ -7,7 +7,7 @@
   width: 0;
   height: 0;
   position: absolute;
-  z-index: 2;
+  z-index: 999;
   overflow: hidden;
   display: flex;
   justify-content: center;

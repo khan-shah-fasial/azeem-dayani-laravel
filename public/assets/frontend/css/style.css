@@ -43,8 +43,38 @@ html.lenis body {
     transform: translate(20px, 220%) rotate(20deg)
 }
 
+.has-scroll-smooth body {
+    overflow: hidden !important;
+}
+
 .negative-mt {
     margin-top: -1px
+}
+
+.whatsappdesktop {
+    position: fixed !important;
+    bottom: 35px;
+    z-index: 9;
+    right: 25px;
+}
+
+.whatsappdesktop i {
+    background: #07d353;
+    color: #fff;
+    width: 3.7vw;
+    height: 3.7vw;
+    border-radius: 50%;
+    line-height: 3.6vw;
+    text-align: center;
+    font-size: 2.3vw;
+}
+
+.whatsappdesktop {
+    inset: inherit !important;
+    transform: translate(94vw, 42vw) !important;
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
 }
 
 .no-scroll {
@@ -88,7 +118,7 @@ main>section:nth-child(1) {
     /* background: radial-gradient(circle,#ffffff3f,#ffffff57,rgb(100,164,62)); */
     background: rgb(100, 164, 62);
     position: fixed;
-    z-index: 2;
+    z-index: 9999;
 }
 
 .preloader svg {
@@ -1171,6 +1201,7 @@ body {
     right: 0vw;
     width: 100%;
     padding: 1.56vw 1.9vw;
+    background-color: #218ee3 !important;
 }
 
 .header_logo {

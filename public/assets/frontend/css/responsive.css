@@ -6,6 +6,25 @@
         margin-bottom: 1.5rem !important;
     }
 
+    .whatsappdesktop {
+        transform: translate(0%, 487px) !important;
+        width: 100%;
+    }
+
+    .whatsappdesktop i {
+        width: 40px;
+        height: 40px; 
+        line-height: 38px; 
+        font-size: 24px;
+    }
+
+    .whatsappdesktop a {
+        float: inline-end;
+        position: relative;
+        right: 20px;
+        top: 10px;
+    }
+
     /* home page start */
 
     .preloader svg { 
@@ -131,6 +150,15 @@
 
     .section_contents.para_font {
         text-align: start;
+    }
+
+    .home_his_work {
+        text-align: left !important;
+        padding-top: 30px;
+    }
+    
+    .home_his_work h2 {
+        padding-left: 12px;
     }
 
     .home_his_work .view-more {
@@ -523,7 +551,9 @@
 
     .vision_main_section .film_music_zig_zag_img_div {
         top: -5em;
-        left: -11em;
+        left: inherit;
+        display: flex; 
+        justify-content: center;
     }
 
     .vision_main_section .film_music_zig_zag_img_div .film_music_zig_zag_img {
@@ -540,7 +570,7 @@
     }
 
     .vision_main_section {
-        padding: 15vw 0 30vw;
+        padding: 3.5em 0 8.5em;
     }
     
     #about_us_page .vision_heading {
@@ -559,6 +589,15 @@
 
     .footer_logo_text { 
         font-size: 24px;
+    }
+
+    footer .footer_logo_text { 
+        text-align: left;
+        padding-left: 12px;
+    }
+
+    footer .footer_list {
+        text-align: start;
     }
 
     .footer_link { 
@@ -587,6 +626,10 @@
         }
     }
 
+    .footer_links_div {
+        padding: 10px 0 10px;
+    }
+
     
 }
 
@@ -595,6 +638,25 @@
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 1.5rem !important;
+    }
+
+    .whatsappdesktop {
+        transform: translate(0%, 487px) !important;
+        width: 100%;
+    }
+
+    .whatsappdesktop i { 
+        width: 40px;
+        height: 40px; 
+        line-height: 38px; 
+        font-size: 24px;
+    }
+
+    .whatsappdesktop a {
+        float: inline-end;
+        position: relative;
+        right: 25px;
+        top: 5px;
     }
 
     main>section:nth-child(1) {
@@ -724,8 +786,8 @@
         width: 15px !important;
     }
 
-    .footer_logo_text { 
-        font-size: 24px;
+    footer .footer_logo_text {
+        font-size: 24px; 
     }
 
     .footer_link { 
@@ -851,6 +913,25 @@
  
     p { 
         font-size: 14px;
+    }
+
+    .whatsappdesktop {
+        transform: translate(0%, 487px) !important;
+        width: 100%;
+    }
+
+    .whatsappdesktop i {
+        width: 40px;
+        height: 40px; 
+        line-height: 38px; 
+        font-size: 24px;
+    }
+
+    .whatsappdesktop a {
+        float: inline-end;
+        position: relative;
+        right: 30px;
+        top: 0px;
     }
 
     .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
