@@ -42,6 +42,10 @@
             .music_section {
                 background-position: 25% top !important;
             }
+
+            .header { 
+                height: 54px;
+            }
         }
 
     </style>
