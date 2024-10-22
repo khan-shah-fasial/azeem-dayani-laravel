@@ -32,8 +32,8 @@
 
         .header {
             position: absolute;
-            background: transparent;
-            height: 0px;
+            background: #218ee3 !important;
+            height: 5.4vw;
             padding: 0px;
         }
 
@@ -153,7 +153,7 @@
               
             </div> --}}
             <div class="row col-lg-9 col-md-11 mx-auto">
-                <div class="col-md-4 d-flex flex-column align-items-end justify-content-between">
+                <div class="col-md-4 d-flex flex-column align-items-md-end align-items-center justify-content-between">
                     <div class="reveal-img image_div">
                         <img src="{{ asset('storage/' .$data['achivements_image']) }}" class="keasri_img mt-3" alt="Achievements">
                     </div>
@@ -166,26 +166,26 @@
                     </div>
                 </div>                
             </div>
-            <div class="home_his_work text-center">
+            <div class="home_his_work text-md-center">
                 <h2 class="animated-heading section-heading pb-md-4 pt-md-5 pb-3">His Work</h2>
                 <div class="row col-md-11 mx-auto">
                     <div class="reveal-img col-lg-3 col-md-6 col-12">
-                        <a href="{{ $data['ows_image_1_url'] }}" target="_blank">
+                        <a href="{{ $data['ows_image_1_url'] }}">
                             <img src="{{ asset('storage/' .$data['ows_image_1']) }}" class="sooryavanshi_img" alt="work">
                         </a>
                     </div>
                     <div class="reveal-img col-lg-3 col-md-6 col-12">
-                        <a href="{{ $data['ows_image_2_url'] }}" target="_blank">
+                        <a href="{{ $data['ows_image_2_url'] }}">
                             <img src="{{ asset('storage/' .$data['ows_image_2']) }}" class="sooryavanshi_img" alt="work">
                         </a>
                     </div>
                     <div class="reveal-img col-lg-3 col-md-6 col-12">
-                        <a href="{{ $data['ows_image_3_url'] }}" target="_blank">
+                        <a href="{{ $data['ows_image_3_url'] }}">
                             <img src="{{ asset('storage/' .$data['ows_image_3']) }}" class="sooryavanshi_img" alt="work">
                         </a>
                     </div>
                     <div class="reveal-img col-lg-3 col-md-6 col-12">
-                        <a href="{{ $data['ows_image_4_url'] }}" target="_blank">
+                        <a href="{{ $data['ows_image_4_url'] }}">
                             <img src="{{ asset('storage/' .$data['ows_image_4']) }}" class="sooryavanshi_img" alt="work">
                         </a>
                     </div>

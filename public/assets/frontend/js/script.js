@@ -1,5 +1,8 @@
 //smooth scroll
 var containerEl = document.querySelector(".scroll-container");
+var Header = document.querySelector(".header");
+var Whatsapp = document.querySelector(".whatsappdesktop");
+var Main = document.querySelector("main");
 var multiplier = 1.5;
 var lerp = 0.05; // для FF
 var mediaQuery = window.matchMedia("(max-width: 992px)");
@@ -49,6 +52,45 @@ ScrollTrigger.scrollerProxy(containerEl, {
 document.body.style.overflow = "";
 ScrollTrigger.refresh();
 locoScroll.start();
+
+
+// Calculate the total height of the body or the main content
+var bodyHeight = document.body.scrollHeight;
+var viewportHeight = window.innerHeight;
+
+// Sticky header using GSAP
+gsap.to(".header", {
+  scrollTrigger: {
+    trigger: Header, // Use the header element as the trigger
+    start: "top top", // Pin when the header reaches the top of the viewport
+    end: bodyHeight - viewportHeight + "px", // Sticky until the page reaches the end
+    pin: true, // Pin the header to make it sticky
+    pinSpacing: false, // Prevent extra spacing below the header when it's pinned
+    markers: false, // Enable markers for debugging (remove in production)
+  },
+});
+
+gsap.to(".whatsappdesktop", {
+  scrollTrigger: {
+    trigger: containerEl, // Use the main scroll container for smooth scrolling
+    start: "top center", // Start pinning at the top of the page
+    end: "bottom bottom", // Keep it pinned until the bottom of the page
+    onUpdate: (self) => {
+      // Dynamically update the WhatsApp icon position using GSAP
+      gsap.set(".whatsappdesktop", {
+        x: window.innerWidth - 80, // Calculate the position from the right edge
+        y: window.innerHeight - 100 // Calculate the position from the bottom edge
+      });
+    },
+    pin: false, // Don't use pinning, just position it with GSAP
+    scrub: true, // Make the changes follow the scroll
+    markers: false, // Enable markers for debugging (remove in production)
+  }
+});
+
+
+
+
 
 
 // Function to override body's transform property when Fancybox is open
@@ -1755,9 +1797,9 @@ ScrollTrigger.refresh();
 
 document.querySelector('.menu-trigger').addEventListener('change', function() {
   if (this.checked) {
-    document.body.classList.add('no-scroll', 'no-transform');
+    locoScroll.stop();
   } else {
-    document.body.classList.remove('no-scroll', 'no-transform');
+    locoScroll.start();
   }
 });
 
