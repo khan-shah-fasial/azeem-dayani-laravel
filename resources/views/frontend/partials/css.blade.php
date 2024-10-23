@@ -7,7 +7,7 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer"
 />
 
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.1.4" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.1.5" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v1.1.3" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/header_animation.css" />

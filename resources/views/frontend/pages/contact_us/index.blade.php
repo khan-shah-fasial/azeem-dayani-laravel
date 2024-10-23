@@ -88,7 +88,7 @@
             $('input, textarea').val('');
             $("select option:first").prop('selected', true);
             setTimeout(function() {
-                location.reload();
+               // location.reload();
             }, 5000);
         }
     });

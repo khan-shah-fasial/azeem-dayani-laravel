@@ -1,3 +1,5 @@
+
+
 //smooth scroll
 var containerEl = document.querySelector(".scroll-container");
 var Header = document.querySelector(".header");
@@ -72,9 +74,9 @@ gsap.to(".header", {
 
 gsap.to(".whatsappdesktop", {
   scrollTrigger: {
-    trigger: containerEl, // Use the main scroll container for smooth scrolling
-    start: "top center", // Start pinning at the top of the page
-    end: "bottom bottom", // Keep it pinned until the bottom of the page
+    trigger: "body", // Use the main scroll container for smooth scrolling
+    start: "top 30%", // Start pinning at the top of the page
+    end: "100% bottom", // Keep it pinned until the bottom of the page
     onUpdate: (self) => {
       // Dynamically update the WhatsApp icon position using GSAP
       gsap.set(".whatsappdesktop", {
@@ -84,10 +86,33 @@ gsap.to(".whatsappdesktop", {
     },
     pin: false, // Don't use pinning, just position it with GSAP
     scrub: true, // Make the changes follow the scroll
-    markers: false, // Enable markers for debugging (remove in production)
+    markers: true, // Enable markers for debugging (remove in production)
   }
 });
 
+// Register GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// ScrollTrigger to monitor the scroll position
+ScrollTrigger.create({
+  trigger: ".scroll-container", // Use the scroll container as the trigger
+  start: "top top", // Start when the top of the page is reached
+  end: "max", // Keep the trigger alive until the bottom of the page
+  onUpdate: (self) => {
+    if (self.scroll() > 10) {
+      // Equivalent of the 'if' condition in jQuery for scrolling past 10px
+      $('.header').addClass('bgcolor_add'); 
+       // Optional: Trigger your scroll event when past 10px
+    } else {
+      // Equivalent of the 'else' condition when scrolled back up
+      $('.header').removeClass('bgcolor_add');  
+       // Optional: Trigger your scroll event when scrolled back up
+    }
+  },
+  scroller: ".scroll-container", // This should be your smooth-scroll container
+  scrub: true, // Enable smooth transition as you scroll
+  markers: false // Set to true for debugging if needed
+});
 
 
 

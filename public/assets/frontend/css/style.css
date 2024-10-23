@@ -71,10 +71,7 @@ html.lenis body {
 
 .whatsappdesktop {
     inset: inherit !important;
-    transform: translate(94vw, 42vw) !important;
-    position: fixed !important;
-    top: 10px !important;
-    left: 10px !important;
+    transform: translate(93vw, 39vw) !important; 
 }
 
 .no-scroll {
@@ -85,9 +82,11 @@ html.lenis body {
     top: 0px;
 }
 
-.no-transform {
+
+
+/* .no-transform {
     transform: none !important; 
-}
+} */
 
 
 /* .header{
