@@ -86,7 +86,7 @@ gsap.to(".whatsappdesktop", {
     },
     pin: false, // Don't use pinning, just position it with GSAP
     scrub: true, // Make the changes follow the scroll
-    markers: true, // Enable markers for debugging (remove in production)
+    markers: false, // Enable markers for debugging (remove in production)
   }
 });
 
