@@ -32,10 +32,18 @@
 
         .header {
             position: absolute;
-            background: #218ee3 !important;
+            background: transparent !important;
+            transition: background-color 0.3s ease;
             height: 5.4vw;
             padding: 0px;
         }
+
+        .sticky-header.bgcolor_add {
+            background-color: #218ee3 !important; /* Your desired background color */
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+ 
+  
 
         @media screen and (max-width: 767px) {
             
@@ -50,7 +58,7 @@
 
     </style>
 
-    <div class="preloader">
+    <div class="preloader d-none">
         <div class="preloader-main">
             <svg width="1231.1" height="70.1" viewBox="0 0 1231.1 70.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff"

@@ -4,7 +4,7 @@
     });// Use `first()` instead of `get()` to get a single record
     $logo = $footer->logo ?? '';
 @endphp
-<header id="header" class="header">
+<header id="header" class="header sticky-header">
     <a href="{{ url(route('index')) }}">
         <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
         <h4 class="footer_logo_text">{{  $logo }}</h4>

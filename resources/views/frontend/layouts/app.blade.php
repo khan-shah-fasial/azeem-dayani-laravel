@@ -11,6 +11,7 @@
 
 </head>
 
+
 <body class="scroll-container" data-scroll-container>
 
 
@@ -22,8 +23,8 @@
     <!---========end Header======----->
 
     <!---======== page content ====-------->
-
-        @yield('page.content')
+ 
+        @yield('page.content') 
 
     <!---======== page content ===== -------->
 
