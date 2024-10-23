@@ -58,7 +58,7 @@
 
     </style>
 
-    <div class="preloader d-none">
+    <div class="preloader">
         <div class="preloader-main">
             <svg width="1231.1" height="70.1" viewBox="0 0 1231.1 70.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff"
