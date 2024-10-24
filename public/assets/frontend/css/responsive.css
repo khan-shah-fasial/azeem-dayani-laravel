@@ -259,7 +259,7 @@
     /* contact us page start */
 
     main>section:nth-child(1) {
-        padding-top: 20px !important;
+        padding-top: 4em !important;
     }
 
     .contact_heading_div { 
@@ -660,7 +660,7 @@
     }
 
     main>section:nth-child(1) {
-        padding-top: 1em !important;
+        padding-top: 4em !important;
     }
 
     .preloader svg { 
