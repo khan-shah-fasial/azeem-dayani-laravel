@@ -85,7 +85,7 @@ gsap.to(".header", {
   scrollTrigger: {
     trigger: Header, // Use the header element as the trigger
     start: "top top", // Pin when the header reaches the top of the viewport
-    end: bodyHeight - viewportHeight + "px", // Sticky until the page reaches the end
+    end: "max", // Sticky until the page reaches the end
     pin: true, // Pin the header to make it sticky
     pinSpacing: false, // Prevent extra spacing below the header when it's pinned
     markers: false, // Enable markers for debugging (remove in production)
@@ -96,7 +96,7 @@ gsap.to(".whatsappdesktop", {
   scrollTrigger: {
     trigger: "body", // Use the main scroll container for smooth scrolling
     start: "top 30%", // Start pinning at the top of the page
-    end: "100% bottom", // Keep it pinned until the bottom of the page
+    end: "max", // Keep it pinned until the bottom of the page
     onUpdate: (self) => {
       // Dynamically update the WhatsApp icon position using GSAP
       gsap.set(".whatsappdesktop", {

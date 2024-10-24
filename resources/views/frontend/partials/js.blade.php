@@ -10,7 +10,7 @@
 
 <script type="text/javascript" defer src="/assets/frontend/js/fancybox.min.js"></script>
 
-<script type="text/javascript" defer src="/assets/frontend/js/script.js?v1.1.3"></script>
+<script type="text/javascript" defer src="/assets/frontend/js/script.js?v1.1.4"></script>
 
 <!--Toast Js-->
 <script defer defer src="/assets/frontend/js/toastr.min.js"></script>
