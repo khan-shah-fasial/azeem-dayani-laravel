@@ -14,41 +14,61 @@ if (mediaQuery.matches) {
   lerp = 0.07;
 }
 
+// Initialize Locomotive Scroll
 var locoScroll = new LocomotiveScroll({
-  el: containerEl,
+  el: document.querySelector(".scroll-container"),
   smooth: true,
-  lerp: lerp,
-  multiplier: multiplier,
-  touchMultiplier: 1.5,
-  firefoxMultiplier: 100,
+  lerp: 0.1, // Adjust lerp to make scrolling smooth
   smartphone: {
-    smooth: true,
+    smooth: true
   },
   tablet: {
-    smooth: true,
-  },
+    smooth: true
+  }
 });
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
-locoScroll.on("scroll", ScrollTrigger.update);
 
-ScrollTrigger.scrollerProxy(containerEl, {
-  scrollTop: function scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
+// Tell ScrollTrigger to use Locomotive Scroll as a proxy for native scrolling
+ScrollTrigger.scrollerProxy(".scroll-container", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
   },
-
-  getBoundingClientRect: function getBoundingClientRect() {
+  getBoundingClientRect() {
     return {
       top: 0,
       left: 0,
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerHeight
     };
   },
-  pinType: containerEl.style.transform ? "transform" : "fixed",
+  pinType: document.querySelector(".scroll-container").style.transform ? "transform" : "fixed"
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+// Apply the header background change after scrolling a bit
+ScrollTrigger.create({
+  trigger: ".scroll-container", 
+  start: "top top",
+  end: "max",
+  onUpdate: (self) => {
+    const scrollY = locoScroll.scroll.instance.scroll.y; // Get scroll position from Locomotive Scroll
+    if (scrollY > 10) {
+      $('.header').addClass('bgcolor_add'); // Add background color when scrolling past 10px
+    } else {
+      $('.header').removeClass('bgcolor_add'); // Remove background color when scrolling back up
+    }
+  },
+  scroller: ".scroll-container",
+  scrub: true
+});
+
+// Refresh ScrollTrigger and Locomotive Scroll when the page is fully loaded
+window.addEventListener('load', () => {
+  locoScroll.update();
+  ScrollTrigger.refresh();
 });
 
 document.body.style.overflow = "";
@@ -90,29 +110,7 @@ gsap.to(".whatsappdesktop", {
   }
 });
 
-// Register GSAP and ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
 
-// ScrollTrigger to monitor the scroll position
-ScrollTrigger.create({
-  trigger: ".scroll-container", // Use the scroll container as the trigger
-  start: "top top", // Start when the top of the page is reached
-  end: "max", // Keep the trigger alive until the bottom of the page
-  onUpdate: (self) => {
-    if (self.scroll() > 10) {
-      // Equivalent of the 'if' condition in jQuery for scrolling past 10px
-      $('.header').addClass('bgcolor_add'); 
-       // Optional: Trigger your scroll event when past 10px
-    } else {
-      // Equivalent of the 'else' condition when scrolled back up
-      $('.header').removeClass('bgcolor_add');  
-       // Optional: Trigger your scroll event when scrolled back up
-    }
-  },
-  scroller: ".scroll-container", // This should be your smooth-scroll container
-  scrub: true, // Enable smooth transition as you scroll
-  markers: false // Set to true for debugging if needed
-});
 
 
 
