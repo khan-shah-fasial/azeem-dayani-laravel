@@ -75,28 +75,36 @@ document.body.style.overflow = "";
 ScrollTrigger.refresh();
 locoScroll.start();
 
+//pinning or stick header and whatsapp icon 
 
 // Calculate the total height of the body or the main content
 var bodyHeight = document.body.scrollHeight;
 var viewportHeight = window.innerHeight;
+
+// Function to refresh the scroll and triggers after load
+function refreshScroll() {
+  locoScroll.update(); // Update Locomotive Scroll
+  ScrollTrigger.refresh(); // Refresh ScrollTrigger
+}
 
 // Sticky header using GSAP
 gsap.to(".header", {
   scrollTrigger: {
     trigger: Header, // Use the header element as the trigger
     start: "top top", // Pin when the header reaches the top of the viewport
-    end: "max", // Sticky until the page reaches the end
+    end: () => document.body.scrollHeight - window.innerHeight + "px", // Sticky until the page reaches the end
     pin: true, // Pin the header to make it sticky
     pinSpacing: false, // Prevent extra spacing below the header when it's pinned
     markers: false, // Enable markers for debugging (remove in production)
   },
 });
 
+// WhatsApp icon position using GSAP
 gsap.to(".whatsappdesktop", {
   scrollTrigger: {
     trigger: "body", // Use the main scroll container for smooth scrolling
     start: "top 30%", // Start pinning at the top of the page
-    end: "max", // Keep it pinned until the bottom of the page
+    end: "100% bottom", // Keep it pinned until the bottom of the page
     onUpdate: (self) => {
       // Dynamically update the WhatsApp icon position using GSAP
       gsap.set(".whatsappdesktop", {
@@ -108,6 +116,17 @@ gsap.to(".whatsappdesktop", {
     scrub: true, // Make the changes follow the scroll
     markers: false, // Enable markers for debugging (remove in production)
   }
+});
+
+// Add a load event listener to ensure everything is initialized correctly
+window.addEventListener('load', () => {
+  // Refresh ScrollTrigger and Locomotive Scroll after full load
+  refreshScroll();
+});
+
+// Optional: also listen for window resize, as mobile can behave differently on resize
+window.addEventListener('resize', () => {
+  refreshScroll();
 });
 
 
