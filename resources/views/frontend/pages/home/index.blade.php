@@ -30,17 +30,8 @@
             background-color: #5aa236 !important;
         }
 
-        .header {
-            position: absolute;
-            background: transparent !important;
-            transition: background-color 0.3s ease;
-            height: 5.4vw;
-            padding: 0px;
-        }
-
-        .sticky-header.bgcolor_add {
-            background-color: #218ee3 !important; /* Your desired background color */
-            transition: background-color 0.3s ease; /* Smooth transition */
+        #header.sticky-header.bgcolor_add .footer_logo_text {
+            display: block;
         }
  
   

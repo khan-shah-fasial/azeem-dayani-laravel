@@ -1195,18 +1195,31 @@ body {
 
 .header {
     position: absolute;
-    z-index: 999;
-    top: 0vw;
+    z-index: 999; 
     right: 0vw;
     width: 100%;
-    padding: 1.56vw 1.9vw;
-    background-color: #218ee3 !important;
+    padding: 0vw 1.9vw;
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+    height: 5.4vw;
+    display: flex !important;
+    align-items: center;
+}
+
+.sticky-header.bgcolor_add {
+    background-color: #218ee3a0 !important;
+    transition: background-color 0.3s ease;
+    backdrop-filter: blur(10px);
 }
 
 .header_logo {
     width: 16vw;
 }
 
+.pin-spacer {
+    position: absolute !important;
+}
+  
 .logo_text {
     font-size: 5vw;
     padding-bottom: 2vw;
