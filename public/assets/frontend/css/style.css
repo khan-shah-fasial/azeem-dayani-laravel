@@ -1200,7 +1200,7 @@ body {
     width: 100%;
     padding: 0vw 1.9vw;
     background-color: transparent !important;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     height: 5.4vw;
     display: flex !important;
     align-items: center;
@@ -1208,7 +1208,7 @@ body {
 
 .sticky-header.bgcolor_add {
     background-color: #218ee3a0 !important;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
     backdrop-filter: blur(10px);
 }
 

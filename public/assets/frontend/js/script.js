@@ -1,5 +1,4 @@
 
-
 //smooth scroll
 var containerEl = document.querySelector(".scroll-container");
 var Header = document.querySelector(".header");
@@ -49,31 +48,35 @@ ScrollTrigger.scrollerProxy(".scroll-container", {
 locoScroll.on("scroll", ScrollTrigger.update);
 
 // Apply the header background change after scrolling a bit
+// Initialize ScrollTrigger to update on scroll changes
 ScrollTrigger.create({
   trigger: ".scroll-container", 
   start: "top top",
   end: "max",
   onUpdate: (self) => {
-    const scrollY = locoScroll.scroll.instance.scroll.y; // Get scroll position from Locomotive Scroll
-    if (scrollY > 10) {
+    // Use ScrollTrigger's scroll position instead of accessing Locomotive Scroll directly
+    const scrollY = self.scroll(); 
+    
+    console.log('Scroll Position:', scrollY); // Debugging line to verify scroll position
+
+    if (scrollY > 0.4) {
       $('.header').addClass('bgcolor_add'); // Add background color when scrolling past 10px
+      console.log("Adding bgcolor_add class"); // Debugging
+      //alert(1);
     } else {
       $('.header').removeClass('bgcolor_add'); // Remove background color when scrolling back up
+      console.log("Removing bgcolor_add class"); // Debugging
+      //alert(2);
     }
   },
   scroller: ".scroll-container",
   scrub: true
 });
 
-// Refresh ScrollTrigger and Locomotive Scroll when the page is fully loaded
-window.addEventListener('load', () => {
-  locoScroll.update();
-  ScrollTrigger.refresh();
-});
-
-document.body.style.overflow = "";
+// Make sure ScrollTrigger and Locomotive Scroll are synced
+locoScroll.on("scroll", ScrollTrigger.update);
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 ScrollTrigger.refresh();
-locoScroll.start();
 
 //pinning or stick header and whatsapp icon 
 
