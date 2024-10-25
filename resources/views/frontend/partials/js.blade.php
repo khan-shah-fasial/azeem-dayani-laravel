@@ -13,7 +13,7 @@
 <script type="text/javascript" defer src="/assets/frontend/js/script.js?v1.1.6"></script>
 
 <!--Toast Js-->
-<script defer defer src="/assets/frontend/js/toastr.min.js"></script>
+<script defer defer src="/assets/frontend/js/toastr.min.js"></script> 
 
 <!--jQuery Validate-->
 <script defer src="/assets/frontend/js/jquery.validate.min.js"></script>
