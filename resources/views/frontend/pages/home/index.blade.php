@@ -16,11 +16,31 @@
 @section('page.content')
     <style>
         #header .footer_logo_text {
-            display: none;
+            display: block; /* Keep it block but hide with opacity and visibility */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease; 
         }
 
+        #header.sticky-header.bgcolor_add .footer_logo_text {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            cursor: pointer;
+        }
+
+        .header_logo_link {
+            cursor: context-menu;
+        }
+
+        #header.sticky-header.bgcolor_add .header_logo_link {
+            cursor: pointer;
+        }
+
+
         .music_section {
-            background: url("{{ asset('storage/' .$data['banner_img']) }}") no-repeat !important;     background-size: cover !important;
+            background: url("{{ asset('storage/' .$data['banner_img']) }}") no-repeat !important;     
+            background-size: cover !important;
         }
 
         .middle_description {
@@ -30,9 +50,7 @@
             background-color: #5aa236 !important;
         }
 
-        #header.sticky-header.bgcolor_add .footer_logo_text {
-            display: block;
-        }
+        
  
   
 
@@ -49,7 +67,7 @@
 
     </style>
 
-    <div class="preloader d-none">
+    <div class="preloader">
         <div class="preloader-main">
             <svg width="1231.1" height="70.1" viewBox="0 0 1231.1 70.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#ffffff"
@@ -357,7 +375,7 @@
                 </div> -->
         </section>
     </main>
-
+    
 @endsection
 @section('page.scripts')
 @endsection

@@ -30,7 +30,7 @@
                             <!-- <img class="image_heading azeem_heading" src="/assets/frontend/images/about-us/Top_Logo.png"> -->
                             <h4 class="about_main_name footer_logo_text">{{ $logo }}</h4>
                         </div>
-
+                        
                         <div class="about_content">
                             <h5 class="animated-heading-about music_director_composer_heading pb-md-2">
                                {{ $data['ab_title'] }}

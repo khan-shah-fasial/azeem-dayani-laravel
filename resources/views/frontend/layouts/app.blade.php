@@ -12,7 +12,7 @@
 </head>
 
 
-<body class="scroll-container" data-scroll-container>
+<body class="scroll-container {{ request()->is('/') ? 'homepage' : '' }} " data-scroll-container>
 
 
 
