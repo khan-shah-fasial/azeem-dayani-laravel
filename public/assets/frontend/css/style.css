@@ -2448,7 +2448,7 @@ div.masonry_gallery.achievement_page_gallery {
 #works_page .card_main:nth-last-of-type(2) .card-title,
 #works_page .card_main:nth-last-of-type(3) .card-body .card-text,
 #works_page .card_main:nth-last-of-type(3) .card-title {
-    color: #000;
+    color: #fff;
     /* Set text color to white */
 }
 

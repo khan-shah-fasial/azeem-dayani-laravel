@@ -1,6 +1,6 @@
 @media screen and (max-width:767px) {
 
-    p {  
+    p {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 1.5rem !important;
@@ -13,8 +13,8 @@
 
     .whatsappdesktop i {
         width: 40px;
-        height: 40px; 
-        line-height: 38px; 
+        height: 40px;
+        line-height: 38px;
         font-size: 24px;
     }
 
@@ -27,18 +27,18 @@
 
     /* home page start */
 
-    .preloader svg { 
+    .preloader svg {
         width: 95%;
     }
 
     .header {
-        position: relative;        
+        position: relative;
         background: #5aa236;
         height: 60px;
     }
 
-    header>a { 
-        position: relative; 
+    header>a {
+        position: relative;
     }
 
     header .footer_logo_text {
@@ -52,7 +52,8 @@
         right: 14px;
     }
 
-    .hamburger-menu span:nth-child(1), .hamburger-menu span:nth-child(3) {
+    .hamburger-menu span:nth-child(1),
+    .hamburger-menu span:nth-child(3) {
         width: 20px;
     }
 
@@ -62,23 +63,27 @@
     }
 
     .menu-trigger:checked~.hamburger-menu span:nth-child(1) {
-        transform: translateY(10px) rotate(45deg); 
+        transform: translateY(10px) rotate(45deg);
     }
+
     .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg); 
+        transform: translateY(-10px) rotate(-45deg);
     }
-    
+
     .menu-links {
         font-size: 24px;
         padding: 10px 12px;
     }
+
     .menu-links li {
         text-align: center;
         margin: 28px 0;
     }
+
     .menu-links li:hover {
         transform: scale(1.05) !important;
     }
+
     .menu-links li a {
         letter-spacing: 2px;
         line-height: 40px;
@@ -88,7 +93,7 @@
         font-size: 28px;
     }
 
-    .music_section > div {
+    .music_section>div {
         padding-top: 10em;
     }
 
@@ -97,7 +102,7 @@
         padding: 0px 12px;
     }
 
-    .music_section .zip_zap_bg_img { 
+    .music_section .zip_zap_bg_img {
         align-items: start;
         margin-top: 0px;
     }
@@ -108,34 +113,36 @@
         padding: 0px 12px 5px;
     }
 
-    a.decoration-underline { 
-        margin-top: -10px; 
+    a.decoration-underline {
+        margin-top: -10px;
         padding: 0px 12px;
         font-size: 14px;
     }
 
-    .para_font, .achievement_top_desecription p { 
+    .para_font,
+    .achievement_top_desecription p {
         margin-bottom: 10px !important;
         padding: 0px 10px;
     }
 
-    .sooryavanshi_divs .para_font {  
+    .sooryavanshi_divs .para_font {
         padding: 0px 0px;
         margin-bottom: 0px !important;
-    }    
+    }
 
-    .para_font p, .achievement_top_desecription p { 
-        font-size: 14px; 
+    .para_font p,
+    .achievement_top_desecription p {
+        font-size: 14px;
         margin-bottom: 10px !important;
         text-align: start;
     }
 
-    .section-heading { 
-        font-size: 40px; 
+    .section-heading {
+        font-size: 40px;
         margin-top: 20px;
     }
 
-    .view-more { 
+    .view-more {
         font-size: 14px;
     }
 
@@ -156,7 +163,7 @@
         text-align: left !important;
         padding-top: 30px;
     }
-    
+
     .home_his_work h2 {
         padding-left: 12px;
     }
@@ -170,8 +177,8 @@
         padding: 0px 12px;
     }
 
-    #bars2 { 
-        top: -20px; 
+    #bars2 {
+        top: -20px;
         height: 40px;
         width: 37%;
     }
@@ -186,7 +193,7 @@
             opacity: .35;
             height: 5px;
         }
-    
+
         100% {
             opacity: 1;
             height: 35px;
@@ -197,7 +204,7 @@
         font-size: 50px;
     }
 
-    .film_list li { 
+    .film_list li {
         height: auto;
     }
 
@@ -205,30 +212,32 @@
         font-size: 16px;
     }
 
-    .film_link:hover, .film_link:focus { 
+    .film_link:hover,
+    .film_link:focus {
         font-size: 18px;
     }
 
-    .film_link:hover + .film_img, .film_link:focus + .film_img {
+    .film_link:hover+.film_img,
+    .film_link:focus+.film_img {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: scale(2.5) rotate(15deg) !important ;
+        transform: scale(2.5) rotate(15deg) !important;
         transition: all 0.5s ease;
     }
 
     #home_page .non_film_section .side_headphone {
         width: 40%;
-        height: auto; 
+        height: auto;
         top: -22em;
         opacity: 0.4;
     }
 
-    .playlist_heading_div { 
+    .playlist_heading_div {
         bottom: 8em;
         left: 12em;
     }
 
-    .playlist_heading { 
+    .playlist_heading {
         font-size: 40px;
         opacity: 0.4;
     }
@@ -236,7 +245,7 @@
     .non_film_music {
         padding: 0px 12px;
     }
-    
+
     .non_film_section {
         position: relative;
         height: auto;
@@ -246,7 +255,8 @@
         width: 10px !important;
     }
 
-    .non_film_music .film_list li, .film_list li { 
+    .non_film_music .film_list li,
+    .film_list li {
         margin-top: 10px;
     }
 
@@ -262,11 +272,12 @@
         padding-top: 4em !important;
     }
 
-    .contact_heading_div { 
+    .contact_heading_div {
         padding-bottom: 20px;
     }
 
-    .contact_heading, .section_title { 
+    .contact_heading,
+    .section_title {
         font-size: 40px;
         bottom: inherit;
     }
@@ -275,7 +286,7 @@
         width: 25%;
     }
 
-    .contact_form { 
+    .contact_form {
         padding: 20px 12px;
     }
 
@@ -286,29 +297,30 @@
         top: 60px;
     }
 
-    .form_heading { 
-        font-size: 40px; 
+    .form_heading {
+        font-size: 40px;
     }
 
-    .contact_form .form-control { 
-        font-size: 14px;
-    }
-    .contact_form .submit_btn { 
+    .contact_form .form-control {
         font-size: 14px;
     }
 
-    .contact_form .submit_btn { 
-        border-radius: 6px; 
+    .contact_form .submit_btn {
+        font-size: 14px;
+    }
+
+    .contact_form .submit_btn {
+        border-radius: 6px;
         width: 6em;
         height: 36px;
     }
 
-    .contact_buffer_div { 
+    .contact_buffer_div {
         top: 0px;
         padding: 20px 0px;
     }
 
-    .buffering_text { 
+    .buffering_text {
         left: 30px;
         top: 1.2em;
         font-size: 60px;
@@ -334,13 +346,13 @@
         margin-bottom: 12px;
     }
 
-    #gallery_videos .item { 
+    #gallery_videos .item {
         margin-bottom: 12px;
     }
 
     button.btn.gallery_yt_video {
         width: 4em !important;
-        height: 4em !important; 
+        height: 4em !important;
         background-size: 100% !important;
     }
 
@@ -353,7 +365,6 @@
     }
 
     #works_page .non_film_section {
-        background: linear-gradient(180deg, #fff 9%, #59a246 8%);        
         padding-bottom: 0vw;
     }
 
@@ -361,11 +372,11 @@
         background: linear-gradient(180deg, #fff 52%, #59a246 48%);
     }
 
-    #bars11 { 
+    #bars11 {
         left: 20vw;
     }
 
-    #bars12 { 
+    #bars12 {
         right: 14vw;
     }
 
@@ -374,40 +385,42 @@
         width: 25%;
     }
 
-    .works_headphone_heading { 
+    .works_headphone_heading {
         align-items: center;
         padding-bottom: 20px;
     }
 
-    .category_title { 
+    .category_title {
         font-size: 20px;
     }
 
-    #bars6  { 
+    #bars6 {
         left: 10px;
     }
 
-    #bars7  { 
+    #bars7 {
         right: -70px;
     }
 
-    #bars8 { 
-        left: 3px; 
+    #bars8 {
+        left: 3px;
     }
-    
-    #bars9 { 
-        right: -1rem; 
+
+    #bars9 {
+        right: -1rem;
     }
 
     .none_film_heading.pt5 {
         padding: 20px 0px;
     }
 
-    .film_row, .non_film_row {
+    .film_row,
+    .non_film_row {
         padding: 0px 12px;
     }
 
-    #works_page .film_row .card-title, .non_film_row .non_film_card_title { 
+    #works_page .film_row .card-title,
+    .non_film_row .non_film_card_title {
         font-size: 28px;
         line-height: inherit;
         text-align: center;
@@ -417,7 +430,7 @@
 
     /* achievements page start */
 
-    .achievements_main_name { 
+    .achievements_main_name {
         font-size: 60px;
     }
 
@@ -433,6 +446,7 @@
         font-size: 26px;
         line-height: 26px;
     }
+
     .achievement_page_gallery {
         padding: 20px 12px 15px !important;
     }
@@ -445,7 +459,7 @@
         padding-right: 0px !important;
     }
 
-    .achievement_card img { 
+    .achievement_card img {
         width: 100% !important;
     }
 
@@ -460,16 +474,17 @@
         left: 0px;
     }
 
-    .video_div { 
+    .video_div {
         width: 100%;
         padding-bottom: 15px;
     }
 
-    .achievements_section #gallery_videos, #gallery_videos>div {
+    .achievements_section #gallery_videos,
+    #gallery_videos>div {
         padding-right: 0px;
     }
 
-    #gallery_videos img { 
+    #gallery_videos img {
         height: auto;
     }
 
@@ -478,7 +493,7 @@
     /* about us page start */
 
     .azeem_big_photo {
-        width: 100%;  
+        width: 100%;
         right: 0px;
         padding: 0px 12px 15px;
     }
@@ -519,23 +534,23 @@
         display: none;
     }
 
-    .azeem_stadium_img_div { 
+    .azeem_stadium_img_div {
         bottom: 0px;
     }
 
-    .azeem_stadium_img { 
+    .azeem_stadium_img {
         right: 0px;
-        width: 100%; 
+        width: 100%;
         padding: 0px 12px 20px;
     }
 
-    .small_heading { 
+    .small_heading {
         font-size: 16px;
         padding: 10px 12px;
         margin-bottom: 0px !important;
     }
 
-    .work_with_team_heading { 
+    .work_with_team_heading {
         font-size: 30px;
         padding: 0px 12px;
     }
@@ -545,14 +560,14 @@
     }
 
     .vision_main_image {
-        width: 100%; 
+        width: 100%;
         padding: 10px 12px;
     }
 
     .vision_main_section .film_music_zig_zag_img_div {
         top: -5em;
         left: inherit;
-        display: flex; 
+        display: flex;
         justify-content: center;
     }
 
@@ -564,7 +579,7 @@
         display: none;
     }
 
-    .film_music_zig_zag_img {  
+    .film_music_zig_zag_img {
         width: 100%;
         top: 4em;
     }
@@ -572,12 +587,12 @@
     .vision_main_section {
         padding: 3.5em 0 8.5em;
     }
-    
+
     #about_us_page .vision_heading {
         transform: rotate(0deg);
         position: absolute;
         top: -30px;
-        left: 0px; 
+        left: 0px;
         text-align: center;
         font-size: 26px !important;
         color: #218ee3 !important;
@@ -587,11 +602,11 @@
 
     /* footer */
 
-    .footer_logo_text { 
+    .footer_logo_text {
         font-size: 24px;
     }
 
-    footer .footer_logo_text { 
+    footer .footer_logo_text {
         text-align: left;
         padding-left: 12px;
     }
@@ -600,26 +615,26 @@
         text-align: start;
     }
 
-    .footer_link { 
+    .footer_link {
         font-size: 14px;
     }
 
-    .social_media_links { 
+    .social_media_links {
         font-size: 16px;
     }
 
-    #bars3 .bar { 
+    #bars3 .bar {
         bottom: -10px;
         height: 3px;
         width: 2px;
     }
-    
+
     @keyframes sound3 {
         0% {
             opacity: .35;
             height: 5px;
         }
-    
+
         100% {
             opacity: 1;
             height: 50px;
@@ -630,11 +645,11 @@
         padding: 10px 0 10px;
     }
 
-    
+
 }
 
-@media screen and (min-width:768px) and  (max-width:991px) {
-    p {  
+@media screen and (min-width:768px) and (max-width:991px) {
+    p {
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 1.5rem !important;
@@ -645,10 +660,10 @@
         width: 100%;
     }
 
-    .whatsappdesktop i { 
+    .whatsappdesktop i {
         width: 40px;
-        height: 40px; 
-        line-height: 38px; 
+        height: 40px;
+        line-height: 38px;
         font-size: 24px;
     }
 
@@ -663,18 +678,18 @@
         padding-top: 4em !important;
     }
 
-    .preloader svg { 
+    .preloader svg {
         width: 95%;
     }
 
     .header {
-        position: relative;        
+        position: relative;
         background: #5aa236;
         height: 60px;
     }
 
-    header>a { 
-        position: relative; 
+    header>a {
+        position: relative;
     }
 
     header .footer_logo_text {
@@ -688,7 +703,8 @@
         right: 14px;
     }
 
-    .hamburger-menu span:nth-child(1), .hamburger-menu span:nth-child(3) {
+    .hamburger-menu span:nth-child(1),
+    .hamburger-menu span:nth-child(3) {
         width: 20px;
     }
 
@@ -698,37 +714,42 @@
     }
 
     .menu-trigger:checked~.hamburger-menu span:nth-child(1) {
-        transform: translateY(10px) rotate(45deg); 
+        transform: translateY(10px) rotate(45deg);
     }
+
     .menu-trigger:checked~.hamburger-menu span:nth-child(3) {
-        transform: translateY(-10px) rotate(-45deg); 
+        transform: translateY(-10px) rotate(-45deg);
     }
-    
+
     .menu-links {
         font-size: 24px;
         padding: 10px 12px;
     }
+
     .menu-links li {
         text-align: center;
         margin: 28px 0;
     }
+
     .menu-links li:hover {
         transform: scale(1.05) !important;
     }
+
     .menu-links li a {
         letter-spacing: 2px;
         line-height: 40px;
     }
 
-    .zip_zap_bg_img { 
+    .zip_zap_bg_img {
         margin-top: 10px;
     }
 
-    .para_font, .para_font p {
+    .para_font,
+    .para_font p {
         margin-bottom: 5px !important;
     }
-    
-    .view-more { 
+
+    .view-more {
         font-size: 14px;
         text-decoration: underline;
     }
@@ -751,7 +772,7 @@
         padding-bottom: 12px;
     }
 
-    .section_contents.para_font { 
+    .section_contents.para_font {
         padding-top: 30px;
     }
 
@@ -760,24 +781,26 @@
         font-size: 18px;
     }
 
-    .film_link:hover, .film_link:focus { 
+    .film_link:hover,
+    .film_link:focus {
         font-size: 20px;
     }
 
-    .film_link:hover + .film_img, .film_link:focus + .film_img {
+    .film_link:hover+.film_img,
+    .film_link:focus+.film_img {
         opacity: 1 !important;
         visibility: visible !important;
-        transform: scale(1.5) rotate(15deg) !important ;
+        transform: scale(1.5) rotate(15deg) !important;
         transition: all 0.5s ease;
     }
 
-    
-    .film_list li { 
+
+    .film_list li {
         height: auto;
         margin-bottom: 10px;
     }
 
-    .non_film_music .film_list li { 
+    .non_film_music .film_list li {
         margin-top: 10px;
     }
 
@@ -786,29 +809,29 @@
     }
 
     footer .footer_logo_text {
-        font-size: 24px; 
+        font-size: 24px;
     }
 
-    .footer_link { 
+    .footer_link {
         font-size: 14px;
     }
 
-    .social_media_links { 
+    .social_media_links {
         font-size: 16px;
     }
 
-    #bars3 .bar { 
+    #bars3 .bar {
         bottom: -10px;
         height: 3px;
         width: 2px;
     }
-    
+
     @keyframes sound3 {
         0% {
             opacity: .35;
             height: 5px;
         }
-    
+
         100% {
             opacity: 1;
             height: 50px;
@@ -818,15 +841,15 @@
 
     /* about us page */
 
-    .about_main_div .footer_logo_text { 
+    .about_main_div .footer_logo_text {
         margin-top: 0px;
     }
 
-    .music_director_composer_main_div:after { 
+    .music_director_composer_main_div:after {
         bottom: -18em;
     }
 
-    .azeem_stadium_img_div { 
+    .azeem_stadium_img_div {
         position: absolute;
         right: 0px;
         bottom: 20px;
@@ -838,8 +861,9 @@
 
     /* works page */
 
-    #works_page .film_row .card-title, #works_page .non_film_row .card-title,
-    .award_name { 
+    #works_page .film_row .card-title,
+    #works_page .non_film_row .card-title,
+    .award_name {
         font-size: 24px;
         margin-bottom: 0px;
         line-height: 26px;
@@ -857,7 +881,7 @@
 
     /* achievements page */
 
-    .achievements_section .award_main_div:nth-last-of-type(1), 
+    .achievements_section .award_main_div:nth-last-of-type(1),
     .achievements_section .award_main_div:nth-last-of-type(2) {
         margin-top: 0px;
     }
@@ -867,7 +891,7 @@
         line-height: 30px;
     }
 
-    .modal-title { 
+    .modal-title {
         font-size: 16px;
     }
 
@@ -878,28 +902,28 @@
         column-gap: 1em;
     }
 
-    div.masonry_gallery .masonry_gallery_div { 
+    div.masonry_gallery .masonry_gallery_div {
         margin-bottom: 1em;
     }
 
     /* contact us page */
-    
-    .form_heading { 
+
+    .form_heading {
         font-size: 46px;
     }
 
-    .contact_form .form-control { 
+    .contact_form .form-control {
         font-size: 14px;
     }
 
-    .contact_buffer_div { 
+    .contact_buffer_div {
         top: 0px;
     }
 
     .buffering_text {
-        font: 4em 'tungsten';  
+        font: 4em 'tungsten';
         left: 1em;
-        top: 50px; 
+        top: 50px;
     }
 
     img.contact_headphone_image {
@@ -908,9 +932,9 @@
 }
 
 
-@media screen and (min-width:992px) and  (max-width:1100px) {
- 
-    p { 
+@media screen and (min-width:992px) and (max-width:1100px) {
+
+    p {
         font-size: 14px;
     }
 
@@ -921,8 +945,8 @@
 
     .whatsappdesktop i {
         width: 40px;
-        height: 40px; 
-        line-height: 38px; 
+        height: 40px;
+        line-height: 38px;
         font-size: 24px;
     }
 
@@ -937,11 +961,11 @@
         transform: translateY(-0.9vw) rotate(-45deg);
     }
 
-    .zip_zap_bg_img { 
+    .zip_zap_bg_img {
         margin-top: 1.29vw;
     }
 
-    #icon-container.middle_description { 
+    #icon-container.middle_description {
         background-position: -65vw -28vw !important;
     }
 
@@ -953,7 +977,7 @@
         width: 18px !important;
     }
 
-    .footer_link { 
+    .footer_link {
         font-size: 16px;
     }
 
@@ -963,11 +987,11 @@
         padding-bottom: 38vw;
     }
 
-    .music_director_composer_main_div:after { 
+    .music_director_composer_main_div:after {
         bottom: -30vw;
     }
 
-    .azeem_stadium_img { 
+    .azeem_stadium_img {
         bottom: -6vw;
     }
 
@@ -977,12 +1001,12 @@
         background: linear-gradient(180deg, #218ee3 0vw, #218ee3 75vw, #ffffff 75vw, #ffffff 95vw, #59a246 95vw, #59a246 100%);
     }
 
-    .award_name { 
+    .award_name {
         font-size: 2.4vw;
         line-height: 2.3vw;
     }
 
-    .achievement_card img {  
+    .achievement_card img {
         width: 90% !important;
     }
 
@@ -992,31 +1016,31 @@
 
     /* contact us page */
 
-    .form_heading { 
+    .form_heading {
         font-size: 5vw;
     }
 
-    .contact_buffer_div { 
+    .contact_buffer_div {
         top: 0vw;
     }
 
     .buffering_text {
-        font: 7.7vw 'tungsten'; 
+        font: 7.7vw 'tungsten';
         left: 8vw;
-        top: 6vw; 
+        top: 6vw;
     }
 
     img.contact_headphone_image {
         width: 50%;
     }
 
-    .contact_form .form-control { 
+    .contact_form .form-control {
         font-size: 1.5vw;
     }
 }
 
-@media screen and (min-width:1101px) and  (max-width:1250px) {
-    #icon-container.middle_description { 
+@media screen and (min-width:1101px) and (max-width:1250px) {
+    #icon-container.middle_description {
         background-position: -47vw -25vw !important;
     }
 }
