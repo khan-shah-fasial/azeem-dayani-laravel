@@ -479,10 +479,10 @@
         padding-bottom: 15px;
     }
 
-    .achievements_section #gallery_videos,
+    /* .achievements_section #gallery_videos,
     #gallery_videos>div {
         padding-right: 0px;
-    }
+    } */
 
     #gallery_videos img {
         height: auto;
