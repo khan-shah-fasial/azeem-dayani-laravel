@@ -265,7 +265,7 @@
 
 
 
-        <section data-icon-height="22vh" class="icon-container section non_film_section non_film"
+        <section data-icon-height="22vh" class="icon-container section non_film_section bg-green1 non_film"
             data-bg="#218ee3">
 
             <div class="side_headphone_div">
@@ -334,7 +334,7 @@
             <div class="non_film_music pt-lg-4 py-3 pb-lg-5">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="animated-heading section-heading text-dark pb-md-3">Non Film</h2>
+                        <h2 class="animated-heading section-heading text-white pb-md-3">Non Film</h2>
                         
                             <ul class="film_list">
                                 @foreach ($data['non_film_catg'] as $index => $row)

@@ -71,7 +71,7 @@ html.lenis body {
 
 .whatsappdesktop {
     inset: inherit !important;
-    transform: translate(93vw, 39vw) !important; 
+    transform: translate(93vw, 39vw) !important;
 }
 
 .no-scroll {
@@ -1101,7 +1101,8 @@ body {
     padding-right: 0vw !important;
 }
 
-.non_film_row .non_film_card, .film_row .card {
+.non_film_row .non_film_card,
+.film_row .card {
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -1195,7 +1196,7 @@ body {
 
 .header {
     position: absolute;
-    z-index: 999; 
+    z-index: 999;
     right: 0vw;
     width: 100%;
     padding: 0vw 1.9vw;
@@ -1219,7 +1220,7 @@ body {
 .pin-spacer {
     position: absolute !important;
 }
-  
+
 .logo_text {
     font-size: 5vw;
     padding-bottom: 2vw;
@@ -1522,12 +1523,12 @@ a.decoration-underline {
     /* 6rem converted to vw */
 }
 
-.sooryavanshi_img { 
+.sooryavanshi_img {
     width: 100%;
     height: 100%;
 }
 
-.section_contents.para_font{
+.section_contents.para_font {
     text-align: center;
     padding-top: 2vw;
     position: relative;
@@ -1540,7 +1541,7 @@ a.decoration-underline {
 
 .middle_description img {
     position: relative;
-    z-index: 9; 
+    z-index: 9;
 }
 
 .middle_description {
@@ -1733,12 +1734,20 @@ footer {
 }
 
 #works_page .ott_music_section {
-    background: linear-gradient(180deg, #fff 22vw, #59a246 0vw);
+    background: #218ee3;
+}
+
+.ott_music_section .bar {
+    background: #fff !important;
+}
+
+.non_film_section .bar {
+    background: #fff !important;
 }
 
 .ott_music_section {
     padding-top: 0vw;
-    padding-bottom: 5vw;
+    padding-bottom: 0vw;
 }
 
 .ott_row {
@@ -1814,7 +1823,7 @@ footer {
 } */
 
 .non_film_section .film_link {
-    color: #000;
+    color: #fff;
 }
 
 .ott_music_section .film_link {
@@ -2287,7 +2296,7 @@ footer {
 
 
 .achievements_section {
-    background: linear-gradient(180deg, #218ee3 0vw, #218ee3 88vw, #ffffff 88vw, #ffffff 104vw, #59a246 104vw, #59a246 100%);
+    background: linear-gradient(180deg, #218ee3 0vw, #218ee3 88vw, #59a246 88vw, #59a246 104vw, #59a246 104vw, #59a246 100%);
     padding: 0vw 0 0vw;
     color: white;
     position: relative;
@@ -2676,11 +2685,11 @@ img.film_music_lines {
 } */
 
 #works_page .non_film_section {
-    background: linear-gradient(180deg, #fff 22vw, #59a246 0vw);
+    background: #59a246;
 }
 
 h3.category_title.non_film {
-    color: #000;
+    color: #ffffff;
     padding: 0vw;
 }
 
@@ -3262,4 +3271,8 @@ button.fancybox-button.fancybox-button--zoom {
         background-position: -10vw -13vw !important;
         background-size: 100% !important;
     }
+}
+
+.bg-green1 {
+    background-color: #5aa236;
 }

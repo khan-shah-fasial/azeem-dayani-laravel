@@ -16,9 +16,7 @@
     @endphp
 
     <style>
-        footer {
-            background: #59a246;
-        } 
+       
         .header { 
             background: #218ee3 !important; 
         } 
@@ -47,7 +45,7 @@
                     </h3>
                     <div class="text-white" id="bars7"></div>
                 </div>
-                <div class="row film_row">
+                <div class="row film_row" style="background:#218ee3;">
                     @foreach ($flims as $row)
                         <div class="col-lg-4 col-md-6 col-12 mb-md-4 mb-3 card_main">
                             <a href="{{ $row->slug }}" target="_blank" class="card-link text-decoration-none">
