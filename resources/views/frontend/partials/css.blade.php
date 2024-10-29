@@ -7,8 +7,8 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer"
 />
 
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.1.8" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v1.1.7" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.1.9" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v1.1.9" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/header_animation.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.carousel.min.css" />
