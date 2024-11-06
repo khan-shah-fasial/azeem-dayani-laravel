@@ -811,6 +811,7 @@ function createIcon(container) {
   const iconIndex = Math.floor(Math.random() * musicNoteIcons.length);
   const icon = document.createElement("img");
   icon.src = musicNoteIcons[iconIndex];
+  icon.alt = "musical notes"; // Set alt attribute
   icon.classList.add("music-icon"); // Add class for styling/animation
   icon.style.position = "absolute"; // Ensure icons can move freely
   icon.style.opacity = 0; // Start hidden
