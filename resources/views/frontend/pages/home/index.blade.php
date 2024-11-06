@@ -138,11 +138,11 @@
             <div class=" text-center">
                 <div class="header_logo_div">
                     <div class="content">
-                        <a href="index.html">
-                           {{--
+                        {{--<a href="index.html">
+                           
                             <img class="main_logo" src="/assets/frontend/images/Homepage/Top_Logo.png">
-                            --}}
-                        </a>
+                            
+                        </a>--}}
                         <h1 class="main_logo font_miedinger text-light logo_text">{{ $logo }}</h1>
                         <div class="heading-anim-main" id="text">
                             <h2 class="font_miedinger music_director split-text-chars">{{ $data['banner_text'] }}</h2>
@@ -152,8 +152,8 @@
                     </div>
                 </div>
                 <div class="zip_zap_bg_img_container zip_zap_bg_img ">
-                    <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png">
-                    <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}">
+                    <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png" alt="zig zag img">
+                    <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}" alt="headphone text img">
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
                     </div>
@@ -238,7 +238,7 @@
             <div class="text-white" id="bars2"></div>
             <div class="film_music"></div>
             <div class="film_music_zig_zag_img_div">
-                <img class="zig-zag-img film_music_zig_zag_img" src="/assets/frontend/images/Homepage/Object_2.png">
+                <img class="zig-zag-img film_music_zig_zag_img" src="/assets/frontend/images/Homepage/Object_2.png" alt="zig zag image 2">
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -249,7 +249,7 @@
                              @foreach ($data['film_catg'] as $index => $row)
                             <li data-img="img{{ $index }}">
                                 <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                <img id="img{{ $index }}" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
+                                <img id="img{{ $index }}" src="{{ asset('storage/' . $row->home_image) }}" class="film_img" alt="film image">
                             </li>
                               @endforeach
                         </ul>
@@ -269,7 +269,7 @@
             data-bg="#218ee3">
 
             <div class="side_headphone_div">
-                <img class="left-scaleup-element side_headphone" src="/assets/frontend/images/Homepage/Headphone_new_2.png"
+                <img class="left-scaleup-element side_headphone" src="/assets/frontend/images/Homepage/Headphone_new_3.png"
                     alt="side headphone">
             </div>
             <div class="slidercircle">
@@ -340,7 +340,7 @@
                                 @foreach ($data['non_film_catg'] as $index => $row)
                                 <li data-img="img{{ $index }}01">
                                     <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                    <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
+                                    <img id="img{{ $index }}01" src="{{ asset('storage/' . $row->home_image) }}" class="film_img" alt="non film image">
                                 </li>
                                  @endforeach
                             </ul>
@@ -360,7 +360,7 @@
                                     @foreach ($data['ott_catg'] as $index => $row)
                                     <li data-img="img{{ $index }}51">
                                         <a href="{{ $row->slug }}" target="_blank" class="film_link">{{ $row->title }}</a>
-                                        <img id="img{{ $index }}51" src="{{ asset('storage/' . $row->home_image) }}" class="film_img">
+                                        <img id="img{{ $index }}51" src="{{ asset('storage/' . $row->home_image) }}" class="film_img" alt="ott image">
                                     </li>
                                     @endforeach
                                 </ul>

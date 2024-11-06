@@ -8,9 +8,9 @@
 
 <footer class="footer pt_6">
     <div class=" text-center">
-        <a href="index.php" class="text-decoration-none">
+        <a href="index.php" class="text-decoration-none" aria-label="footer azeem logo">
             <!-- <img class="header_logo" src="images/footer_logo_2.png"> -->
-            <h4 class="footer_logo_text">{{ $logo }}</h4>
+            <h1 class="footer_logo_text">{{ $logo }}</h1>
         </a>
         <div class="col-md-12 footer_links_div">
             <ul class="list-group list-group-horizontal list-unstyled justify-content-center flex-md-row flex-column">
@@ -43,7 +43,7 @@
                 class="list-group-item list-unstyled d-flex gap-4 footer_social_media_icons pt-md-3 mb-0 justify-content-center">
                 @foreach ($social_media as $index => $row)
                     <li class="list-item">
-                        <a href="{{ $row->url }}" class="social_media_links" target="_blank">
+                        <a href="{{ $row->url }}" class="social_media_links" target="_blank" aria-label="social media link">
                             {!! $row->icon !!}
                         </a>
                     </li>
