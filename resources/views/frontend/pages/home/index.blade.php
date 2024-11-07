@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 <div class="zip_zap_bg_img_container zip_zap_bg_img ">
-                    <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_3.png" alt="zig zag img">
+                    <img class="zig-zag-img zip_zap_bg_og_img" src="/assets/frontend/images/Homepage/Object_5.png" alt="zig zag img">
                     <img class="scaleup-element headphone_text_img" src="{{ asset('storage/' .$data['about_image']) }}" alt="headphone text img">
                     <div class="animated-para col-md-9 description para_font">
                         {!! $data['about_content'] !!} 
@@ -238,7 +238,7 @@
             <div class="text-white" id="bars2"></div>
             <div class="film_music"></div>
             <div class="film_music_zig_zag_img_div">
-                <img class="zig-zag-img film_music_zig_zag_img" src="/assets/frontend/images/Homepage/Object_2.png" alt="zig zag image 2">
+                <img class="zig-zag-img film_music_zig_zag_img" src="/assets/frontend/images/Homepage/Object_4.png" alt="zig zag image 2">
             </div>
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -269,7 +269,7 @@
             data-bg="#218ee3">
 
             <div class="side_headphone_div">
-                <img class="left-scaleup-element side_headphone" src="/assets/frontend/images/Homepage/Headphone_new_3.png"
+                <img class="left-scaleup-element side_headphone" src="/assets/frontend/images/Homepage/Headphone_new_4.png"
                     alt="side headphone">
             </div>
             <div class="slidercircle">
