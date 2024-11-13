@@ -133,11 +133,6 @@ window.addEventListener('resize', () => {
 });
 
 
-
-
-
-
-
 // Function to override body's transform property when Fancybox is open
 function checkFancyboxPresence() {
   var fancyboxExists = document.querySelector('.fancybox-container') !== null;
@@ -1933,3 +1928,29 @@ splitTextChars.forEach(element => {
     }
   });
 });
+
+
+
+function toggleScrollTrigger(paused) {
+  gsap.utils.toArray(ScrollTrigger.getAll()).forEach(trigger => {
+    if (paused) {
+      trigger.disable(); // Freezes the scroll-triggered animations
+    } else {
+      trigger.enable(); // Re-enables them
+    }
+  });
+}
+
+document.addEventListener("shown.bs.modal", function () {
+  if (document.body.classList.contains("modal-open")) toggleScrollTrigger(true);
+});
+
+document.addEventListener("hidden.bs.modal", function () {
+  toggleScrollTrigger(false);
+});
+
+
+if (!document.body.classList.contains("modal-open")) {
+  gsap.to(locoScroll);
+}
+

@@ -7,15 +7,15 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer"
 />
 
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/all.min.css?v1.1.1" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.2.1" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v1.2.3" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/all.min.css?v1.1.2" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css?v1.2.2" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css?v1.2.4" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/fonts.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/header_animation.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.carousel.min.css" />
 <link rel="stylesheet" type="text/css" href="/assets/frontend/css/owl.theme.default.min.css" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css?v1.1.1" />
-<link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/toastr.min.css?v1.1.2" />
+<link rel="stylesheet" type="text/css" href="/assets/frontend/css/bootstrap.min.css?v1.1.1" />
 <link rel="stylesheet" href="/assets/frontend/css/locomotive-scroll.min.css">
 
 <link rel="stylesheet" type="text/css" href="assets/frontend/css/fancybox.min.css" />
