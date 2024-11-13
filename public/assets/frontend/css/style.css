@@ -2217,3 +2217,7 @@ button.fancybox-button.fancybox-button--zoom {
 .bg-green1 {
     background-color: #5aa236;
 }
+
+.close {
+    cursor: pointer;
+}
