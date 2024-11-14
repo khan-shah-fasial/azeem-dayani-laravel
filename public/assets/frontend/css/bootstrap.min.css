@@ -480,6 +480,32 @@ h1 {
 .text-decoration-none {
     text-decoration: none !important;
 }
+.text-decoration-underline {
+    text-decoration: underline !important;
+}
+.text-decoration-line-through {
+    text-decoration: line-through !important;
+}
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+.text-wrap {
+    white-space: normal !important;
+}
+.text-nowrap {
+    white-space: nowrap !important;
+}
+/* rtl:begin:remove */
+.text-break {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+}
 .pb-3 {
     padding-bottom: 1rem !important;
 }
