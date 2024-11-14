@@ -81,7 +81,7 @@
                                     <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
                                         alt="Kapoor &amp; Sons" />
                                     <div class="text-overflow card-body non_film_card_body">
-                                        <h5 class="card-title non_film_card_title">{{ $row->title }}</h5>
+                                        <h5 class="card-title non_film_card_title text-uppercase">{{ $row->title }}</h5>
                                     </div>
                                 </div>
                             </a>
@@ -110,7 +110,7 @@
                                     <img src="{{ asset('storage/' . $row->image) }}" class="card-img-top"
                                         alt="Kapoor &amp; Sons" />
                                     <div class="text-overflow card-body non_film_card_body">
-                                        <h5 class="card-title non_film_card_title">{{ $row->title }}</h5>
+                                        <h5 class="card-title non_film_card_title text-uppercase">{{ $row->title }}</h5>
                                     </div>
                                 </div>
                             </a>
